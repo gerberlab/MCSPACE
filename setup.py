@@ -14,6 +14,8 @@ setup(name='mcspace',
                     'scipy',
                     'jupyterlab',
                     'ipykernel',
+                    'scikit-bio',
+                    'statsmodels'
                     ],
     python_requires=">=3.8",
 )

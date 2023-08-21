@@ -165,6 +165,7 @@ class TimeSeriesModel(BasicModel):
                  num_time,
                  device,
                  sparse_communities=True,
+                 scale_multiplier=1,
                  use_contamination_community=False,
                  contamination_community=None,
                  lr=1e-3):
@@ -188,7 +189,8 @@ class TimeSeriesModel(BasicModel):
                                                                         num_time,
                                                                         perturbation_prior_prob, 
                                                                         device, 
-                                                                        sparse_communities)
+                                                                        sparse_communities,
+                                                                        scale_multiplier=scale_multiplier)
     
     def compute_log_likelihood(self, comm_dist, otu_dist, counts, contam_weight):
         # count data is for multiple groups and subjects
