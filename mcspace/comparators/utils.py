@@ -26,6 +26,27 @@ def inv_ilr_transform_data(data):
     return ilr_inv(data)
 
 
+def flatten_reads_only(reads):
+    groups = ['pre_perturb', 'comparator', 'post_perturb']
+    flatreads = None
+    subj_labels = None
+    for ig, grp in enumerate(groups):
+        subjs = list(reads[grp].keys())
+        for isx, sub in enumerate(subjs):
+            particles = reads[grp][sub]
+            nparticles, notus = particles.shape
+            if flatreads is None:
+                flatreads = particles
+            else:
+                flatreads = np.vstack([flatreads, particles])
+            for _ in range(nparticles):
+                if subj_labels is None:
+                    subj_labels = np.array([ig, isx])
+                else:
+                    subj_labels = np.vstack([subj_labels, np.array([ig, isx])])
+    return flatreads, subj_labels
+
+
 def flatten_data(data):
     reads = data['reads']
     assign = data['assignments']
@@ -57,3 +78,6 @@ def flatten_data(data):
                 # subj_labels.append(gslabel)
         
     return flatreads, subj_labels, cluster_labels
+
+
+# *** fisher association test ================================================================

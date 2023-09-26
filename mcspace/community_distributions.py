@@ -89,7 +89,9 @@ class SparsityIndicator(AnnealedParameter):
         q_gamma_params = torch.zeros((self.num_communities,), requires_grad=True, device=device)
         torch.nn.init.uniform_(q_gamma_params)
         self.q_gamma_params = torch.nn.Parameter(q_gamma_params)
-    
+        # #! TESTING - LARGER INIT...
+        # self.q_gamma_params = torch.nn.Parameter(torch.normal(2,1, size=(self.num_communities,), requires_grad=True, device=device))
+
     def set_KL_scale_from_data(self, data=None):
         if data is not None:
             logp = get_log_p_from_data(data)
@@ -176,10 +178,10 @@ class PerturbationMagnitude(nn.Module):
     def sample_eps(self):
         self.eps = torch.normal(0,1,size=(self.num_communities,),device=self.device,requires_grad=False) 
 
-    def forward(self, input):
+    def forward(self, pre_peturb_data, post_perturb_data):
         self.sample_eps()
-        pre_peturb_data = input['pre_perturb']
-        post_perturb_data = input['post_perturb']
+        # pre_peturb_data = input['pre_perturb']
+        # post_perturb_data = input['post_perturb']
 
         nsubj = 0
         enc_pre = 0
@@ -466,11 +468,11 @@ class BasicCommunityDistribution(nn.Module):
         self.KL_comm = KL_comm
         self.KL_gamma = KL_gamma
         self.sparsity_probs = self.sparsity_gamma.q_probs
-        return topic_distrib, KL 
+        return topic_distrib, KL, gamma
 
 
 class PerturbationCommunityDistribution(nn.Module):
-    def __init__(self, num_communities, num_otus, num_subjects, subject_variance, perturbation_prior_prob, device, sparse_communities, scale_multiplier=1):
+    def __init__(self, num_communities, num_otus, num_groups, num_subjects, subject_variance, perturbation_prior_prob, device, sparse_communities, scale_multiplier=1):
         super().__init__()
         self.num_communities = num_communities
         self.num_otus = num_otus
@@ -479,31 +481,42 @@ class PerturbationCommunityDistribution(nn.Module):
         self.sparsity_gamma = SparsityIndicator(num_communities, scale_multiplier, start_temp=0.5, end_temp=0.01, device=device)
 
         self.num_subjects = num_subjects
-        self.num_groups = 3 # TODO: option to change?
+        self.num_groups = num_groups
+        if (self.num_groups != 2) and (self.num_groups != 3):
+            # TODO: ???
+            #! NOTE: could include more than 3 too...
+            raise ValueError("Number of total groups should be 2 or 3") 
+        
         self.perturbation_prior_prob = perturbation_prior_prob
 
         #* group means
         self.eta_pre_perturb = GroupMeanDistribution(num_communities, num_otus, device)
-        # TODO: might include option to not include comparator... --would need a day to do...
-        self.eta_comparator = GroupMeanDistribution(num_communities, num_otus, device)
-
+        
         #* perturbation parameters
         self.delta = PerturbationMagnitude(num_communities, num_otus, device)
         self.perturb_indicators = PerturbationIndicators(shape=(num_communities,), prior_prob=self.perturbation_prior_prob, start_temp=0.5, end_temp=0.01, device=device)
 
         #* learned variances for each group
         self.pre_perturb_variance = GroupVariance(num_otus, num_subjects, prior_mean=subject_variance['pre_perturb'], prior_variance=100, device=device)
-        self.comparator_variance = GroupVariance(num_otus, num_subjects, prior_mean=subject_variance['comparator'], prior_variance=100, device=device)
         self.post_perturb_variance = GroupVariance(num_otus, num_subjects, prior_mean=subject_variance['post_perturb'], prior_variance=100, device=device)
 
         #* subject community distributions
         self.pre_perturb_distrib = SubjectDistribution(num_communities, num_subjects, num_otus, device)
-        self.comparator_distrib = SubjectDistribution(num_communities, num_subjects, num_otus, device)
         self.post_perturb_distrib = SubjectDistribution(num_communities, num_subjects, num_otus, device)
+
+        #! if including comparator group
+        if self.num_groups == 3: 
+            self.delta_comparator = PerturbationMagnitude(num_communities, num_otus, device)
+            self.perturb_indicators_comparator = PerturbationIndicators(shape=(num_communities,), prior_prob=self.perturbation_prior_prob, start_temp=0.5, end_temp=0.01, device=device)
+            # self.eta_comparator = GroupMeanDistribution(num_communities, num_otus, device)
+            self.comparator_variance = GroupVariance(num_otus, num_subjects, prior_mean=subject_variance['comparator'], prior_variance=100, device=device)
+            self.comparator_distrib = SubjectDistribution(num_communities, num_subjects, num_otus, device)
 
     def set_temps(self, epoch, num_epochs):
         self.sparsity_gamma.set_temp(epoch, num_epochs)
         self.perturb_indicators.set_temp(epoch, num_epochs)
+        if self.num_groups == 3:
+            self.perturb_indicators_comparator.set_temp(epoch, num_epochs)
 
     def get_params(self):
         return {
@@ -511,6 +524,8 @@ class PerturbationCommunityDistribution(nn.Module):
                 'beta': self.beta,
                 'perturbation_magnitude': self.perturbation_magnitude,
                 'perturbation_indicators': self.perturbation_indicators,
+                'comparator_perturbation_magnitude': self.comparator_perturbation_magnitude,
+                'comparator_perturbation_indicators': self.comparator_perturbation_indicators,
                 'sparsity_probs': self.sparsity_probs,
                 'mean_pre_perturbation_distribution': self.mean_pre_perturbation_distribution,
                 'mean_comparator_distribution': self.mean_comparator_distribution,
@@ -519,7 +534,8 @@ class PerturbationCommunityDistribution(nn.Module):
                 'var_comparator': self.var_comparator,
                 'var_post_perturbation': self.var_post_perturbation,
                 'KL_pre_perturb': self.KL_pre_perturb,
-                'KL_comparator': self.KL_comparator,
+                'KL_delta_comparator': self.KL_delta_comparator,
+                'KL_c_comparator': self.KL_c_comparator,
                 'KL_delta': self.KL_delta,
                 'KL_c': self.KL_c,
                 'KL_var_pre_perturb': self.KL_var_pre_perturb,
@@ -540,17 +556,15 @@ class PerturbationCommunityDistribution(nn.Module):
         return res
     
     def forward(self, input):
-        # TODO: clean up data utils; document model inference better; be clear on inference networks and data inputs...
         #* input is normed data; no counts ; what about 'full data'; over all particles, for all samples 
         normed_data = input['normed_data']
         full_data = input['full_normed_data'] # should be Lfull x O array
  
         # sample pre-perturbation group means
         x_pre_perturb, KL_pre_perturb = self.eta_pre_perturb(normed_data['pre_perturb'])
-        x_comparator, KL_comparator = self.eta_comparator(normed_data['comparator'])
 
         # sample perturbation magnitude and indicators
-        delta, KL_delta = self.delta(normed_data)
+        delta, KL_delta = self.delta(normed_data['pre_perturb'],normed_data['post_perturb'])
         c_indicators, KL_c = self.perturb_indicators()
 
         # compute post-perturbation distribution
@@ -558,24 +572,36 @@ class PerturbationCommunityDistribution(nn.Module):
 
         # sample subject variance for each group
         var_pre_perturb, KL_var_pre_perturb = self.pre_perturb_variance(normed_data['pre_perturb'])
-        var_comparator, KL_var_comparator = self.comparator_variance(normed_data['comparator'])
         var_post_perturb, KL_var_post_perturb = self.post_perturb_variance(normed_data['post_perturb'])
 
         # sample subject distributions for each group
         x_pre_perturb_subj, KL_pre_perturb_subj = self.pre_perturb_distrib(normed_data['pre_perturb'], x_pre_perturb, var_pre_perturb)
-        x_comparator_subj, KL_comparator_subj = self.comparator_distrib(normed_data['comparator'], x_comparator, var_comparator)
         x_post_perturb_subj, KL_post_perturb_subj = self.post_perturb_distrib(normed_data['post_perturb'], x_post_perturb, var_post_perturb)
+
+        # sample comparator group if using
+        if self.num_groups == 3:
+            # x_comparator, KL_comparator = self.eta_comparator(normed_data['comparator'])
+            delta_comparator, KL_delta_comparator = self.delta_comparator(normed_data['pre_perturb'],normed_data['comparator'])
+            c_indicators_comparator, KL_c_comparator = self.perturb_indicators_comparator()
+            x_comparator = x_pre_perturb + delta_comparator*c_indicators_comparator
+            var_comparator, KL_var_comparator = self.comparator_variance(normed_data['comparator'])
+            x_comparator_subj, KL_comparator_subj = self.comparator_distrib(normed_data['comparator'], x_comparator, var_comparator)
+
+            # compute community distributions
+            # combine subject distributions for each group, reshape: GxKxS -> KxGxS
+            x = torch.permute(torch.stack([x_pre_perturb_subj, x_comparator_subj, x_post_perturb_subj]), (1,0,2))
+            # group mean distribution
+            x_mean = torch.stack([x_pre_perturb, x_comparator, x_post_perturb]).T # final shape = KxG
+        else:
+            KL_delta_comparator = KL_c_comparator = KL_var_comparator = KL_comparator_subj = 0
+            x = torch.permute(torch.stack([x_pre_perturb_subj, x_post_perturb_subj]), (1,0,2))
+            # group mean distribution
+            x_mean = torch.stack([x_pre_perturb, x_post_perturb]).T # final shape = KxG
 
         # sample sparsity indicators
         gamma, KL_gamma = self.sparsity_gamma()
-
-        # compute community distributions
-        # combine subject distributions for each group, reshape: GxKxS -> KxGxS
-        x = torch.permute(torch.stack([x_pre_perturb_subj, x_comparator_subj, x_post_perturb_subj]), (1,0,2))
+        # compute community distribution
         beta = self.sparse_softmax(x, gamma)
-
-        # group mean distribution
-        x_mean = torch.stack([x_pre_perturb, x_comparator, x_post_perturb]).T # final shape = KxG
         
         # store parameters
         self.beta_mean = self.sparse_softmax(x_mean[:,:,None], gamma)
@@ -584,28 +610,41 @@ class PerturbationCommunityDistribution(nn.Module):
         self.perturbation_indicators = self.perturb_indicators.q_probs
         self.sparsity_probs = self.sparsity_gamma.q_probs
         self.mean_pre_perturbation_distribution = x_pre_perturb
-        self.mean_comparator_distribution = x_comparator
         self.mean_post_perturbation_distribution = x_post_perturb
         self.var_pre_perturbation = var_pre_perturb
-        self.var_comparator = var_comparator
         self.var_post_perturbation = var_post_perturb
         self.KL_pre_perturb = KL_pre_perturb
-        self.KL_comparator = KL_comparator
         self.KL_delta = KL_delta
         self.KL_c = KL_c
         self.KL_var_pre_perturb = KL_var_pre_perturb
-        self.KL_var_comparator = KL_var_comparator
         self.KL_var_post_perturb = KL_var_post_perturb
         self.KL_pre_perturb_subj = KL_pre_perturb_subj
-        self.KL_comparator_subj = KL_comparator_subj
         self.KL_post_perturb_subj = KL_post_perturb_subj
         self.KL_gamma = KL_gamma
+        
+        if self.num_groups == 3:
+            self.comparator_perturbation_magnitude = delta_comparator #*
+            self.comparator_perturbation_indicators = self.perturb_indicators_comparator.q_probs #*
+            self.mean_comparator_distribution = x_comparator
+            self.var_comparator = var_comparator
+            self.KL_delta_comparator = KL_delta_comparator
+            self.KL_c_comparator = KL_c_comparator
+            self.KL_var_comparator = KL_var_comparator
+            self.KL_comparator_subj = KL_comparator_subj
+        else:
+            self.comparator_perturbation_magnitude = None
+            self.comparator_perturbation_indicators = None
+            self.mean_comparator_distribution = None
+            self.var_comparator = None
+            self.KL_comparator = None
+            self.KL_var_comparator = None
+            self.KL_comparator_subj = None
 
         # return distribution and KL
-        KL = KL_pre_perturb + KL_comparator + KL_delta + KL_c +\
+        KL = KL_pre_perturb + KL_delta_comparator + KL_c_comparator + KL_delta + KL_c +\
                 KL_var_pre_perturb + KL_var_comparator + KL_var_post_perturb +\
                 KL_pre_perturb_subj + KL_comparator_subj + KL_post_perturb_subj + KL_gamma
-        return beta, KL
+        return beta, KL, gamma
     
 
 class TimeSeriesCommunityDistribution(nn.Module):
@@ -638,10 +677,11 @@ class TimeSeriesCommunityDistribution(nn.Module):
     def get_params(self):
         return {
             'beta': self.beta,
+            'beta_mean': self.beta,
             'x_initial': self.x_initial,
             'sparsity_probs': self.sparsity_probs,
             'perturbation_indicators': self.perturbation_indicators,
-            'perturbation_magnitudes': self.perturbation_magnitudes,
+            'perturbation_magnitude': self.perturbation_magnitudes,
             'KL_x_initial': self.KL_x_initial,
             'KL_c': self.KL_c,
             'KL_delta': self.KL_delta,
@@ -649,8 +689,8 @@ class TimeSeriesCommunityDistribution(nn.Module):
         }
 
     def sparse_softmax(self, x, gamma):
-        a = torch.amax(x,dim=0)
-        temp = gamma[:,None]*torch.exp(x - a)
+        # a = torch.amax(x,dim=0)
+        temp = gamma[:,None]*torch.exp(x) # - a)
         res = temp/temp.sum(dim=0)
         if (torch.isnan(res).any()) or (torch.isinf(res).any()):
             raise ValueError("nan or inf in sparse softmax")
@@ -692,5 +732,5 @@ class TimeSeriesCommunityDistribution(nn.Module):
 
         # return distribution and KL
         KL = KL_x_initial + KL_c + KL_delta + KL_gamma
-        return beta, KL
+        return beta, KL, gamma
         
