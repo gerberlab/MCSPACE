@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='mcspace',
     version='0.1.0',
-    description='MC-SPACE model for MaPS-seq data',
+    description='MCSPACE model for MaPS-seq data',
     author='Gary Uppal',
     packages=['mcspace'],
     install_requires=[
@@ -14,7 +14,8 @@ setup(name='mcspace',
                     'scipy',
                     'jupyterlab',
                     'ipykernel',
-                    'scikit-bio',
+                    # 'scikit-bio',
+                    'composition-stats',
                     'statsmodels'
                     ],
     python_requires=">=3.8",
