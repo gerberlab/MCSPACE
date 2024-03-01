@@ -1,12 +1,7 @@
 mcspace.egg-info
 mcspace/__pycache__/
-mcspace/data
 mcspace/experiments
 mcspace/ICML_paper
 mcspace/MCSPACE_paper
 mcspace/notes
-mcspace/old
-mcspace/temp
-mcspace/back_up
-mcspace/new_data
-mcspace/phylo_trees
+mcspace/_old

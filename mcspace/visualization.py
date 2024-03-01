@@ -241,5 +241,4 @@ def render_proportions_and_assemblages(beta, theta, taxonomy, otu_order, assembl
     theta_lgd.ax.set_title("Relative\nabundance")
     theta_lgd.ax.set_yticks([0, -1, -2])
     theta_lgd.ax.set_yticklabels([r'$10^{0}$',r'$10^{-1}$',r'$10^{-2}$'])
-    # plt.savefig(outpath / "assemblages_with_proportions.png", bbox_inches="tight")
     return fig, ax_beta, ax, beta_lgd, theta_lgd

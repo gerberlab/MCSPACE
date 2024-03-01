@@ -1,0 +1,241 @@
+	Kingdom	Kingdom confidence	Phylum	Phylum confidence	Class	Class confidence	Order	Order confidence	Family	Family confidence	Genus	Genus confidence
+Otu1	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Enterobacterales	100	Enterobacteriaceae	100	Escherichia/Shigella	95.0
+Otu2	Bacteria	100	Bacteroidetes	100	Bacteroidia	100	Bacteroidales	100	Bacteroidaceae	100	Bacteroides	100.0
+Otu181	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Aerococcaceae	95	Abiotrophia	95.0
+Otu225	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Agathobacter	27.0
+Otu4	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	84.0
+Otu9	Bacteria	100	Firmicutes	96	Clostridia	90	Clostridiales	90	Lachnospiraceae	31	Lactonifactor	14.0
+Otu70	Bacteria	100	Firmicutes	91	Clostridia	85	Clostridiales	85	Clostridiales_Incertae Sedis XIII	28	Bacilliculturomica	28.0
+Otu8	Bacteria	100	Firmicutes	97	Clostridia	90	Clostridiales	89	Clostridiales_Incertae Sedis XIII	17	Anaerovorax	7.0
+Otu15	Bacteria	100	Firmicutes	100	Clostridia	98	Clostridiales	98	Lachnospiraceae	29	Robinsoniella	15.0
+Otu37	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	51.0
+Otu27	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Lactobacillaceae	100	Ligilactobacillus	100.0
+Otu19	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	89	Parasporobacterium	29.0
+Otu18	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVb	97.0
+Otu36	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	87.0
+Otu6	Bacteria	100	Verrucomicrobia	100	Verrucomicrobiae	100	Verrucomicrobiales	100	Akkermansiaceae	100	Akkermansia	100.0
+Otu12	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	92	Sporobacter	55.0
+Otu22	Bacteria	100	Firmicutes	99	Clostridia	95	Clostridiales	95	Peptostreptococcaceae	40	Criibacterium	38.0
+Otu3	Bacteria	100	Bacteroidetes	100	Bacteroidia	100	Bacteroidales	100	Porphyromonadaceae	100	Parabacteroides	100.0
+Otu45	Bacteria	100	Firmicutes	98	Clostridia	93	Clostridiales	93	Lachnospiraceae	33	Mordavella	13.0
+Otu5	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Lactobacillaceae	100	Limosilactobacillus	97.0
+Otu67	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	29.0
+Otu14	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Syntrophococcus	30.0
+Otu232	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Schaedlerella	72.0
+Otu31	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Enterocloster	27.0
+Otu17	Bacteria	100	Firmicutes	87	Clostridia	82	Clostridiales	81	Lachnospiraceae	37	Abyssivirga	10.0
+Otu93	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Hungatella	13.0
+Otu7	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	94	Lachnospira	23.0
+Otu13	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	99	Flintibacter	92.0
+Otu39	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Eisenbergiella	13.0
+Otu86	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	16.0
+Otu11	Bacteria	100	Firmicutes	100	Clostridia	96	Clostridiales	96	Lachnospiraceae	96	Falcatimonas	18.0
+Otu10	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	82.0
+Otu75	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Lachnospiracea_incertae_sedis	68.0
+Otu20	Bacteria	100	Firmicutes	100	Erysipelotrichia	100	Erysipelotrichales	100	Erysipelotrichaceae	99	Clostridium XVIII	99.0
+Otu83	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Clostridiales_Incertae Sedis XIII	85	Ihubacter	84.0
+Otu26	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Muricomes	12.0
+Otu28	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Flintibacter	71.0
+Otu41	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Clostridium XlVa	59.0
+Otu106	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	98	Lachnospiraceae	93	Anaerotignum	88.0
+Otu112	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Acetatifactor	50.0
+Otu131	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	59.0
+Otu121	Bacteria	100	Firmicutes	98	Clostridia	93	Clostridiales	93	Lachnospiraceae	37	Lactonifactor	12.0
+Otu40	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Acetatifactor	22.0
+Otu108	Bacteria	100	Firmicutes	97	Clostridia	89	Clostridiales	89	Clostridiales_Incertae Sedis XIII	46	Bacilliculturomica	46.0
+Otu219	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Eisenbergiella	33.0
+Otu25	Bacteria	100	Firmicutes	100	Clostridia	98	Clostridiales	98	Lachnospiraceae	98	Acetatifactor	47.0
+Otu173	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Merdimonas	72.0
+Otu32	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Muricomes	45.0
+Otu54	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Paludicola	24.0
+Otu203	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	18.0
+Otu53	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	98	Butyricicoccus	78.0
+Otu168	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Ruminococcus2	38.0
+Otu76	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Hungatella	30.0
+Otu38	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	98	Acetatifactor	96.0
+Otu109	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	96	Clostridium XlVa	29.0
+Otu151	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Streptococcaceae	100	Streptococcus	100.0
+Otu94	Bacteria	100	Firmicutes	98	Clostridia	98	Clostridiales	98	Lachnospiraceae	97	Marvinbryantia	51.0
+Otu33	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	43.0
+Otu30	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	16.0
+Otu24	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	10.0
+Otu69	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	31.0
+Otu50	Bacteria	100	Firmicutes	95	Clostridia	95	Clostridiales	95	Ruminococcaceae	93	Paludicola	27.0
+Otu104	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	98	Blautia	69.0
+Otu44	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Ruminococcus2	20.0
+Otu35	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	46.0
+Otu73	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	98	Anaerosporobacter	34.0
+Otu57	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Clostridium XlVa	42.0
+Otu103	Bacteria	100	Firmicutes	97	Clostridia	97	Clostridiales	97	Ruminococcaceae	80	Sporobacter	46.0
+Otu136	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Phocea	52.0
+Otu118	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Phocea	48.0
+Otu29	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Lacrimispora	36.0
+Otu59	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	96	Frisingicoccus	35.0
+Otu98	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Neglecta	89.0
+Otu77	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Schaedlerella	98.0
+Otu142	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Coprococcus	14.0
+Otu172	Bacteria	100	Firmicutes	91	Clostridia	87	Clostridiales	87	Lachnospiraceae	38	Lactonifactor	13.0
+Otu34	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Lawsonibacter	74.0
+Otu52	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Blautia	84.0
+Otu82	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Mediterraneibacter	28.0
+Otu113	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	98	Intestinimonas	37.0
+Otu107	Bacteria	100	Firmicutes	85	Clostridia	65	Clostridiales	65	Clostridiales_Incertae Sedis XII	41	Guggenheimella	41.0
+Otu68	Bacteria	100	Firmicutes	96	Clostridia	91	Clostridiales	91	Lachnospiraceae	39	Robinsoniella	23.0
+Otu97	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Clostridiales_Incertae Sedis XIII	92	Ihubacter	89.0
+Otu23	Bacteria	100	Firmicutes	98	Clostridia	97	Clostridiales	97	Ruminococcaceae	82	Harryflintia	27.0
+Otu84	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	94	Schaedlerella	20.0
+Otu66	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	58.0
+Otu64	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Cuneatibacter	27.0
+Otu55	Bacteria	100	Actinobacteria	100	Coriobacteriia	100	Eggerthellales	100	Eggerthellaceae	100	Eggerthella	100.0
+Otu46	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Anaerosporobacter	11.0
+Otu116	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Kineothrix	19.0
+Otu63	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	97	Sporobacter	49.0
+Otu144	Bacteria	99	Firmicutes	91	Clostridia	89	Clostridiales	88	Clostridiales_Incertae Sedis XI	7	Dethiosulfatibacter	7.0
+Otu56	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	98	Frisingicoccus	37.0
+Otu21	Bacteria	99	Proteobacteria	19	Gammaproteobacteria	16	Cellvibrionales	12	Cellvibrionaceae	11	Maricurvus	9.0
+Otu58	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Acetatifactor	94.0
+Otu16	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Oscillibacter	61.0
+Otu212	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Anaerosporobacter	33.0
+Otu48	Bacteria	100	Firmicutes	99	Clostridia	94	Clostridiales	94	Lachnospiraceae	42	Abyssivirga	31.0
+Otu47	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Ruminococcaceae	95	Oscillibacter	64.0
+Otu99	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	99	Hydrogenoanaerobacterium	34.0
+Otu162	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Acetanaerobacterium	42.0
+Otu43	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Roseburia	44.0
+Otu188	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	99.0
+Otu89	Bacteria	100	Firmicutes	100	Erysipelotrichia	100	Erysipelotrichales	100	Erysipelotrichaceae	100	Longicatena	100.0
+Otu132	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Neglecta	51.0
+Otu101	Bacteria	100	Firmicutes	97	Erysipelotrichia	94	Erysipelotrichales	94	Erysipelotrichaceae	93	Longibaculum	26.0
+Otu78	Bacteria	100	Firmicutes	100	Erysipelotrichia	100	Erysipelotrichales	100	Erysipelotrichaceae	99	Kandleria	37.0
+Otu102	Bacteria	100	Firmicutes	93	Clostridia	89	Clostridiales	88	Peptostreptococcaceae	28	Criibacterium	19.0
+Otu49	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Stomatobaculum	34.0
+Otu119	Bacteria	100	Firmicutes	97	Clostridia	91	Clostridiales	89	Clostridiales_Incertae Sedis XIII	21	Anaerovorax	14.0
+Otu130	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	85.0
+Otu42	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Ruminococcus	67.0
+Otu65	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	21.0
+Otu235	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Sellimonas	6.0
+Otu79	Bacteria	100	Firmicutes	97	Clostridia	96	Clostridiales	96	Lachnospiraceae	36	Robinsoniella	16.0
+Otu128	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Eisenbergiella	43.0
+Otu95	Bacteria	99	Firmicutes	87	Erysipelotrichia	61	Erysipelotrichales	61	Erysipelotrichaceae	59	Bulleidia	22.0
+Otu158	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Hungatella	97.0
+Otu127	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Extibacter	15.0
+Otu51	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Faecalimonas	10.0
+Otu74	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Kineothrix	25.0
+Otu152	Bacteria	100	Firmicutes	82	Clostridia	79	Clostridiales	78	Clostridiales_Incertae Sedis XIII	18	Ihubacter	10.0
+Otu80	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Anaerotruncus	29.0
+Otu140	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	32.0
+Otu137	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Dorea	95.0
+Otu62	Bacteria	100	Firmicutes	99	Clostridia	98	Clostridiales	98	Lachnospiraceae	97	Ruminococcus2	29.0
+Otu90	Bacteria	100	Firmicutes	93	Clostridia	91	Clostridiales	91	Lachnospiraceae	90	Marvinbryantia	27.0
+Otu91	Bacteria	100	Firmicutes	97	Clostridia	86	Clostridiales	76	Catabacteriaceae	31	Catabacter	31.0
+Otu154	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Parasporobacterium	8.0
+Otu105	Bacteria	100	Firmicutes	67	Erysipelotrichia	52	Erysipelotrichales	52	Erysipelotrichaceae	52	Holdemania	36.0
+Otu111	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	94	Intestinimonas	78.0
+Otu191	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	30.0
+Otu71	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Faecalicatena	51.0
+Otu60	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Muricomes	33.0
+Otu159	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Clostridiales_Incertae Sedis XIII	83	Ihubacter	76.0
+Otu115	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Marvinbryantia	59.0
+Otu133	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Ruminococcus2	20.0
+Otu92	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Frisingicoccus	99.0
+Otu61	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Lactobacillaceae	100	Lactobacillus	100.0
+Otu223	Bacteria	100	Firmicutes	99	Clostridia	86	Clostridiales	84	Lachnospiraceae	53	Robinsoniella	9.0
+Otu149	Bacteria	100	Firmicutes	99	Clostridia	96	Clostridiales	95	Clostridiales_Incertae Sedis XIII	18	Anaerovorax	6.0
+Otu81	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Ruminococcus	90.0
+Otu72	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Ruminococcus2	15.0
+Otu186	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Fusicatenibacter	96.0
+Otu126	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	98	Clostridiaceae 4	19	Anaerosolibacter	7.0
+Otu141	Bacteria	100	Firmicutes	83	Clostridia	81	Clostridiales	81	Ruminococcaceae	51	Colidextribacter	49.0
+Otu117	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Lachnotalea	31.0
+Otu205	Bacteria	100	Firmicutes	100	Clostridia	91	Clostridiales	85	Clostridiales_Incertae Sedis XIII	12	Anaerovorax	7.0
+Otu129	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	99	Ruminococcaceae	94	Clostridium IV	53.0
+Otu125	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Hungatella	9.0
+Otu208	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	97	Hungatella	26.0
+Otu96	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Acetatifactor	89.0
+Otu134	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Ruminococcus2	29.0
+Otu85	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Harryflintia	100.0
+Otu176	Bacteria	100	Firmicutes	98	Clostridia	97	Clostridiales	97	Peptostreptococcaceae	37	Criibacterium	34.0
+Otu88	Bacteria	100	Proteobacteria	39	Gammaproteobacteria	33	Cellvibrionales	25	Cellvibrionaceae	21	Pseudoteredinibacter	17.0
+Otu114	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Clostridium XlVa	32.0
+Otu124	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Ruthenibacterium	100.0
+Otu187	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Peptostreptococcaceae	100	Romboutsia	100.0
+Otu100	Bacteria	100	Deferribacteres	100	Deferribacteres	100	Deferribacterales	100	Deferribacteraceae	100	Mucispirillum	100.0
+Otu138	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Anaerotaenia	7.0
+Otu153	Bacteria	100	Firmicutes	100	Clostridia	96	Clostridiales	95	Ruminococcaceae	95	Ethanoligenens	29.0
+Otu160	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Eisenbergiella	100.0
+Otu87	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Anaerotignum	100.0
+Otu216	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	58.0
+Otu123	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Streptococcaceae	100	Lactococcus	100.0
+Otu163	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Merdimonas	43.0
+Otu135	Bacteria	100	Firmicutes	52	Clostridia	49	Clostridiales	49	Peptostreptococcaceae	14	Wukongibacter	5.0
+Otu147	Bacteria	100	Firmicutes	97	Clostridia	94	Clostridiales	94	Lachnospiraceae	38	Lactonifactor	11.0
+Otu184	Bacteria	99	Firmicutes	94	Clostridia	86	Clostridiales	86	Clostridiales_Incertae Sedis XIII	22	Bacilliculturomica	18.0
+Otu110	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	27.0
+Otu214	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	99	Flavonifractor	65.0
+Otu148	Bacteria	100	Firmicutes	85	Clostridia	83	Clostridiales	83	Clostridiaceae 1	41	Fervidicella	16.0
+Otu120	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	99	Ruminococcaceae	99	Dysosmobacter	97.0
+Otu150	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Ruminococcaceae	99	Ethanoligenens	40.0
+Otu122	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	38.0
+Otu196	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	51.0
+Otu157	Bacteria	99	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	98	Murimonas	64.0
+Otu215	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Blautia	42.0
+Otu165	Bacteria	100	Firmicutes	98	Clostridia	95	Clostridiales	95	Clostridiales_Incertae Sedis XIII	35	Bacilliculturomica	19.0
+Otu167	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	97	Ruminococcus	24.0
+Otu182	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Anaerotruncus	100.0
+Otu175	Bacteria	100	Firmicutes	70	Clostridia	64	Clostridiales	64	Clostridiales_Incertae Sedis XII	25	Guggenheimella	25.0
+Otu145	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Hungatella	18.0
+Otu155	Bacteria	100	Firmicutes	99	Erysipelotrichia	97	Erysipelotrichales	97	Erysipelotrichaceae	97	Amedibacillus	50.0
+Otu139	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Clostridium XlVa	51.0
+Otu238	Bacteria	100	Firmicutes	98	Clostridia	98	Clostridiales	98	Lachnospiraceae	98	Acetatifactor	43.0
+Otu174	Bacteria	100	Firmicutes	100	Erysipelotrichia	100	Erysipelotrichales	100	Erysipelotrichaceae	100	Holdemania	100.0
+Otu161	Bacteria	100	Firmicutes	100	Erysipelotrichia	100	Erysipelotrichales	100	Erysipelotrichaceae	99	Longibaculum	87.0
+Otu222	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Clostridium XlVa	36.0
+Otu193	Bacteria	100	Firmicutes	100	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Enterocloster	45.0
+Otu236	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	99	Faecalimonas	39.0
+Otu146	Bacteria	100	Firmicutes	98	Erysipelotrichia	96	Erysipelotrichales	96	Erysipelotrichaceae	96	Amedibacillus	49.0
+Otu164	Bacteria	100	Firmicutes	100	Bacilli	100	Bacillales	100	Staphylococcaceae	100	Staphylococcus	100.0
+Otu228	Bacteria	100	Firmicutes	100	Clostridia	98	Clostridiales	98	Lachnospiraceae	61	Abyssivirga	39.0
+Otu177	Bacteria	100	Actinobacteria	100	Actinobacteria	100	Propionibacteriales	100	Propionibacteriaceae	100	Cutibacterium	100.0
+Otu169	Bacteria	100	Firmicutes	99	Clostridia	95	Clostridiales	95	Clostridiales_Incertae Sedis XIII	61	Ihubacter	54.0
+Otu143	Bacteria	100	Firmicutes	90	Clostridia	77	Clostridiales	77	Lachnospiraceae	64	Anaerobium	8.0
+Otu185	Bacteria	99	Firmicutes	85	Clostridia	82	Clostridiales	80	Clostridiales_Incertae Sedis XIII	14	Ihubacter	9.0
+Otu156	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Enterocloster	100.0
+Otu171	Bacteria	100	Actinobacteria	100	Actinobacteria	100	Mycobacteriales	100	Corynebacteriaceae	100	Corynebacterium	100.0
+Otu179	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	99	Caproicibacter	34.0
+Otu204	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	99	Lachnospiraceae	97	Clostridium XlVa	28.0
+Otu201	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	99	Sporobacter	62.0
+Otu170	Bacteria	100	Firmicutes	99	Clostridia	97	Clostridiales	97	Lachnospiraceae	84	Eisenbergiella	33.0
+Otu227	Bacteria	100	Firmicutes	95	Clostridia	93	Clostridiales	92	Lachnospiraceae	35	Robinsoniella	15.0
+Otu178	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Mediterraneibacter	90.0
+Otu180	Bacteria	100	Firmicutes	99	Clostridia	99	Clostridiales	98	Ruminococcaceae	97	Caproiciproducens	46.0
+Otu224	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	96	Hungatella	51.0
+Otu166	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Roseburia	100.0
+Otu198	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Neglecta	83.0
+Otu221	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Faecalimonas	41.0
+Otu207	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Pseudomonadales	100	Pseudomonadaceae	100	Pseudomonas	92.0
+Otu210	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Ruminococcus2	23.0
+Otu190	Bacteria	100	Bacteroidetes	100	Bacteroidia	100	Bacteroidales	100	Bacteroidaceae	100	Phocaeicola	99.0
+Otu237	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Flintibacter	100.0
+Otu183	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Peptoniphilaceae	100	Finegoldia	100.0
+Otu194	Bacteria	100	Actinobacteria	100	Actinobacteria	100	Mycobacteriales	100	Corynebacteriaceae	100	Corynebacterium	100.0
+Otu231	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	100	Acetatifactor	100.0
+Otu189	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Lachnospiraceae	99	Kineothrix	36.0
+Otu192	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Clostridium IV	83.0
+Otu218	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Clostridium IV	100.0
+Otu202	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	100	Streptococcaceae	100	Streptococcus	100.0
+Otu209	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Enterobacterales	100	Enterobacteriaceae	100	Escherichia/Shigella	71.0
+Otu199	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Eubacteriaceae	100	Anaerofustis	100.0
+Otu195	Bacteria	99	Firmicutes	64	Clostridia	63	Clostridiales	62	Lachnospiraceae	55	Acetatifactor	27.0
+Otu200	Bacteria	100	Fusobacteria	100	Fusobacteriia	100	Fusobacteriales	100	Fusobacteriaceae	100	Fusobacterium	100.0
+Otu197	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Enterobacterales	100	Enterobacteriaceae	100	Escherichia/Shigella	68.0
+Otu206	Bacteria	100	Firmicutes	85	Clostridia	84	Clostridiales	84	Lachnospiraceae	83	Acetatifactor	33.0
+Otu220	Bacteria	100	Actinobacteria	100	Actinobacteria	100	Micrococcales	100	Cellulomonadaceae	83	Oerskovia	82.0
+Otu234	Bacteria	100	Proteobacteria	100	Betaproteobacteria	100	Neisseriales	100	Neisseriaceae	100	Neisseria	100.0
+Otu229	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Enterobacterales	100	Enterobacteriaceae	100	Salmonella	55.0
+Otu233	Bacteria	100	Firmicutes	93	Negativicutes	20	Selenomonadales	20	Sporomusaceae	16	Dendrosporobacter	8.0
+Otu239	Bacteria	100	Firmicutes	90	Clostridia	56	Clostridiales	56	Clostridiaceae 3	17	Caldisalinibacter	16.0
+Otu217	Bacteria	100	Proteobacteria	100	Gammaproteobacteria	100	Pseudomonadales	100	Moraxellaceae	100	Acinetobacter	100.0
+Otu213	Bacteria	100	Firmicutes	100	Bacilli	100	Lactobacillales	99	Aerococcaceae	97	Facklamia	63.0
+Otu211	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	98	Paludicola	57.0
+Otu240	Bacteria	100	Firmicutes	100	Clostridia	100	Clostridiales	100	Ruminococcaceae	100	Neglecta	99.0
+Otu230	Bacteria	100	Proteobacteria	100	Alphaproteobacteria	100	Sphingomonadales	100	Sphingomonadaceae	100	Sphingomonas	100.0
+Otu226	Bacteria	100	Cyanobacteria/Chloroplast	100	Chloroplast	100	Chloroplast	100	Streptophyta	100		
