@@ -170,9 +170,14 @@ class LatentTimeSeriesMixtureWeights(nn.Module):
         p = 0
         for t in range(1,self.num_time):
             if self.perturbed_times[t] == 1:
+                # perturbation turns on
                 eta = x_latent[:,t-1,:] + c_indicators[:,p,None]*delta[:,p,None]
                 p += 1
-            else:
+            elif self.perturbed_times[t] == 0:
+                # drift in between time points
+                eta = x_latent[:,t-1,:]
+            elif self.perturbed_times[t] == -1:
+                # perturbation turns off
                 eta = x_latent[:,t-1,:] - c_indicators[:,p-1,None]*delta[:,p-1,None]
             dt = self.times[t]-self.times[t-1]
 
@@ -298,7 +303,7 @@ class AssemblageProportions(nn.Module):
         self.add_process_variance = add_process_variance
 
         self.perturbed_times = perturbed_times
-        self.num_perturbations = np.array(perturbed_times).sum() #! since input is boolean...
+        self.num_perturbations = (np.array(perturbed_times)==1).sum()
         self.perturbation_prior_prob = perturbation_prior
 
         self.use_sparse_weights = use_sparse_weights

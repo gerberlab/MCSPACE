@@ -36,7 +36,7 @@ class MCSPACE(nn.Module):
         self.add_process_variance = add_process_variance
 
         self.perturbed_times = perturbed_times
-        self.num_perturbations = np.array(perturbed_times).sum() #! since input is boolean...
+        self.num_perturbations = (np.array(perturbed_times)==1).sum()
         self.perturbation_prior_prob = perturbation_prior
 
         self.use_sparse_weights = use_sparse_weights
