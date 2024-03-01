@@ -63,21 +63,7 @@ class MCSPACE(nn.Module):
         if self.num_perturbations > 0:
             self.beta_params.perturbation_indicators.set_temp(epoch, num_epochs)
 
-    # # TODO: make sure works with multiple times and subjects
-    # def compute_loglik_multinomial(self, beta, theta, counts):
-    #     EPS = 1e-6
-    #     rlogtheta = torch.sum(counts[:,None,:]*torch.log(theta + EPS), dim=2)
-    #     x_star, _ = torch.max(rlogtheta, dim=1, keepdim=True)
-    #     summand = x_star + torch.log(torch.sum(beta[None,:]*torch.exp(rlogtheta - x_star) ,dim=1,keepdim=True) + EPS)
-    #     total = summand.sum()
-    #     if torch.isnan(total).any():
-    #         raise ValueError("nan in sparse loglik")
-    #     if torch.isinf(total).any():
-    #         raise ValueError("inf in sparse loglik")
-    #     return total
-
     def compute_loglik_multinomial(self, beta, theta, counts):
-        # TODO: TRIPLE CHECK...
         EPS = 1e-6
         total = 0
         for i, tm in enumerate(self.times):

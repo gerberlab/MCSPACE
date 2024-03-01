@@ -296,11 +296,3 @@ def get_cecum_colon_pair_data(min_abundance=0.005, min_reads=1000,max_reads=1000
     taxasub = taxa.iloc[otusub,:]
     taxonomy = condense_taxonomy(taxasub)
     return counts, taxonomy
-
-
-if __name__ == "__main__":
-    reads, taxonomy = get_colon_dataset()
-    print(reads.keys())
-    print(reads[0].keys())
-    print(reads[0]['s1'].shape)
-    print(taxonomy.shape)
