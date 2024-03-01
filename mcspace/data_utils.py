@@ -64,58 +64,8 @@ def filter_dataset(reads, min_abundance=0.005, min_reads=1000,max_reads=10000):
     final_filtered = ofiltered[psub,:]
     return final_filtered, otu_sub
 
-    # rd = reads.sum(axis=1)
-    # psub = ((rd>=min_reads) & (rd<=max_reads))
-    # filtered = reads[psub,:]
-    # bulk = filtered.sum(axis=1)/filtered.sum()     
-    # otu_sub = (bulk > min_abundance)
-    # rd = reads.sum(axis=1)
-    # psub = ((rd>=min_reads) & (rd<=max_reads))
-    # pfiltered = reads[psub,:]
-    # bulk = pfiltered.sum(axis=0)/pfiltered.sum()     
-    # otu_sub = (bulk > min_abundance)
-    # ofiltered = reads[:,otu_sub]
 
-    # rd2 = ofiltered.sum(axis=1)
-    # psub2 = ((rd2>=min_reads) & (rd2<=max_reads))
-    # filtered = ofiltered[psub2,:]
-
-def get_interpersonal_subjects(rootpath = Path("./")):    
-    datapath = rootpath / "data"
-    rawdata = pd.read_csv(datapath / "Interpersonal Data for Gary.csv")
-    subjects = rawdata['Core'].unique()
-    return subjects
-
-
-def get_interpersonal_data_subject(subject, min_abundance=0.005, min_reads=1000,max_reads=10000, rootpath = Path("./")):
-    datapath = rootpath / "data"
-
-    rawdata = pd.read_csv(datapath / "Interpersonal Data for Gary.csv")
-
-    subject_options = ['H10', 'H18', 'H19', 'H1', 'H11TS4']
-    if subject not in subject_options:
-        raise ValueError(f"subject must be in {subject_options}")
-
-    temp = rawdata.loc[rawdata['Core'] == subject,:]
-    temppivot = temp.pivot(index='OTU', columns='Particle', values='Count')
-    temppivot = temppivot.fillna(0)
-    min_reads=1000
-    max_reads=10000
-    min_abundance = 0.01
-
-    filtered = temppivot.values
-    rd = filtered.sum(axis=0)
-    psub = ((rd>=min_reads) & (rd<=max_reads))
-    filtered = filtered[:,psub]
-    bulk = filtered.sum(axis=1)/filtered.sum()  
-    otu_sub = (bulk > min_abundance)
-    otufiltered = filtered[otu_sub,:]
-    rd = otufiltered.sum(axis=0)
-    psub2 = ((rd>=min_reads) & (rd<=max_reads))
-    finalfiltered = otufiltered[:,psub2].T
-    return finalfiltered
-
-
+#! -----------------original maps-seq datasets----------------------------
 def get_mixing_dataset(min_abundance=0.005, min_reads=1000,max_reads=10000, datapath = Path("./data")):
     mixtest = np.load(datapath / "fig1_data_FIXT.npy")
     reads, otu_sub = filter_dataset(mixtest, min_abundance=min_abundance, min_reads=min_reads, max_reads=max_reads)
@@ -188,6 +138,31 @@ def get_colon_dataset(min_abundance=0.005, min_reads=1000,max_reads=10000,datapa
     return counts, taxonomy
 
 
+#! -----------------time series datasets without and with perturbations----------------------------
+def get_human_timeseries_dataset(min_abundance=0.01, min_reads=1000, max_reads=10000, rootpath=Path("./data")):
+    datapath = rootpath / "data" / "human_timeseries"
+    taxfile = datapath / "taxonomy.csv"
+    countfile = datapath / "count_data.csv"
+
+    #* create dataset object
+    dataset = DataSet(countfile, taxfile)
+
+    # filter otus
+    num_consistent_subjects=1
+    dataset.consistency_filtering(num_consistent_subjects=num_consistent_subjects, min_abundance=min_abundance, min_reads=min_reads, max_reads=max_reads)
+
+    # filter particles
+    dataset.filter_particle_data(min_reads=min_reads, max_reads=max_reads)
+
+    #* return reads, number otus, times, and subjects...
+    reads = dataset.get_reads()
+    num_otus = len(dataset.otu_index)
+    times = dataset.times
+    num_subjects = len(dataset.subjects)
+    subjects = dataset.subjects
+    return reads, num_otus, times, subjects, dataset
+
+
 def get_diet_dataset(min_abundance=0.005, min_reads=1000, max_reads=10000, subj_remove=['JX09', 'JX07', 'JX08'], num_consistent_subjects=1,rootpath = Path("./")):
     datapath = rootpath / "data" / "diet_timeseries_data"
     taxfile = datapath / "taxonomy.csv"
@@ -200,7 +175,6 @@ def get_diet_dataset(min_abundance=0.005, min_reads=1000, max_reads=10000, subj_
     dataset.remove_subjects(subj_remove)
 
     # filter otus
-    # dataset.consistency_filtering(num_consistent_subjects=2)
     dataset.consistency_filtering(num_consistent_subjects=num_consistent_subjects, min_abundance=min_abundance, min_reads=min_reads, max_reads=max_reads)
 
     # filter out lactococcus
