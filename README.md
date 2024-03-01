@@ -5,7 +5,7 @@ Sparse Bayesian mixture model for learning community subtypes and perturbation e
 First install the MCSPACE package:
 ```
 git clone https://github.com/gerberlab/MCSPACE.git
-pip install mcspace/.
+pip install MCSPACE/.
 ```
 
 Then install [pytorch](https://pytorch.org/) from pip
