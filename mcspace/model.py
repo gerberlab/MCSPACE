@@ -5,7 +5,6 @@ import torch.nn.functional as F
 from torch.nn.functional import gumbel_softmax
 from mcspace.utils import BernoulliKL, GaussianKL, sparse_softmax, BernoulliKLPower
 from sklearn.cluster import KMeans
-from mcspace.basic_model import BasicMCSPACE
 from mcspace.assemblage_proportions import AssemblageProportions
 
 
