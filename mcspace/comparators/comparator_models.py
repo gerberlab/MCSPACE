@@ -18,10 +18,10 @@ class BasicGaussianMixture:
 
     def get_params(self):
         # get aic, learned communities (means), weights, covariances, convergence check, number-iterations used
-        # TODO: for perturbations, need some type of map? particle assignment...
         params = {}
         params['labels'] = self.labels
         params['aic'] = self.aic
+        params['bic'] = self.bic
         params['weights'] = self.model.weights_
         params['means'] = self.model.means_
         params['covariances'] = self.model.covariances_
@@ -31,10 +31,10 @@ class BasicGaussianMixture:
         return params
 
     def fit_model(self, data):
-        # TODO: what is format of input data?; transform to what's needed...
         ilr_data = ilr_transform_data(data)
         self.labels = self.model.fit_predict(ilr_data)
         self.aic = self.model.aic(ilr_data)
+        self.bic = self.model.bic(ilr_data)
 
 
     def predict_labels(self, data):
@@ -47,25 +47,10 @@ class BasicGaussianMixture:
         return mu
 
 
-# #! run range of K and get aics
-# def run_basic_gmm_vs_k(data, k_list):
-#     aics = []
-#     params = []
-#     for k in k_list:
-#         model = BasicGaussianMixture(k)
-#         model.fit_model(data)
-#         p = model.get_params()
-#         aics.append(p['aic'])
-#         params.append(p)
-#     # TODO: check min aic; and make sure all converged...
-#     #* return aics and params with lowest aic
-#     return aics, params
-
 def lognormpdf(y, mu, sigma):
     # y shape = LxO; mu shape = KxO, sigma shape = KxOxO
     # result shape = LxK
     sign, logdet = np.linalg.slogdet(sigma)
-    # TODO: better way than calculating inverse?
     sigmainv = np.linalg.inv(sigma)
     x = y[:,None,:] - mu[None,:,:]
     prod = np.einsum('lki,kij,lkj->lk',x,sigmainv,x)
@@ -88,7 +73,6 @@ def directional_AIC(model, y):
 class DirectionalGaussianMixture:
     def __init__(self, num_communities, dim):
         self.num_communities = num_communities
-        #TODO: if 2-dim, enforce k is even; else throw error
         self.dim = dim
         if self.dim == 1:
             self.num_bins = self.num_communities

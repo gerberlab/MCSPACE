@@ -1,5 +1,6 @@
 import numpy as np
-from skbio.stats.composition import ilr, ilr_inv
+# from skbio.stats.composition import ilr, ilr_inv
+from composition_stats import ilr, ilr_inv
 
 
 def ilr_transform_data(data):
@@ -50,8 +51,7 @@ def flatten_reads_only(reads):
 def flatten_data(data):
     reads = data['reads']
     assign = data['assignments']
-    # groups = ['jax', 'envigo', 'fmt'] # TODO: will need to change names, and also implement separately for time series...
-    groups = ['pre_perturb', 'comparator', 'post_perturb']
+    groups = list(reads.keys())
 
     flatreads = None
     subj_labels = None #[]
@@ -78,6 +78,3 @@ def flatten_data(data):
                 # subj_labels.append(gslabel)
         
     return flatreads, subj_labels, cluster_labels
-
-
-# *** fisher association test ================================================================

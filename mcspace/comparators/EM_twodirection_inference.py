@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import multivariate_normal, invwishart
 import pickle as pkl
-from skbio.stats.composition import ilr
+# from skbio.stats.composition import ilr
 from sklearn.metrics.cluster import v_measure_score
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
