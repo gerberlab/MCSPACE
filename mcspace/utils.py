@@ -148,3 +148,37 @@ def get_summary_stats(model, data, n_samples = 1000):
     theta = theta.cpu().detach().clone().numpy()
     thetasub = theta[gammasub,:]
     return pert_bf, betameansub, thetasub
+
+
+def down_sample_reads_percentage(reads, percentage, threshold=-1, replace=False):
+    npart, notus = reads.shape 
+    new_reads = np.zeros((npart, notus))
+    
+    for lidx in range(npart):
+        rd = reads[lidx,:].sum()
+        new_read_depth = int(percentage*rd)
+        preads = down_sample_reads_particle(lidx, reads, new_read_depth, replace)
+        new_reads[lidx,:len(preads)] = preads 
+    
+    # remove particles below threshold of reads...
+    rdfull = new_reads.sum(axis=1)
+    new_reads = new_reads[rdfull>threshold,:]
+    return new_reads
+
+
+def down_sample_reads_particle(lidx, reads, new_read_depth, replace=False):
+    # for each particle, sample reads without replacement
+    npart, notus = reads.shape 
+    # resample reads from each particle with given read depth
+    rd = int(np.sum(reads[lidx,:]))
+    otu_counts = np.zeros((rd,), dtype=np.int64)
+    k = 0 
+    # ''flatten'' reads, with mulitple copies of each otu-index
+    for oidx in range(notus):
+        ncounts = int(reads[lidx,oidx])
+        for _ in range(ncounts):
+            otu_counts[k] = oidx 
+            k=k+1 
+    sampled = np.random.choice(otu_counts, new_read_depth, replace=replace)
+    preads = np.bincount(sampled)  # reads for each otus
+    return preads 

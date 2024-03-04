@@ -139,7 +139,7 @@ def get_colon_dataset(min_abundance=0.005, min_reads=1000,max_reads=10000,datapa
 
 
 #! -----------------time series datasets without and with perturbations----------------------------
-def get_human_timeseries_dataset(min_abundance=0.01, min_reads=1000, max_reads=10000, rootpath=Path("./data")):
+def get_human_timeseries_dataset(min_abundance=0.01, min_reads=1000, max_reads=10000, rootpath=Path("./")):
     datapath = rootpath / "data" / "human_timeseries"
     taxfile = datapath / "taxonomy.csv"
     countfile = datapath / "count_data.csv"
@@ -163,8 +163,8 @@ def get_human_timeseries_dataset(min_abundance=0.01, min_reads=1000, max_reads=1
     return reads, num_otus, times, subjects, dataset
 
 
-def get_diet_dataset(min_abundance=0.005, min_reads=1000, max_reads=10000, subj_remove=['JX09', 'JX07', 'JX08'], num_consistent_subjects=1,rootpath = Path("./")):
-    datapath = rootpath / "data" / "diet_timeseries_data"
+def get_mouse_diet_perturbations_dataset(min_abundance=0.01, min_reads=1000, max_reads=10000, subj_remove=['JX09', 'JX07', 'JX08'], num_consistent_subjects=1,rootpath = Path("./")):
+    datapath = rootpath / "data" / "mouse_diet_timeseries_data"
     taxfile = datapath / "taxonomy.csv"
     countfile = datapath / "count_data.csv"
 
