@@ -2,6 +2,7 @@ import numpy as np
 from mcspace.utils import pickle_load, pickle_save, down_sample_reads_percentage
 from pathlib import Path
 import pandas as pd
+from mcspace.data_utils import get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset
 
 
 def generate_folds_and_downsampled(counts, outpath, nfolds=5):
@@ -32,4 +33,25 @@ def generate_folds_and_downsampled(counts, outpath, nfolds=5):
 def main():
     rootpath = Path("./")
     basepath = rootpath / "paper" / "cross_validation"
+    outpathbase = basepath / f"holdout_data"
+    outpathbase.mkdir(exist_ok=True, parents=True)
+
+    dsets = [get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset]
+    names = ['Human', 'Mouse']
+
+    for dset, name in zip(dsets, names):
+        reads, num_otus, times, subjects, dataset = dset()
+        for t in times:
+            for s in subjects:
+                counts = reads[t][s]
+                outpath = outpathbase / f"{name}_{t}_{s}"
+                outpath.mkdir(exist_ok=True, parents=True)
+                generate_folds_and_downsampled(counts, outpath, nfolds=5)
+                print(f"DONE: {name}: time = {t}, subject = {s}")
+    print("***ALL DONE***")
+
+
+if __name__ == "__main__":
+    main()
+
 
