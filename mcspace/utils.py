@@ -82,14 +82,13 @@ def get_cosine_dist(x,y):
     return 1.0 - cossim
 
 
-def sample_assignments(otu_dist, comm_dist, contam_weight, contam_comm, counts):
+def sample_assignments(otu_dist, comm_dist, counts):
     EPS = 1e-6
     num_communities, _ = otu_dist.shape
     num_particles, _ = counts.shape
 
     #* compute posterior assignment probabilities
-    otu_mixture_distrib = otu_dist*(1-contam_weight) + contam_weight*contam_comm
-    logprob = (counts[:,None,:]*np.log(otu_mixture_distrib[None,:,:] + EPS)).sum(axis=-1) + np.log(comm_dist[None,:] + EPS)
+    logprob = (counts[:,None,:]*np.log(otu_dist[None,:,:] + EPS)).sum(axis=-1) + np.log(comm_dist[None,:] + EPS)
     
     for kidx in range(num_communities):
         if comm_dist[kidx] < EPS: 

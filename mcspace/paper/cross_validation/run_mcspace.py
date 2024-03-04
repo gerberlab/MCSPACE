@@ -102,7 +102,11 @@ def main(run_idx):
 
 
 if __name__ == "__main__":
-    import sys
-    run_idx = int(sys.argv[1])
-    print(f"running case ID: {run_idx}")
-    main(run_idx)
+    # import sys
+    # run_idx = int(sys.argv[1])
+    # print(f"running case ID: {run_idx}")
+    # main(run_idx)
+
+    for i in range(60):
+        main(i)
+    print("***ALL DONE***")
