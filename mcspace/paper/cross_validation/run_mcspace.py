@@ -3,7 +3,7 @@ import torch
 from mcspace.model import MCSPACE
 from mcspace.trainer import train_model
 from mcspace.data_utils import get_data, get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset
-from mcspace.utils import get_device, pickle_load, pickle_save, get_summary_stats
+from mcspace.utils import get_device, pickle_load, pickle_save, get_summary_stats, MODEL_FILE
 from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -56,7 +56,7 @@ def run_case(basepath, case, fold):
 
     num_epochs = 5000
     ELBOs = train_model(model, data, num_epochs)
-    torch.save(model, outpath / "model.pt")
+    torch.save(model, outpath / MODEL_FILE)
 
     # plot losses
     fig, ax = plt.subplots()

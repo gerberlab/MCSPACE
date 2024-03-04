@@ -8,3 +8,6 @@ mcspace/_old
 mcspace/tests
 mcspace/debug_data
 mcspace/paper/cross_validation/mcspace
+mcspace/paper/cross_validation/gmm_basic
+mcspace/paper/cross_validation/gmm_one_dim
+mcspace/paper/cross_validation/gmm_two_dim

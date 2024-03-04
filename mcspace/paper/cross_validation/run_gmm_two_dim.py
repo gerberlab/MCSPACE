@@ -1,6 +1,6 @@
 import numpy as np
 from mcspace.utils import pickle_load, pickle_save, RESULT_FILE, MODEL_FILE
-from mcspace.comparators.comparator_models import BasicGaussianMixture
+from mcspace.comparators.comparator_models import DirectionalGaussianMixture
 from pathlib import Path
 import time 
 from mcspace.data_utils import get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset
@@ -8,18 +8,18 @@ from mcspace.data_utils import get_human_timeseries_dataset, get_mouse_diet_pert
 
 def run_case(basepath, case, fold):
     datapath = basepath / "holdout_data" / case
-    outpathbase = basepath / "gmm_basic" / case / f"Fold_F{fold}"
+    outpathbase = basepath / "gmm_two_dim" / case / f"Fold_F{fold}"
     outpathbase.mkdir(exist_ok=True, parents=True)
 
     reads = pickle_load(datapath / f"train_F{fold}.pkl")
 
-    klist = np.arange(2,31)
+    klist = [4, 6, 8, 10] #! model does not converge for K>10
     for ncomm in klist:
         print(f"...fitting k = {ncomm}")
         outpath = outpathbase / f"K_{ncomm}"
         outpath.mkdir(exist_ok=True, parents=True)
 
-        model = BasicGaussianMixture(ncomm)
+        model =DirectionalGaussianMixture(ncomm, dim=2)
         model.fit_model(reads)
         results = model.get_params()
         #* save results
