@@ -166,7 +166,7 @@ def get_cases():
 def main():
     st = time.time()
     #* cases
-    nfolds = 1 #! UPDATE ... 5
+    nfolds = 5
 
     rootpath = Path("./")
     basepath = rootpath / "paper" / "cross_validation"
@@ -181,14 +181,12 @@ def main():
 
     # loop over cases
     cases = get_cases()
-    # for case in cases:
-    case = cases[0]
-    #! UPDATE...
-    for fold in range(nfolds):
-        # eval cosine error for models
-        results = evaluate_case(results, case, fold, basepath)
-        print(f"DONE |  fold={fold}")
-    print(f"DONE |  case={case}")
+    for case in cases:
+        for fold in range(nfolds):
+            # eval cosine error for models
+            results = evaluate_case(results, case, fold, basepath)
+            print(f"DONE |  fold={fold}")
+        print(f"DONE |  case={case}")
 
     # save results
     outpath = basepath / "cv_holdout_results"
