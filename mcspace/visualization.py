@@ -193,10 +193,11 @@ def render_perturbation_effect_and_assemblages(pert_bf, betadiff, theta, taxonom
 def render_proportions_and_assemblages(beta, theta, taxonomy, otu_order, assemblage_order, ylabels=""):
     # TODO: also want to add legend...
     scale = 1
+    ncomm, ntime, nsubj = beta.shape
     fig = plt.figure(figsize=(8.5*scale,11*scale*1.2))
     gs = fig.add_gridspec(nrows=2,ncols=2,
                         width_ratios=(1.0,0.3),
-                        height_ratios=(1,20), #! figure out automatic scaling...
+                        height_ratios=(ntime,20), #! figure out automatic scaling...
                         wspace=0.05,
                         hspace=0.05)
 

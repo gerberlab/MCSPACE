@@ -181,3 +181,28 @@ def down_sample_reads_particle(lidx, reads, new_read_depth, replace=False):
     sampled = np.random.choice(otu_counts, new_read_depth, replace=replace)
     preads = np.bincount(sampled)  # reads for each otus
     return preads 
+
+
+def estimate_process_variance(reads, num_otus, subjects, sample_times):
+    #* get an average time step
+    t_temp = np.array(sample_times)
+    dt = np.mean(t_temp[1:] - t_temp[:-1])
+
+    num_samp_times = len(sample_times)
+    #* estimate variance for all subjects
+    timevars = {}
+    for s in subjects:
+        tdata = np.zeros((num_otus, num_samp_times))
+        for i, tm in enumerate(sample_times):
+            counts = reads[tm][s]
+            ra = counts.sum(axis=0)/counts.sum()
+            tdata[:,i] = np.log(ra + 1e-20)
+        tramean = np.mean(tdata, axis=1)
+        tvar = np.var(tdata, axis=1)
+        tvar = tvar[tramean>np.log(0.005)] #! NOTE: taxa will not all be present in each dietary window...
+        tvarmed = np.median(tvar)
+        timevars[s] = tvarmed
+
+    #* take median over subjects
+    medvar = np.median(np.array(list(timevars.values())))
+    return medvar/dt
