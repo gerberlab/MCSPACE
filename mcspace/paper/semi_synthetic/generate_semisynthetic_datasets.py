@@ -5,8 +5,6 @@ from scipy.special import softmax, logsumexp
 import torch
 from mcspace.model import MCSPACE
 
-#! need ot update methods w/dict or not
-#! left off here...
 
 def gen_reads_negbin(beta, theta, num_particles, negbin_n, negbin_p):
     """
@@ -58,23 +56,112 @@ def down_sample_particles(full_reads, full_assign, npart):
     return reads, assign
 
 
-# vary number of particles:
-# 100, 250, 500, 1000, 2500, 5000, 10000
+def generate_dataset(beta, theta, num_particles, negbin_n, negbin_p, num_reads=None):
+    if num_reads is None:
+        counts, z = gen_reads_negbin(beta, theta, num_particles, negbin_n, negbin_p)
+    else:
+        counts, z = gen_reads_fixed_rdepth(beta, theta, num_particles, num_reads)
+    # single time point and subject
+    reads = {}
+    reads[0] = {}
+    reads[0]['s1'] = counts
+    assignments = {}
+    assignments[0] = {}
+    assignments[0]['s1'] = z
+    return reads, assignments
 
-# vary number reads
-# 100, 250, 500, 1000, 2500, 5000, 10000
 
-#* realistic values based on real data ^
-# 7 for each case; 14 total, for 10 datasets x2 (mouse and human)
+def sample_base_dataset(beta, theta):
+    K = len(beta)
+    Kidx_max, n_otus = theta.shape
+    new_comm_ind = np.random.choice(Kidx_max, size=(K,), replace=True)
+    newtheta = theta[new_comm_ind,:]
+
+    # permute OTUs in theta
+    for kidx in range(K):
+        new_order = np.random.permutation(n_otus)
+        newtheta[kidx,:] = newtheta[kidx,new_order]
+    # renomalize -- shouldn't make much difference
+    newtheta = np.asarray(newtheta).astype('float64')
+    newtheta = newtheta / np.sum(newtheta, axis=1, keepdims=True)
+
+    newbeta = beta[new_comm_ind]
+    # renormalize
+    newbeta = np.asarray(newbeta).astype('float64')
+    newbeta = newbeta / np.sum(newbeta, axis=0, keepdims=True)
+    return newbeta, newtheta
 
 
-def gen_human_semisyn_data(): #TODO: use same for both datasets, input arg difference human vs mouse
+def get_savedata(reads, assignments, theta, beta):
+    savedata = {'reads': reads, 
+                'assignments': assignments, 
+                'theta': theta, 
+                'beta': beta}
+    return savedata
+
+
+def gen_semisyn_data(base_sample): #TODO: use same for both datasets, input arg difference human vs mouse
     np.random.seed(42)
     torch.manual_seed(0)
-    
-    # paths
+
+    #* paths
     rootpath = Path("./")
     basepath = rootpath / "paper" / "semi_synthetic"
-    datapath = basepath / "base_run" / "Human"
+    datapath = basepath / "base_run" / base_sample
 
-    model = torch.load()
+    outpath = basepath / f"semisyn_data_{base_sample}"
+    outpath.mkdir(exist_ok=True, parents=True)
+
+    results = pickle_load(datapath / "results.pkl")
+    beta = np.squeeze(results['beta'])
+    theta = results['theta']
+
+    print(beta.shape)
+    print(theta.shape)
+
+    #* cases
+    npart_cases = [10000, 5000, 2500, 1000, 500, 250, 100]
+    nreads_cases = [10000, 5000, 2500, 1000, 500, 250, 100]
+    dsets = np.arange(10)
+
+    #* default values
+    datafit = pickle_load(basepath / f"negbin_fit_params_{base_sample}_data.pkl")
+    npart_default = datafit["num_particles"]
+    print(f"default number of particles = {npart_default}")
+    negbin_n = datafit['negbin_n']
+    negbin_p = datafit['negbin_p']
+    print(f"negbin params: p = {negbin_p}, n = {negbin_n}")
+
+
+    for ds in dsets:
+        print(f"simulating data set {ds}...")
+
+        #* sample new beta and theta
+        newbeta, newtheta = sample_base_dataset(beta, theta)
+
+        #* generate samples, vary particles
+        npart = npart_cases[0]
+        reads, assignments = generate_dataset(newbeta, newtheta, npart, negbin_n, negbin_p)
+        savedata = get_savedata(reads, assignments, newtheta, newbeta)
+        pickle_save(outpath / f"data_D{ds}_P{npart}_Rdefault_B{base_sample}.pkl", savedata)
+        for npart in npart_cases[1:]:
+            reads, assignments = down_sample_particles(reads, assignments, npart)
+            savedata = get_savedata(reads, assignments, newtheta, newbeta)
+            pickle_save(outpath / f"data_D{ds}_P{npart}_Rdefault_B{base_sample}.pkl", savedata)
+
+        #* vary number of reads
+        for nreads in nreads_cases:
+            reads, assignments = generate_dataset(newbeta, newtheta, npart_default, negbin_n=None, negbin_p=None, num_reads=nreads)
+            savedata = get_savedata(reads, assignments, newtheta, newbeta)
+            pickle_save(outpath / f"data_D{ds}_Pdefault_R{nreads}_B{base_sample}.pkl", savedata)
+
+    print(f"DONE: {base_sample} semisyn")
+
+
+def main():
+    gen_semisyn_data('Mouse')
+    gen_semisyn_data('Human')
+
+
+if __name__ == "__main__":
+    main()
