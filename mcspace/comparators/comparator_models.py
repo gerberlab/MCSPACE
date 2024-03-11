@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.stats import multivariate_normal
 from sklearn.mixture import GaussianMixture
-from mcspace.comparators.utils import ilr_transform_data, inv_ilr_transform_data
+from mcspace.utils import ilr_transform_data, inv_ilr_transform_data
 from mcspace.comparators.EM_intercept_inference import EM_algo as EM_onedim
 from mcspace.comparators.EM_intercept_inference import calc_expected_states as one_dim_calc_expected_states
 from mcspace.comparators.EM_twodirection_inference import calc_expected_states as two_dim_calc_expected_states
