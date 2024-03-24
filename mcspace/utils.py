@@ -262,3 +262,21 @@ def flatten_data(data):
                 # subj_labels.append(gslabel)
         
     return flatreads, subj_labels, cluster_labels
+
+
+def get_mcspace_cooccur_prob(model, data, otu_threshold, nsamples=100):
+    # time_idx, subj_idx,
+    #! return full tensor over all times and subjects (or return dict??)
+    cooccur_prob = 0
+    for i in range(nsamples):
+        loss, theta, beta, gamma = model(data)
+        theta = theta.cpu().clone().detach().numpy()
+        beta = beta.cpu().clone().detach().numpy()
+        gamma = gamma.cpu().clone().detach().numpy()
+
+        summand = gamma[:,None,None,None,None]*beta[:,:,:,None,None]*(theta[:,None,None,None,:] > otu_threshold)*(theta[:,None,None,:,None] > otu_threshold)
+        prob_sample = summand.sum(axis=0)
+        cooccur_prob += prob_sample
+    cooccur_prob /= nsamples
+    return cooccur_prob
+

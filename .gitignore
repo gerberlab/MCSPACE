@@ -7,13 +7,4 @@ mcspace/notes
 mcspace/_old
 mcspace/tests
 mcspace/debug_data
-mcspace/paper/cross_validation/mcspace
-mcspace/paper/cross_validation/gmm_basic
-mcspace/paper/cross_validation/gmm_one_dim
-mcspace/paper/cross_validation/gmm_two_dim
-mcspace/paper/mouse_diet_runs
-mcspace/paper/human_timeseries_runs
-mcspace/paper/semi_synthetic/semisyn_data_Human
-mcspace/paper/semi_synthetic/semisyn_data_Mouse
-mcspace/paper/assemblage_recovery/mcspace
-mcspace/paper/
+mcspace/_old_paper/
