@@ -123,7 +123,10 @@ def get_bayes_factors(post_prob, prior_prob):
 
 def get_summary_stats(model, data, n_samples = 1000):
     # return sparse: pert bayes factors, beta, and theta
-    gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
+    if model.use_sparse_weights is True:
+        gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
+    else:
+        gamma_probs = np.ones(model.num_assemblages)
     gammasub = (gamma_probs>0.5)
 
     if model.num_perturbations > 0:
