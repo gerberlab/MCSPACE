@@ -1,3 +1,10 @@
+import os
+os.environ["OMP_NUM_THREADS"] = "40" # export OMP_NUM_THREADS=4
+os.environ["OPENBLAS_NUM_THREADS"] = "40" # export OPENBLAS_NUM_THREADS=4 
+os.environ["MKL_NUM_THREADS"] = "40" # export MKL_NUM_THREADS=6
+os.environ["VECLIB_MAXIMUM_THREADS"] = "40" # export VECLIB_MAXIMUM_THREADS=4
+os.environ["NUMEXPR_NUM_THREADS"] = "40" # export NUMEXPR_NUM_THREADS=6
+
 import numpy as np
 from mcspace.utils import pickle_load, pickle_save, RESULT_FILE, MODEL_FILE
 from mcspace.comparators.comparator_models import BasicGaussianMixture
@@ -57,7 +64,8 @@ def main(run_idx):
 
     # seed = 0
     base_sample = 'Mouse' #! to do, loop over...
-    rootpath = Path("./")
+    rootpath = Path("./") #! path to mcspace
+
     basepath = rootpath / "paper" / "assemblage_recovery"
     datapath = rootpath / "paper" / "semi_synthetic" / "semisyn_data" / base_sample
 
@@ -80,11 +88,11 @@ def main(run_idx):
 
 
 if __name__ == "__main__":
-    # import sys
-    # run_idx = int(sys.argv[1])
-    # print(f"running case ID: {run_idx}")
-    # main(run_idx=0)
+    import sys
+    run_idx = int(sys.argv[1])
+    print(f"running case ID: {run_idx}")
+    main(run_idx=0)
 
-    for i in range(150):
-        main(i)
-    print("***ALL DONE***")
+    # for i in range(150):
+    #     main(i)
+    # print("***ALL DONE***")
