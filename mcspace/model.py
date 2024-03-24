@@ -2,9 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from sklearn.cluster import KMeans
 from mcspace.assemblage_proportions import AssemblageProportions
-from mcspace.utils import ilr_transform_data, inv_ilr_transform_data
 
 
 class MCSPACE(nn.Module):
@@ -54,25 +52,6 @@ class MCSPACE(nn.Module):
                                                  use_sparse_weights,
                                                  add_process_variance)
         self.optimizer = torch.optim.Adam(self.parameters(), lr=self.lr)
-
-    def init_theta_kmeans(self, data):
-        # counts = data['count_data'].cpu().detach().clone().numpy()
-        reads = data['count_data']
-        times = list(reads.keys())
-        subjs = list(reads[times[0]].keys())
-        subj_counts = []
-        for t in times:
-            for s in subjs:
-                subj_counts.append(reads[t][s].cpu().detach().clone().numpy())
-        counts = np.concatenate(subj_counts, axis=0)
-
-        ilr_reads = ilr_transform_data(counts)
-        model = KMeans(n_clusters=self.num_assemblages)
-        km_labels = model.fit_predict(ilr_reads)
-        kmeans_theta = inv_ilr_transform_data(model.cluster_centers_)
-        theta_init = np.log(kmeans_theta)
-        self.theta_params.data = torch.from_numpy(theta_init).to(self.device)
-        print("theta intialized from kmeans fit")
 
     def set_temps(self, epoch, num_epochs):
         if self.use_sparse_weights:
