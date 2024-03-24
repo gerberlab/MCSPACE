@@ -9,3 +9,5 @@ mcspace/tests
 mcspace/debug_data
 mcspace/_old_paper/
 mcspace/paper/semi_synthetic/semisyn_data
+mcspace/paper/assemblage_recovery/mcspace_runs
+mcspace/paper/assemblage_recovery/gmm_basic_runs
