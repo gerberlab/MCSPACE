@@ -87,8 +87,6 @@ class PerturbationMagnitude(nn.Module):
         return x, KL
     
 
-#! per subject process variance
-#! ONLY if number of non-perturbed time points >2 ...
 class ProcessVariance(nn.Module):
     def __init__(self, num_otus, times, subjects, prior_mean, prior_var, device):
         super().__init__()
@@ -135,7 +133,7 @@ class ProcessVariance(nn.Module):
         return x, KL
     
 
-#! the "x's"
+# the "x's"
 class LatentTimeSeriesMixtureWeights(nn.Module):
     def __init__(self, num_assemblages, num_otus, times, subjects, perturbed_times, device):
         super().__init__()

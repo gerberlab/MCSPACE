@@ -204,7 +204,7 @@ def estimate_process_variance(reads, num_otus, subjects, sample_times):
             tdata[:,i] = np.log(ra + 1e-20)
         tramean = np.mean(tdata, axis=1)
         tvar = np.var(tdata, axis=1)
-        tvar = tvar[tramean>np.log(0.005)] #! NOTE: taxa will not all be present in each dietary window...
+        tvar = tvar[tramean>np.log(0.005)]
         tvarmed = np.median(tvar)
         timevars[s] = tvarmed
 
