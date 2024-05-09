@@ -2,9 +2,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.functional import gumbel_softmax
-from mcspace.utils import BernoulliKL, GaussianKL, sparse_softmax, BernoulliKLPower
-from sklearn.cluster import KMeans
 from mcspace.assemblage_proportions import AssemblageProportions
 
 
@@ -36,7 +33,7 @@ class MCSPACE(nn.Module):
         self.add_process_variance = add_process_variance
 
         self.perturbed_times = perturbed_times
-        self.num_perturbations = np.array(perturbed_times).sum() #! since input is boolean...
+        self.num_perturbations = (np.array(perturbed_times)==1).sum()
         self.perturbation_prior_prob = perturbation_prior
 
         self.use_sparse_weights = use_sparse_weights

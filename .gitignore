@@ -5,10 +5,10 @@ mcspace/ICML_paper
 mcspace/MCSPACE_paper
 mcspace/notes
 mcspace/_old
-mcspace/.ipynb_checkpoints
-mcspace/paper
-mcspace/data
-mcspace/misc
-mcspace/debug_data
-mcspace/_old_paper
 mcspace/tests
+mcspace/debug_data
+mcspace/_old_paper/
+mcspace/paper
+mcspace/misc
+mcspace/data
+mcspace/.ipynb_checkpoints
