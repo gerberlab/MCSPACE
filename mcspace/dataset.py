@@ -53,7 +53,7 @@ class DataSet:
     def remove_subjects(self, to_remove):
         self.subjects = np.setdiff1d(self.subjects, np.array(to_remove))
 
-    def consistency_filtering(self, num_consistent_subjects, min_abundance=0.005, min_read_depth=1000, max_read_depth=10000):
+    def consistency_filtering(self, num_consistent_subjects, min_abundance=0.005, min_reads=1000, max_reads=10000):
         # TODO: add consistency over time points too??
         taxa_presence = dict() # dict over days
         for tm in self.times:
@@ -65,7 +65,7 @@ class DataSet:
                 # filter particles
                 filtered = temp.values # O x L
                 rd = filtered.sum(axis=0)
-                psub = ((rd>=min_read_depth) & (rd<=max_read_depth))
+                psub = ((rd>=min_reads) & (rd<=max_reads))
                 filtered = filtered[:,psub]
                 bulk = filtered.sum(axis=1)/filtered.sum()     
                 otu_sub_group[subj] = (bulk > min_abundance)
@@ -83,7 +83,7 @@ class DataSet:
         for oidx in to_remove:
             self.otu_index.remove(oidx) 
 
-    def filter_particle_data(self, min_read_depth=1000, max_read_depth=10000):
+    def filter_particle_data(self, min_reads=1000, max_reads=10000):
         data = {} # dict over time - subject
         for tm in self.times:
             data[tm] = {}
@@ -94,7 +94,7 @@ class DataSet:
                 # filter particles
                 filtered = temp.values # O x L
                 rd = filtered.sum(axis=0)
-                psub = ((rd>=min_read_depth) & (rd<=max_read_depth))
+                psub = ((rd>=min_reads) & (rd<=max_reads))
                 filtered = filtered[:,psub]
                 data[tm][subj] = filtered.T
         self.reads = data 

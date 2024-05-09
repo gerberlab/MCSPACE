@@ -87,8 +87,6 @@ class PerturbationMagnitude(nn.Module):
         return x, KL
     
 
-#! per subject process variance
-#! ONLY if number of non-perturbed time points >2 ...
 class ProcessVariance(nn.Module):
     def __init__(self, num_otus, times, subjects, prior_mean, prior_var, device):
         super().__init__()
@@ -135,7 +133,7 @@ class ProcessVariance(nn.Module):
         return x, KL
     
 
-#! the "x's"
+# the "x's"
 class LatentTimeSeriesMixtureWeights(nn.Module):
     def __init__(self, num_assemblages, num_otus, times, subjects, perturbed_times, device):
         super().__init__()
@@ -170,9 +168,14 @@ class LatentTimeSeriesMixtureWeights(nn.Module):
         p = 0
         for t in range(1,self.num_time):
             if self.perturbed_times[t] == 1:
+                # perturbation turns on
                 eta = x_latent[:,t-1,:] + c_indicators[:,p,None]*delta[:,p,None]
                 p += 1
-            else:
+            elif self.perturbed_times[t] == 0:
+                # drift in between time points
+                eta = x_latent[:,t-1,:]
+            elif self.perturbed_times[t] == -1:
+                # perturbation turns off
                 eta = x_latent[:,t-1,:] - c_indicators[:,p-1,None]*delta[:,p-1,None]
             dt = self.times[t]-self.times[t-1]
 
@@ -298,7 +301,7 @@ class AssemblageProportions(nn.Module):
         self.add_process_variance = add_process_variance
 
         self.perturbed_times = perturbed_times
-        self.num_perturbations = np.array(perturbed_times).sum() #! since input is boolean...
+        self.num_perturbations = (np.array(perturbed_times)==1).sum()
         self.perturbation_prior_prob = perturbation_prior
 
         self.use_sparse_weights = use_sparse_weights
@@ -354,6 +357,8 @@ class AssemblageProportions(nn.Module):
 
         beta = sparse_softmax(x_latent, gamma)
 
+        self.x_latent = x_latent
+        self.var_process = var_process
         KL = KL_delta + KL_c + KL_var_process + KL_gamma + KL_x_latent
         return beta, KL, gamma
     
