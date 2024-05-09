@@ -359,6 +359,7 @@ class AssemblageProportions(nn.Module):
 
         beta = sparse_softmax(x_latent, gamma)
 
+        self.x_latent = x_latent
         self.var_process = var_process
         KL = KL_delta + KL_c + KL_var_process + KL_gamma + KL_x_latent
         return beta, KL, gamma

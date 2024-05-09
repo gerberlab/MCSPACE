@@ -1,6 +1,6 @@
 from pathlib import Path
 import numpy as np
-from mcspace.utils import pickle_load, pickle_save, MODEL_FILE, DATA_FILE, get_summary_stats
+from mcspace.utils import pickle_load, pickle_save, get_gt_assoc
 from scipy.special import softmax, logsumexp
 import torch
 from mcspace.model import MCSPACE
@@ -73,16 +73,29 @@ def generate_dataset(beta, theta, num_particles, negbin_n, negbin_p, num_reads=N
 def sample_base_dataset(beta, theta, nclust):
     K = nclust
     Kidx_max, n_otus = theta.shape
-    new_comm_ind = np.random.choice(Kidx_max, size=(K,), replace=True)
-    newtheta = theta[new_comm_ind,:]
+    success = False
+    while success is False:
+        new_comm_ind = np.random.choice(Kidx_max, size=(K,), replace=True)
+        newtheta = theta[new_comm_ind,:]
 
-    # permute OTUs in theta
-    for kidx in range(K):
-        new_order = np.random.permutation(n_otus)
-        newtheta[kidx,:] = newtheta[kidx,new_order]
-    # renomalize -- shouldn't make much difference
-    newtheta = np.asarray(newtheta).astype('float64')
-    newtheta = newtheta / np.sum(newtheta, axis=1, keepdims=True)
+        # permute OTUs in theta
+        for kidx in range(K):
+            new_order = np.random.permutation(n_otus)
+            newtheta[kidx,:] = newtheta[kidx,new_order]
+        # renomalize -- shouldn't make much difference
+        newtheta = np.asarray(newtheta).astype('float64')
+        newtheta = newtheta / np.sum(newtheta, axis=1, keepdims=True)
+
+        # check ground truth associations, retry if everything associated
+        gt_assoc = get_gt_assoc(newtheta, otu_threshold=0.005)
+        notus = gt_assoc.shape[0]
+        triassoc = gt_assoc[np.triu_indices(notus, k=1)]
+        proportion_unit = triassoc.sum()/len(triassoc)
+        if proportion_unit < 1.0:
+            success = True
+            print("...success")
+        else:
+            print("...retry")
 
     newbeta = beta[new_comm_ind]
     # renormalize
