@@ -14,3 +14,4 @@ mcspace/misc
 mcspace/data
 mcspace/.ipynb_checkpoints
 mcspace/data_processing
+mcspace/test_garbage_model

@@ -123,13 +123,43 @@ def get_bayes_factors(post_prob, prior_prob):
     return post_odds*inv_prior_odds
 
 
-def get_summary_stats(model, data, n_samples = 1000):
-    # return sparse: pert bayes factors, beta, and theta
+# def get_summary_stats(model, data, n_samples = 1000):
+#     # return sparse: pert bayes factors, beta, and theta
+#     if model.use_sparse_weights is True:
+#         gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
+#     else:
+#         gamma_probs = np.ones(model.num_assemblages)
+#     gammasub = (gamma_probs>0.5)
+
+#     if model.num_perturbations > 0:
+#         pert_probs = model.beta_params.perturbation_indicators.q_probs.cpu().detach().clone().numpy()
+#         pert_prior = model.perturbation_prior_prob
+#         pertprobsub = pert_probs[gammasub,:]
+#         pert_bf = get_bayes_factors(pertprobsub, pert_prior)
+#     else:
+#         pert_bf = None
+
+#     loss, theta, beta, gamma = model(data)
+#     ncomm, ntime, nsubj = beta.shape
+#     beta_samples = np.zeros((n_samples, ncomm, ntime, nsubj))
+#     for i in range(n_samples):
+#         loss, theta, beta, gamma = model(data)
+#         beta_samples[i,:] = beta.cpu().detach().clone().numpy()
+#     beta_mean = np.mean(beta_samples, axis=0)
+#     betameansub = beta_mean[gammasub,:,:]
+#     betameansub = betameansub/betameansub.sum(axis=0, keepdims=True)
+    
+#     theta = theta.cpu().detach().clone().numpy()
+#     thetasub = theta[gammasub,:]
+#     return pert_bf, betameansub, thetasub
+
+def get_summary_results(model, data, n_samples=1000):
     if model.use_sparse_weights is True:
         gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
     else:
         gamma_probs = np.ones(model.num_assemblages)
-    gammasub = (gamma_probs>0.5)
+    #* using 95th percentile for model selection
+    gammasub = (gamma_probs>0.95)
 
     if model.num_perturbations > 0:
         pert_probs = model.beta_params.perturbation_indicators.q_probs.cpu().detach().clone().numpy()
@@ -139,19 +169,34 @@ def get_summary_stats(model, data, n_samples = 1000):
     else:
         pert_bf = None
 
-    loss, theta, beta, gamma = model(data)
+    loss, theta, beta, gamma, pi = model(data)
+    ngrps = pi.shape
+    pi_samples = np.zeros((n_samples, ngrps))
+    loss_samples = np.zeros((n_samples,))
     ncomm, ntime, nsubj = beta.shape
-    beta_samples = np.zeros((n_samples, ncomm, ntime, nsubj))
+    ncomm_keep = gammasub.sum()
+    beta_samples = np.zeros((n_samples, ncomm_keep, ntime, nsubj))
+    fixed_gamma = torch.zeros_like(gamma)
+    fixed_gamma[gammasub] = 1
     for i in range(n_samples):
-        loss, theta, beta, gamma = model(data)
-        beta_samples[i,:] = beta.cpu().detach().clone().numpy()
-    beta_mean = np.mean(beta_samples, axis=0)
-    betameansub = beta_mean[gammasub,:,:]
-    betameansub = betameansub/betameansub.sum(axis=0, keepdims=True)
+        loss, _, _, _, pi = model(data)
+        loss_samples[i] = loss.cpu().detach().clone().numpy()
+        pi_samples[i,:] = pi.cpu().detach().clone().numpy()
+        # *need latent beta
+        x_latent = model.beta_params.x_latent
+        beta = sparse_softmax(x_latent, fixed_gamma)
+        beta = beta.cpu().detach().clone().numpy()
+        betasub = beta[gammasub,:,:]
+        # **renomalize
+        betasub /= betasub.sum(axis=0, keepdims=True)
+        beta_samples[i,:,:,:] = betasub
+    beta_summary = np.mean(beta_samples, axis=0)
     
     theta = theta.cpu().detach().clone().numpy()
     thetasub = theta[gammasub,:]
-    return pert_bf, betameansub, thetasub
+    pi_summary = np.mean(pi_samples, axis=0)
+    mean_loss = np.mean(loss_samples)
+    return pert_bf, beta_summary, thetasub, pi_summary, mean_loss
 
 
 def down_sample_reads_percentage(reads, percentage, threshold=-1, replace=False):
