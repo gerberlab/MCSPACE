@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from mcspace.assemblage_proportions import AssemblageProportions
+from mcspace.garbage_weights import GarbageWeights
 
 
 class MCSPACE(nn.Module):
@@ -19,6 +20,8 @@ class MCSPACE(nn.Module):
                 device,
                 add_process_variance,
                 use_sparse_weights=True,
+                use_contamination=False,
+                contamination_cluster=None,
                 lr=5e-3):
         super().__init__()
 
@@ -27,6 +30,7 @@ class MCSPACE(nn.Module):
         self.times = times
         self.num_time = len(times)
         self.subjects = subjects
+        self.num_subjects = len(subjects)
         self.device = device
         self.lr = lr
 
@@ -37,6 +41,14 @@ class MCSPACE(nn.Module):
         self.perturbation_prior_prob = perturbation_prior
 
         self.use_sparse_weights = use_sparse_weights
+
+        #! adding mixing contamination
+        self.use_contamination = use_contamination
+        self.contamination_cluster = contamination_cluster
+
+        self.garbage_weights = GarbageWeights(self.num_time, self.num_subjects, self.num_otus, self.device)
+        # # TODO: make learned parameter with beta prior (sample specific???)
+        # self.contamination_weights = torch.tensor(0.05).float().to(self.device)
 
         self.theta_params = nn.Parameter(torch.normal(0, 1, size=(self.num_assemblages, self.num_otus), device=self.device, requires_grad=True))
         self.beta_params = AssemblageProportions(num_assemblages,
@@ -74,12 +86,75 @@ class MCSPACE(nn.Module):
             raise ValueError("inf in sparse loglik")
         return total
     
+
+    def compute_loglik_garbage(self, beta, theta, counts, gweights):
+        EPS = 1e-6
+        total = 0
+        for i, tm in enumerate(self.times):
+            for j, sub in enumerate(self.subjects): 
+                pi = gweights[i,j]
+                garb_cluster = self.contamination_cluster[tm][sub]
+                theta_mix = (1.0 - pi)*theta + pi*garb_cluster
+
+                rlogtheta = torch.sum(counts[tm][sub][:,None,:]*torch.log(theta_mix + EPS), dim=2)
+                x_star, _ = torch.max(rlogtheta, dim=1, keepdim=True)
+                summand = x_star + torch.log(torch.sum(beta[None,:,i,j]*torch.exp(rlogtheta - x_star) ,dim=1,keepdim=True) + EPS)
+                total += summand.sum()
+        if torch.isnan(total).any():
+            raise ValueError("nan in sparse loglik")
+        if torch.isinf(total).any():
+            raise ValueError("inf in sparse loglik")
+        return total
+
+
+    # def compute_contamination_mixture_loglik(self, beta, theta, onehot_counts):
+    #     EPS = 1e-6
+    #     total=0
+
+    #     # TODO: sample specific garbage weights?...
+    #     for i, tm in enumerate(self.times):
+    #         for j, sub in enumerate(self.subjects): 
+    #             # pi_G = self.contamination_weights
+    #             # G_cluster = self.contamination_cluster[tm]
+    #             # expand to shape LxKxOxJ
+    #             # TODO: may need to use log to take prod(pow(...))
+    #             # read_mixture = (1.0 - pi_G)*torch.prod(torch.pow(theta[None,:,:,None], onehot_counts[tm][sub][:,None,:,:]), dim=2) +\
+    #             #                 pi_G*torch.prod(torch.pow(G_cluster[None,None,:,None], onehot_counts[tm][sub][:,None,:,:]), dim=2)
+                
+    #             # read_mixture = (1.0 - pi_G)*torch.exp(torch.sum(onehot_counts[tm][sub][:,None,:,:]*torch.log(theta[None,:,:,None])), dim=2) +\
+    #             #                 pi_G*torch.exp(torch.sum( onehot_counts[tm][sub][:,None,:,:]*torch.log(G_cluster[None,None,:,None])), dim=2)
+
+    #             # sum_over_reads = torch.sum( torch.log(read_mixture) , dim=-1)
+
+    #             sum_over_reads = torch.sum( torch.log((1.0 - self.contamination_weights)*torch.exp(torch.sum(onehot_counts[tm][sub][:,None,:,:]*torch.log(theta[None,:,:,None]), dim=2)) +\
+    #                             self.contamination_weights*torch.exp(torch.sum( onehot_counts[tm][sub][:,None,:,:]*torch.log(self.contamination_cluster[tm][None,None,:,None]), dim=2))) , dim=-1)
+
+    #             x_star, _ = torch.max(sum_over_reads, dim=1, keepdim=True) # max over K -> resulting shape LxK (keepdims)
+    #             summand = x_star + torch.log(torch.sum(beta[None,:,i,j]*torch.exp(sum_over_reads - x_star) ,dim=1,keepdim=True) + EPS)
+    #             total += summand.sum() # sum over particles, L
+    #     if torch.isnan(total).any():
+    #         raise ValueError("nan in sparse loglik")
+    #     if torch.isinf(total).any():
+    #         raise ValueError("inf in sparse loglik")
+        
+    #     print(total)
+    #     return total
+
+
     def forward(self, data):
         counts = data['count_data'] # is dict over times and subjects
+        # onehot_counts = data['onehot_counts'] #dict over times and subjects -> LxOxJ (one hot for each read J)
 
-        beta, KL, gamma = self.beta_params(data)
+        beta, KL_beta, gamma = self.beta_params(data)
         theta = F.softmax(self.theta_params, dim=1)
-        loglik = self.compute_loglik_multinomial(beta, theta, counts)
+    
+        if self.use_contamination:
+            pi, KL_pi = self.garbage_weights(data)
+            loglik = self.compute_loglik_garbage(beta, theta, counts, pi)
+        else:
+            loglik = self.compute_loglik_multinomial(beta, theta, counts)
+            KL_pi = 0
 
+        KL = KL_beta + KL_pi
         self.ELBO_loss = -(loglik - KL)
         return self.ELBO_loss, theta, beta, gamma

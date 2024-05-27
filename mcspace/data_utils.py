@@ -23,6 +23,7 @@ def get_basic_data(reads_in, device, dtype=torch.float):
 def get_data(reads_dict, device):
     # reads_dict is dict (times) of dict (subjects) of counts
     counts = {}
+    group_contamination_communities = {}
     contamination_communities = {}
     normed_data = {}
     # output L* x O; for all particles concatenated together
@@ -32,20 +33,24 @@ def get_data(reads_dict, device):
         counts[g] = {}
         all_particles = None
         normed_data[g] = {}
+        contamination_communities[g] = {}
         for s in subjs:
             subj_reads = reads_dict[g][s]
             counts[g][s] = torch.from_numpy(subj_reads).to(dtype=torch.float, device=device)
             data, _ = get_basic_data(subj_reads, device)
             normed_data[g][s] = data['normed_data']
             full_normed_data.append(data['normed_data'])
+            subj_bulk = subj_reads.sum(axis=0)/subj_reads.sum()
+            contamination_communities[g][s] = torch.from_numpy(subj_bulk).to(dtype=torch.float, device=device)
             if all_particles is None:
                 all_particles = reads_dict[g][s]
             else:
                 all_particles = np.concatenate([all_particles, reads_dict[g][s]], axis=0)
         bulk = all_particles.sum(axis=0)/all_particles.sum()
-        contamination_communities[g] = torch.from_numpy(bulk).to(dtype=torch.float, device=device)
+        group_contamination_communities[g] = torch.from_numpy(bulk).to(dtype=torch.float, device=device)
     combined_data = torch.cat(full_normed_data, dim=0)
-    return {'count_data': counts, 'normed_data': normed_data, 'full_normed_data': combined_data} #, contamination_communities
+    return {'count_data': counts, 'normed_data': normed_data, 'full_normed_data': combined_data, \
+            'garbage_clusters': contamination_communities, 'group_garbage_clusters': group_contamination_communities}
 
 
 def filter_dataset(reads, min_abundance=0.005, min_reads=1000,max_reads=10000):
