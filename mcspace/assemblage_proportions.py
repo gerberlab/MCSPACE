@@ -129,7 +129,7 @@ class ProcessVariance(nn.Module):
         var = torch.squeeze(torch.exp(self.q_var_params(enc)))
         x = mu + torch.sqrt(var)*self.eps 
         x = F.softplus(x)
-        KL = GaussianKL(mu, var, self.prior_mean, self.prior_var)
+        KL = GaussianKL(mu, var, self.prior_mean, self.prior_var).sum()
         return x, KL
     
 
