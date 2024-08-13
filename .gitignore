@@ -3,7 +3,6 @@ mcspace/__pycache__/
 mcspace/notes
 mcspace/_old
 mcspace/tests
-mcspace/paper
 mcspace/.ipynb_checkpoints
 mcspace/data/_old_human_timeseries
 mcspace/data/_old_mouse_diet_timeseries_data
