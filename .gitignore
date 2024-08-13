@@ -1,16 +1,9 @@
 mcspace.egg-info
 mcspace/__pycache__/
-mcspace/experiments
-mcspace/ICML_paper
-mcspace/MCSPACE_paper
 mcspace/notes
 mcspace/_old
 mcspace/tests
-mcspace/debug_data
-mcspace/_old_paper/
 mcspace/paper
-mcspace/misc
-mcspace/data
 mcspace/.ipynb_checkpoints
 mcspace/data/_old_human_timeseries
 mcspace/data/_old_mouse_diet_timeseries_data
