@@ -123,13 +123,13 @@ def get_bayes_factors(post_prob, prior_prob):
     return post_odds*inv_prior_odds
 
 
-def get_summary_stats(model, data, n_samples = 1000):
-    # return sparse: pert bayes factors, beta, and theta
+def get_summary_results(model, data, n_samples=1000):
     if model.use_sparse_weights is True:
         gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
     else:
         gamma_probs = np.ones(model.num_assemblages)
-    gammasub = (gamma_probs>0.5)
+    #* using 95th percentile for model selection
+    gammasub = (gamma_probs>0.95)
 
     if model.num_perturbations > 0:
         pert_probs = model.beta_params.perturbation_indicators.q_probs.cpu().detach().clone().numpy()
@@ -139,19 +139,91 @@ def get_summary_stats(model, data, n_samples = 1000):
     else:
         pert_bf = None
 
-    loss, theta, beta, gamma = model(data)
+    loss, theta, beta, gamma, pi = model(data)
+    if pi is not None:
+        ngrps = pi.shape[0]
+        pi_samples = np.zeros((n_samples, ngrps))
+    
+    loss_samples = np.zeros((n_samples,))
     ncomm, ntime, nsubj = beta.shape
-    beta_samples = np.zeros((n_samples, ncomm, ntime, nsubj))
+    ncomm_keep = gammasub.sum()
+    beta_samples = np.zeros((n_samples, ncomm_keep, ntime, nsubj))
+    fixed_gamma = torch.zeros_like(gamma)
+    fixed_gamma[gammasub] = 1
     for i in range(n_samples):
-        loss, theta, beta, gamma = model(data)
-        beta_samples[i,:] = beta.cpu().detach().clone().numpy()
-    beta_mean = np.mean(beta_samples, axis=0)
-    betameansub = beta_mean[gammasub,:,:]
-    betameansub = betameansub/betameansub.sum(axis=0, keepdims=True)
+        loss, _, _, _, pi = model(data)
+        loss_samples[i] = loss.cpu().detach().clone().numpy()
+        if pi is not None:
+            pi_samples[i,:] = pi.cpu().detach().clone().numpy()
+        # *need latent beta
+        x_latent = model.beta_params.x_latent
+        beta = sparse_softmax(x_latent, fixed_gamma)
+        beta = beta.cpu().detach().clone().numpy()
+        betasub = beta[gammasub,:,:]
+        # **renomalize
+        betasub /= betasub.sum(axis=0, keepdims=True)
+        beta_samples[i,:,:,:] = betasub
+    beta_summary = np.mean(beta_samples, axis=0)
     
     theta = theta.cpu().detach().clone().numpy()
     thetasub = theta[gammasub,:]
-    return pert_bf, betameansub, thetasub
+    if pi is not None:
+        pi_summary = np.mean(pi_samples, axis=0)
+    else:
+        pi_summary = None
+    mean_loss = np.mean(loss_samples)
+    return pert_bf, beta_summary, thetasub, pi_summary, mean_loss
+
+
+def get_posterior_summary_data(model, data, taxonomy, times, subjects):
+    pert_bf, beta_summary, theta_summary, pi_summary, mean_loss = get_summary_results(model, data)
+    ncomm, ntime, nsubj = beta_summary.shape
+    _, npert = pert_bf.shape
+    assemblages = [f"A{i+1}" for i in range(ncomm)]
+
+    betatimes = []
+    betasubj = []
+    betaval = []
+    betaassem = []
+ 
+    for i,t in enumerate(times):
+        for j,s in enumerate(subjects):
+            for k,a in enumerate(assemblages):
+                betatimes.append(t)
+                betasubj.append(s)
+                betaassem.append(a)
+                betaval.append(beta_summary[k,i,j])
+    betadf = pd.DataFrame({'Time': betatimes, 'Subject': betasubj,
+                      'Assemblage': betaassem, 'Value': betaval})
+    betadf['log10Value'] = np.log10(betadf['Value'] + 1e-20)
+    
+    multiind = pd.MultiIndex.from_frame(taxonomy.reset_index())
+    thetadf = pd.DataFrame(theta_summary.T, index=multiind, columns=assemblages)
+
+    pertdf = pd.DataFrame(pert_bf, index=assemblages, columns=[f'P{i+1}' for i in range(npert)])
+    return thetadf, betadf, pertdf
+
+
+def get_sig_perturbation_diff_subset(betadf, pertdf, pidx, t_after, t_before, bf_threshold=10):
+    b_before = betadf.loc[betadf['Time'] == t_before]
+    b_after = betadf.loc[betadf['Time'] == t_after]
+    
+    b_before_multi = b_before.set_index(['Subject', 'Assemblage'])[['Value']]
+    b_after_multi = b_after.set_index(['Subject', 'Assemblage'])[['Value']]
+    
+    bdiff = b_after_multi.subtract(b_before_multi).reset_index()
+    
+    sigpertinds = pertdf.loc[pertdf[f'P{pidx}']>=bf_threshold, f'P{pidx}'].index
+    bdiffsub = bdiff.loc[bdiff['Assemblage'].isin(sigpertinds),:]
+    meandiff = bdiffsub[['Assemblage', 'Value']].groupby('Assemblage').mean()
+    bpertorder = meandiff.sort_values(by='Value').index
+    return bdiffsub, bpertorder
+
+
+def get_pert_otu_sub(thetadf, pertcomms, otu_threshold = 0.01):
+    sigpertcomms = thetadf.reset_index().set_index('Otu')[pertcomms]
+    otusub = sigpertcomms.loc[(sigpertcomms>0.01).any(axis=1),:].index
+    return otusub
 
 
 def down_sample_reads_percentage(reads, percentage, threshold=-1, replace=False):
@@ -274,13 +346,13 @@ def get_mcspace_cooccur_prob(model, data, otu_threshold, nsamples=100):
     #! return full tensor over all times and subjects (or return dict??)
     cooccur_prob = 0
     for i in range(nsamples):
-        loss, theta, beta, gamma = model(data)
+        loss, theta, beta, gamma, _ = model(data)
         theta = theta.cpu().clone().detach().numpy()
         beta = beta.cpu().clone().detach().numpy()
         gamma = gamma.cpu().clone().detach().numpy()
-
+        _, ntime, nsubj = beta.shape
         summand = gamma[:,None,None,None,None]*beta[:,:,:,None,None]*(theta[:,None,None,None,:] > otu_threshold)*(theta[:,None,None,:,None] > otu_threshold)
-        prob_sample = summand.sum(axis=0)
+        prob_sample = summand.sum(axis=(0,1,2))/(nsubj*ntime)
         cooccur_prob += prob_sample
     cooccur_prob /= nsamples
     return cooccur_prob
@@ -329,3 +401,52 @@ def calc_auc(gt_assoc, post_probs, nthres = 100):
 
     auc_val = auc(fpr, tpr)
     return auc_val, true_pos, false_pos, true_neg, false_neg
+
+
+def get_min_loss_path(runpath, seeds):
+    losses = {}
+
+    seeds = np.arange(10)
+    for seed in seeds:
+        respath = runpath / f"seed_{seed}"
+        model = torch.load(respath / MODEL_FILE)
+        data = pickle_load(respath / DATA_FILE)
+
+        n_samples = 100
+        loss_samples = np.zeros(n_samples)
+        for i in range(n_samples):
+            loss, _, _, _, _ = model(data)
+            loss_samples[i] = loss.item()
+        losses[seed] = np.mean(loss_samples)
+        print(seed)
+    
+    best_seed = min(losses, key=losses.get)
+    print(best_seed)
+    respath = runpath / f"seed_{best_seed}"
+    return respath
+
+
+def apply_taxonomy_threshold(taxonomy, threshold=0.5):
+    ranks = ['domain', 'phylum', 'class', 'order', 'family', 'genus']
+    conf = ['dconf', 'pconf', 'cconf', 'oconf', 'fconf', 'gconf']
+    
+    taxcopy = taxonomy.reset_index()
+    ntaxa = taxcopy.shape[0]
+    for i in range(ntaxa):
+        for r,c in zip(ranks, conf):
+            if taxcopy.loc[i,c] < threshold:
+                taxcopy.loc[i,r] = 'na'
+    
+    ptaxa = taxcopy.set_index("Otu")
+    ptaxa2 = ptaxa[ranks]
+    
+    mapper = {x:x.capitalize() for x in list(ptaxa2.columns)}
+    ptaxa3 = ptaxa2.rename(columns=mapper)
+    return ptaxa3
+
+
+def get_abundance_order(betadf):
+    betadf_drop = betadf[['Assemblage', 'Value']]
+    aveval = betadf_drop.groupby('Assemblage').mean()
+    beta_order = aveval.sort_values(by='Value', ascending=False).index
+    return beta_order

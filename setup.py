@@ -6,7 +6,7 @@ setup(name='mcspace',
     author='Gary Uppal',
     packages=['mcspace'],
     install_requires=[
-                    'numpy',
+                    'numpy==1.26.4',
                     'scikit-learn',
                     'matplotlib',
                     'seaborn',
