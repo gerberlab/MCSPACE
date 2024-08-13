@@ -11,14 +11,17 @@ class DataSet:
     class to load single dataset from long format csv files
     """
     #* save this with model as pickle object, use for plotting downstream...
-    def __init__(self, reads, taxonomy):
+    def __init__(self, reads, taxonomy, gzip=False):
         self.reads_file = reads
         self.taxonomy_file = taxonomy
 
         self._raw_taxonomy = pd.read_csv(taxonomy)
         self._raw_taxonomy.set_index('Otu', inplace=True)
-        self._long_data = pd.read_csv(reads)
-
+        if gzip is False:
+            self._long_data = pd.read_csv(reads)
+        else:
+            self._long_data = pd.read_csv(reads, compression='gzip')
+            
         self.times = np.sort(np.array(self._long_data['Time'].unique())) #TODO: add check to make sure this is numeric...
         self.subjects = self._long_data['Subject'].unique()
         

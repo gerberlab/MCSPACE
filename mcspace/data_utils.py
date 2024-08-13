@@ -169,12 +169,12 @@ def get_human_timeseries_dataset(min_abundance=0.005, min_reads=250, max_reads=1
 
 
 def get_mouse_diet_perturbations_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, subj_remove=['JX09'], num_consistent_subjects=2,rootpath = Path("./")):
-    datapath = rootpath / "data" / "mouse_diet_timeseries_data"
-    taxfile = datapath / "taxonomy.csv"
-    countfile = datapath / "count_data.csv"
+    datapath = rootpath / "data" / "mouse_experiments"
+    taxfile = datapath / "tax.csv"
+    countfile = datapath / "mouse_counts.csv.gz"
 
     #* create dataset object
-    dataset = DataSet(countfile, taxfile)
+    dataset = DataSet(countfile, taxfile, gzip=True)
 
     # remove subject with missing data
     dataset.remove_subjects(subj_remove)
@@ -184,7 +184,7 @@ def get_mouse_diet_perturbations_dataset(min_abundance=0.005, min_reads=250, max
 
     # filter out lactococcus
     taxonomy = dataset.get_taxonomy()
-    Lactococcus_oidxs = list(taxonomy.loc[taxonomy['Genus'] == 'Lactococcus',:].index)
+    Lactococcus_oidxs = list(taxonomy.loc[taxonomy['genus'] == 'Lactococcus',:].index)
     dataset.remove_otus(Lactococcus_oidxs)
 
 #     dataset.remove_times(times_remove)
