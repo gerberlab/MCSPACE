@@ -178,7 +178,6 @@ def get_summary_results(model, data, n_samples=1000):
 def get_posterior_summary_data(model, data, taxonomy, times, subjects):
     pert_bf, beta_summary, theta_summary, pi_summary, mean_loss = get_summary_results(model, data)
     ncomm, ntime, nsubj = beta_summary.shape
-    _, npert = pert_bf.shape
     assemblages = [f"A{i+1}" for i in range(ncomm)]
 
     betatimes = []
@@ -200,7 +199,11 @@ def get_posterior_summary_data(model, data, taxonomy, times, subjects):
     multiind = pd.MultiIndex.from_frame(taxonomy.reset_index())
     thetadf = pd.DataFrame(theta_summary.T, index=multiind, columns=assemblages)
 
-    pertdf = pd.DataFrame(pert_bf, index=assemblages, columns=[f'P{i+1}' for i in range(npert)])
+    if pert_bf is not None:
+        _, npert = pert_bf.shape
+        pertdf = pd.DataFrame(pert_bf, index=assemblages, columns=[f'P{i+1}' for i in range(npert)])
+    else:
+        pertdf = None
     return thetadf, betadf, pertdf
 
 
