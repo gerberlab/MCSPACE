@@ -21,10 +21,10 @@ def run_seed(outpathbase, seed):
     outpath = outpathbase / f"seed_{seed}"
     outpath.mkdir(exist_ok=True, parents=True)
 
-    reads, num_otus, times, subjects, dataset = get_human_timeseries_dataset(min_abundance=0.005, min_reads=250)
+    reads, num_otus, times, subjects, dataset = get_human_timeseries_dataset()
     taxonomy = dataset.get_taxonomy()
     pickle_save(outpath / "taxonomy.pkl", taxonomy)
-    pickle_save(outpath / "dataset.pkl", dataset)
+    # pickle_save(outpath / "dataset.pkl", dataset)
 
     print(f"num otus = {num_otus}")
     print(f"times = {times}")
@@ -79,24 +79,15 @@ def run_seed(outpathbase, seed):
     plt.savefig(outpath / "elbo_loss.png", bbox_inches="tight")
     plt.close()
 
-    #* visualize results
-    pert_bf, beta, theta, pi_garb, mean_loss = get_summary_results(model, data)
-    otu_order, assemblage_order = vis.get_clustered_otu_assemblage_ordering(theta)
-    labels = [f"Day {t}" for t in times]
-    # taxonomy = dataset.get_taxonomy()
-    vis.render_proportions_and_assemblages(beta, theta, taxonomy, otu_order, assemblage_order, ylabels=labels)
-    plt.savefig(outpath / "assemblages_and_proportions.png", bbox_inches="tight")
-    plt.close()
-
 
 def main():
     rootpath = Path("./")
-    basepath = rootpath / "paper" / "human_dataset_runs"
-    outpathbase = basepath / "runs_FF"
+    basepath = rootpath / "paper" / "human_runs"
+    outpathbase = basepath / "runs"
     outpathbase.mkdir(exist_ok=True, parents=True)
 
     seeds = np.arange(10)
-    for seed in seeds: #[42]:
+    for seed in seeds:
         run_seed(outpathbase, seed)
 
     
