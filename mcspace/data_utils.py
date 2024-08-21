@@ -145,7 +145,7 @@ def get_colon_dataset(min_abundance=0.005, min_reads=1000,max_reads=10000,datapa
 
 #! -----------------time series datasets without and with perturbations----------------------------
 def get_human_timeseries_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, rootpath=Path("./")):
-    datapath = rootpath / "data" / "human_timeseries"
+    datapath = rootpath / "data" / "human_experiments"
     taxfile = datapath / "taxonomy.csv"
     countfile = datapath / "count_data.csv"
 

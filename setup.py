@@ -16,7 +16,7 @@ setup(name='mcspace',
                     'ipykernel',
                     # 'scikit-bio',
                     'composition-stats',
-                    'statsmodels'
+                    'statsmodels' # add networkx and ete...; biophyton
                     ],
     python_requires=">=3.8",
 )
