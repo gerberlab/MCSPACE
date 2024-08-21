@@ -446,10 +446,3 @@ def apply_taxonomy_threshold(taxonomy, threshold=0.5):
     mapper = {x:x.capitalize() for x in list(ptaxa2.columns)}
     ptaxa3 = ptaxa2.rename(columns=mapper)
     return ptaxa3
-
-
-def get_abundance_order(betadf):
-    betadf_drop = betadf[['Assemblage', 'Value']]
-    aveval = betadf_drop.groupby('Assemblage').mean()
-    beta_order = aveval.sort_values(by='Value', ascending=False).index
-    return beta_order
