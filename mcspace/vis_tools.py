@@ -8,6 +8,7 @@ import seaborn as sns
 import pandas as pd
 import ete3
 from Bio import SeqIO, Phylo
+import networkx as nx
 
 
 def remove_border(ax):
@@ -69,11 +70,12 @@ def plot_subject_proportions_timeseries(ax, betadf, subj, order, logscale=True, 
     return ax
 
 
-def get_pruned_tree(treepath, treefile, taxonomy, temppath=Path("./_tmp")):
+def get_pruned_tree(treepath, treefile, taxonomy, temppath=Path("./_tmp"), upper=False):
     tree = ete3.Tree((treepath / treefile).as_posix())
     print("original tree size:", len(tree))
     taxaids = list(taxonomy.index)
-#     taxaids = [idx.upper() for idx in taxaids]
+    if upper:
+        taxaids = [idx.upper() for idx in taxaids]
     tree.prune(taxaids, True)
     print("pruned tree size:", len(tree))
     
@@ -110,7 +112,8 @@ def plot_phylo_tree(ax, tree, taxonomy, fontsize=16, text_len=41):
         text._text = taxonname
         text._text = text._text + '- ' * (TEXT_LEN - len(text._text))
         text.set_fontsize(fontsize)
-    
+        if (level == 'Species') or (level == 'Genus'):
+            text.set_fontstyle('italic')
     ax = remove_border(ax)
     return ax, taxa_order
 
@@ -138,3 +141,131 @@ def plot_assemblages(ax, thetadf, otu_order, beta_order, cmap=None, logscale=Tru
                xticklabels=xticklabels, yticklabels=yticklabels, square=square, cbar=cbar, cbar_kws=cbar_kws)
     return ax
 
+
+
+#! plotting association changes
+def get_assemblages_containing_taxon(thetadf, oidx, otu_threshold=0.05):
+    thetasub = thetadf.loc[thetadf.index.get_level_values('Otu') == oidx,:]
+    assemblages = thetasub.columns[(thetasub > otu_threshold).any(axis=0)]
+    return assemblages
+
+
+def get_taxa_in_assemblages(thetadf, assemblages, otu_threshold=0.05):
+    otus = thetadf.index[(thetadf.loc[:,assemblages]>otu_threshold).any(axis=1)].get_level_values('Otu')
+    return otus
+
+
+# TODO: move to utils
+def get_subj_averaged_assemblage_proportions(betadf):
+    subjave = betadf.loc[:,['Time','Assemblage','Value']].groupby(by=['Time','Assemblage']).mean()
+    subjave.reset_index(inplace=True)
+    betamat = subjave.pivot(index='Time', columns='Assemblage', values='Value')
+    return betamat
+
+
+def get_edge_weights(thetadf, avebeta, assemblages, otu_focus, otus_assoc):
+    times = avebeta.index
+    assemblages = thetadf.columns
+    thetasimp = thetadf.reset_index()[['Otu'] + list(assemblages)].set_index('Otu')
+    
+    theta_self = thetasimp.loc[otu_focus,:].values # 1xK
+    theta_assoc = thetasimp.loc[otus_assoc,:].values # OxK
+    betavals = avebeta.loc[:,assemblages].values # ntime x K
+    
+    numerator = np.sum(betavals[:,None,:]*theta_assoc*theta_self, axis=-1)
+    denominator = np.sum(betavals[:,None,:]*theta_self, axis=-1)
+    
+    edgevals = numerator/denominator
+    df = pd.DataFrame(edgevals, index=times, columns=otus_assoc)
+    return df.T
+
+
+def get_relative_abundances(data, times, subjects, taxonomy, multi_index=False):
+    reads = data['count_data']
+    ntime = len(times)
+    nsubj = len(subjects)
+    notus = reads[times[0]][subjects[0]].shape[1]
+
+    relabuns = np.zeros((notus, ntime, nsubj)) # also make into dataframe
+    for i,t in enumerate(times):
+        for j,s in enumerate(subjects):
+            counts = reads[t][s].cpu().detach().clone().numpy()
+            pra = counts/counts.sum(axis=1,keepdims=True)
+            ras = np.mean(pra, axis=0)
+            relabuns[:,i,j] = ras
+
+    if multi_index is True:
+        index = pd.MultiIndex.from_frame(taxonomy.reset_index())
+    else:
+        index = taxonomy.index 
+    radf = pd.DataFrame(relabuns.mean(axis=2), index=index, columns=times)
+    return radf
+
+
+def plot_association_changes(axs, edge_weights, node_weights, otu_focus, taxonomy,
+                             node_colors=None, edge_scale=20, node_scale=2000, rad=1, textsize=12,
+                            edge_threshold=0.02, edge_base=0):
+    taxa = edge_weights.index
+    diets = edge_weights.columns
+
+    # make graph
+    graph = nx.Graph()
+    # add nodes and edges with default weights
+    for oidx in taxa:
+        if oidx != otu_focus:
+            graph.add_edge(oidx, otu_focus, weight=1)
+        graph.nodes[oidx]['weight'] = 500
+
+    # get node positions
+    pos = nx.spring_layout(graph)
+
+    notus = len(edge_weights.index)
+    xpos =  np.cos(np.linspace(0,1,notus)*2*np.pi)
+    ypos =  np.sin(np.linspace(0,1,notus)*2*np.pi)
+    i = 0
+    for oidx in edge_weights.index:
+        if oidx != otu_focus:
+            pos[oidx] = np.array([xpos[i],ypos[i]])
+            i += 1
+        else:
+            pos[oidx] = np.array([0,0])
+
+    for i,diet in enumerate(diets):
+        # update edge weights
+        for oidx in taxa:
+            if oidx != otu_focus:
+                if edge_weights.loc[oidx,diet] >= edge_threshold:
+                    graph[oidx][otu_focus]['weight'] = edge_scale*edge_weights.loc[oidx,diet] + edge_base
+                else:
+                    graph[oidx][otu_focus]['weight'] = 0
+            # update node sizes
+            graph.nodes[oidx]['weight']=node_scale*node_weights.loc[oidx,diet]
+
+        # get node colors
+        color_map = []
+        for node in graph:
+            if node_colors is not None:
+                color_map.append(node_colors[node])
+            else:
+                color_map.append('tab:blue')
+
+        # draw network
+        ew = list(nx.get_edge_attributes(graph,'weight').values())
+        nw = list(nx.get_node_attributes(graph,'weight').values())
+        nx.draw_networkx(graph, pos=pos, ax=axs[i], width=ew, node_size=nw, 
+                         node_color=color_map, with_labels=False, alpha=0.5)
+        
+        # annotate nodes
+        for k in pos.keys():
+            x = pos[k][0]
+            y = pos[k][1]
+            if k == otu_focus:
+                x = 1.0 - rad
+                y = rad - 1.0
+            s = f'{k}'
+            s = s[(s.find('u')+1):]
+            axs[i].text(rad*x,rad*y,s=s, horizontalalignment='center', verticalalignment='center', fontsize=textsize)
+            if i == 0:
+                s = taxonomy.loc[k,'Genus']
+                axs[i].text(rad*x,rad*y + (rad-1.0),s=s, horizontalalignment='center', verticalalignment='center', fontsize=textsize)
+    return axs, graph
