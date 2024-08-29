@@ -120,16 +120,16 @@ def get_savedata(reads, assignments, theta, beta, pigarb):
     return savedata
 
 
-def gen_semisyn_data(base_sample):
+def gen_semisyn_data(base_sample, rootdir, outdir):
     np.random.seed(42)
     torch.manual_seed(42)
 
     #* paths
-    rootpath = Path("./")
+    rootpath = Path(rootdir)
     basepath = rootpath / "paper_cluster" / "semi_synthetic_data"
     datapath = basepath / "base_run" / base_sample
 
-    outpath = basepath / f"semisyn_data" / base_sample
+    outpath = Path(outdir) / f"semisyn_data" / base_sample
     outpath.mkdir(exist_ok=True, parents=True)
 
     results = pickle_load(datapath / "results.pkl")
@@ -216,10 +216,15 @@ def gen_semisyn_data(base_sample):
     print(f"DONE: {base_sample} semisyn")
 
 
-def main():
-    gen_semisyn_data('Mouse')
-    gen_semisyn_data('Human')
+def main(rootdir, outdir):
+    gen_semisyn_data('Mouse', rootdir, outdir)
+    gen_semisyn_data('Human', rootdir, outdir)
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--d", dest='rootdir', help='project directory path')
+    parser.add_argument("--o", dset="outdir", help="output directory path")
+    args = parser.parse_args()
+    main(args.rootdir, args.outdir)
