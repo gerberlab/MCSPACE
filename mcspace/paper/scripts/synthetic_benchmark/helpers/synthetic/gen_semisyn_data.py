@@ -126,7 +126,7 @@ def gen_semisyn_data(base_sample, rootdir, outdir):
 
     #* paths
     rootpath = Path(rootdir)
-    basepath = rootpath / "synthetic_benchmark" / "helpers" / "synthetic"
+    basepath = rootpath / "scripts" / "synthetic_benchmark" / "helpers" / "synthetic"
     datapath = basepath / "base_run" / base_sample
 
     outpath = Path(outdir) / f"semisyn_data" / base_sample
