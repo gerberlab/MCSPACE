@@ -143,6 +143,7 @@ def main(rootdir, run_idx, base_sample):
 
 
 if __name__ == "__main__":
+    #! add a default option to run all...
     # 200 human cases
     # 250 mouse cases
     import argparse
