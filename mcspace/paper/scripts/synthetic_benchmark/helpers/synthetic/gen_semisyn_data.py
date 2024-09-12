@@ -224,7 +224,7 @@ def main(rootdir, outdir):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--d", dest='rootdir', help='project directory path')
-    parser.add_argument("--o", dest="outdir", help="output directory path")
+    parser.add_argument("-d", dest='rootdir', help='project directory path')
+    parser.add_argument("-o", dest="outdir", help="output directory path")
     args = parser.parse_args()
     main(args.rootdir, args.outdir)
