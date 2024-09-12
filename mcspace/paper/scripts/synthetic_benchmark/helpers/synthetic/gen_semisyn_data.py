@@ -126,7 +126,6 @@ def gen_semisyn_data(base_sample, rootdir, outdir):
 
     #* paths
     rootpath = Path(rootdir)
-    # basepath = rootpath / "paper_cluster" / "semi_synthetic_data" # this scripts path? #! really want 'datapath' (relative to scripts path)
     basepath = rootpath / "synthetic_benchmark" / "helpers" / "synthetic"
     datapath = basepath / "base_run" / base_sample
 
