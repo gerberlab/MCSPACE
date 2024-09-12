@@ -126,7 +126,8 @@ def gen_semisyn_data(base_sample, rootdir, outdir):
 
     #* paths
     rootpath = Path(rootdir)
-    basepath = rootpath / "paper_cluster" / "semi_synthetic_data"
+    # basepath = rootpath / "paper_cluster" / "semi_synthetic_data" # this scripts path? #! really want 'datapath' (relative to scripts path)
+    basepath = rootpath / "synthetic_benchmark" / "helpers" / "synthetic"
     datapath = basepath / "base_run" / base_sample
 
     outpath = Path(outdir) / f"semisyn_data" / base_sample
@@ -225,6 +226,6 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--d", dest='rootdir', help='project directory path')
-    parser.add_argument("--o", dset="outdir", help="output directory path")
+    parser.add_argument("--o", dest="outdir", help="output directory path")
     args = parser.parse_args()
     main(args.rootdir, args.outdir)
