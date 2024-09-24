@@ -1,0 +1,201 @@
+[*] Using environment settings from /data/bwh-comppath-seq/gary/final_script_checks/MCSPACE/mcspace/paper/scripts/settings.sh.
+(30, 3)
+(30, 74)
+default number of particles = 2971
+negbin params: p = 0.0006880881644822823, n = 1.0445396816625279
+simulating data set 0...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 1...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 2...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 3...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 4...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 5...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 6...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 7...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 8...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 9...
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+...success
+DONE: Mouse semisyn
+(30,)
+(30, 58)
+default number of particles = 605
+negbin params: p = 0.000792590089298642, n = 2.5824423545202304
+simulating data set 0...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 1...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 2...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 3...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 4...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 5...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 6...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 7...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 8...
+...success
+...success
+...success
+...success
+...success
+...success
+simulating data set 9...
+...success
+...success
+...success
+...success
+...success
+...success
+DONE: Human semisyn

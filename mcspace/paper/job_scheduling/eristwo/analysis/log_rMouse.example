@@ -1,0 +1,44 @@
+[*] Using environment settings from /data/bwh-comppath-seq/gary/final_script_checks/MCSPACE/mcspace/paper/scripts/settings.sh.
+
+epoch 0
+ELBO =  tensor(2.5181e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5250e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5318e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5844e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5019e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5239e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5116e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5949e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.6247e+08, grad_fn=<NegBackward0>)
+
+epoch 0
+ELBO =  tensor(2.5471e+08, grad_fn=<NegBackward0>)
+outputting summary results for best run
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+2
+***ALL DONE***

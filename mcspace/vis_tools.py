@@ -108,7 +108,7 @@ def plot_phylo_tree(ax, tree, taxonomy, fontsize=16, text_len=41):
         taxa_order.append(otu_name)
         name, level = get_lowest_level(otu_name, taxonomy)
         prefix = prefix_taxa[level]
-        taxonname = ' ' + prefix + ' ' + name + ' ' + otu_name
+        taxonname = ' ' + prefix + ' ' + name + ' ' + otu_name.upper()
         text._text = taxonname
         text._text = text._text + '- ' * (TEXT_LEN - len(text._text))
         text.set_fontsize(fontsize)

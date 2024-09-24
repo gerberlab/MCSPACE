@@ -409,7 +409,6 @@ def calc_auc(gt_assoc, post_probs, nthres = 100):
 def get_min_loss_path(runpath, seeds):
     losses = {}
 
-    seeds = np.arange(10)
     for seed in seeds:
         respath = runpath / f"seed_{seed}"
         model = torch.load(respath / MODEL_FILE)

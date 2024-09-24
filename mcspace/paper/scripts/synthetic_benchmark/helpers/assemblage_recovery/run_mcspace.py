@@ -20,15 +20,15 @@ import time
 mpl.use('agg')
 
 
-def run_case(basepath, datapath, case, seed, base_sample):
+def run_case(outpathbase, datapathbase, case, seed, base_sample):
     device = get_device()
     torch.manual_seed(seed)
     np.random.seed(seed)
 
-    outpath = basepath / "mcspace_runs" / base_sample / case / f"seed_{seed}"
+    outpath = outpathbase / "mcspace" / base_sample / case / f"seed_{seed}"
     outpath.mkdir(exist_ok=True, parents=True)
 
-    sim_dataset = pickle_load(datapath / f"data_{case}.pkl")
+    sim_dataset = pickle_load(datapathbase / base_sample / f"data_{case}.pkl")
     reads = sim_dataset['reads']
     num_otus = reads[0]['s1'].shape[1]
     data = get_data(reads, device)
@@ -69,13 +69,13 @@ def run_case(basepath, datapath, case, seed, base_sample):
     ELBOs = train_model(model, data, num_epochs)
     torch.save(model, outpath / MODEL_FILE)
 
-    # plot losses
-    fig, ax = plt.subplots()
-    ax.plot(ELBOs)
-    ax.set_xlabel("Epoch")
-    ax.set_ylabel("ELBO loss")
-    plt.savefig(outpath / "ELBO_loss.png")
-    plt.close()
+    # # plot losses
+    # fig, ax = plt.subplots()
+    # ax.plot(ELBOs)
+    # ax.set_xlabel("Epoch")
+    # ax.set_ylabel("ELBO loss")
+    # plt.savefig(outpath / "ELBO_loss.png")
+    # plt.close()
     print(f"DONE: case={case}")
 
 
@@ -111,13 +111,12 @@ def get_cases(npart_cases, nreads_cases, nclust_cases, pgarb_cases, nsubj_cases,
     return all_cases
 
 
-def main(rootdir, run_idx, base_sample):
+def main(rootdir, outdir, run_idx, base_sample):
     st = time.time()
 
     rootpath = Path(rootdir)
-
-    basepath = rootpath / "paper_cluster" / "assemblage_recovery"
-    datapath = rootpath / "paper_cluster" / "semi_synthetic_data" / "semisyn_data" / base_sample
+    outpathbase = Path(outdir) / "assemblage_recovery"
+    datapathbase = Path(outdir) / "semisyn_data"
 
     if base_sample == 'Human':
         nsubj_cases = [1]
@@ -135,21 +134,33 @@ def main(rootdir, run_idx, base_sample):
 
     print(f"running case: {case}")
     for seed in range(5):
-        run_case(basepath, datapath, case, seed, base_sample) 
+        run_case(outpathbase, datapathbase, case, seed, base_sample) 
     print("***DONE***")
     et = time.time()
     elapsed_time = et - st
     print(elapsed_time)
 
 
+def run_all(rootdir, outdir):
+    for ncases, base_sample in zip([200, 250], ['Human', 'Mouse']):
+        for ridx in range(ncases):
+            main(rootdir, outdir, ridx, base_sample)
+
+
 if __name__ == "__main__":
-    #! add a default option to run all...
     # 200 human cases
     # 250 mouse cases
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--directory", dest='directory', help='root path')
-    parser.add_argument("--idx", type=int, dest='idx', help='run number')
-    parser.add_argument("--dset", dest='dset', help='dataset case (Human or Mouse)')
+    parser.add_argument("-d", dest='rootpath', help='root path')
+    parser.add_argument("-o", dest='outpath', help='output path')
+    parser.add_argument("-run_all", dest='run_all', help='option to run all cases', action='store_true')    
+    parser.add_argument("-idx", type=int, dest='idx', help='run number (200 total cases for human; 250 for mouse datasets)')
+    parser.add_argument("-dset", dest='dset', help='dataset case (Human or Mouse)')
     args = parser.parse_args()
-    main(args.directory, args.idx, args.dset)
+    if args.run_all is True:
+        print("RUNNING ALL CASES")
+        run_all(args.rootpath, args.outpath)
+    else:
+        print(f"Running {args.dset} case {args.idx}")
+        main(args.rootpath, args.outpath, args.idx, args.dset)
