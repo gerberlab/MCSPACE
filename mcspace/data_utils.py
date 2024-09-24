@@ -145,7 +145,9 @@ def get_colon_dataset(min_abundance=0.005, min_reads=1000,max_reads=10000,datapa
 
 #! -----------------time series datasets without and with perturbations----------------------------
 def get_human_timeseries_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, rootpath=Path("./")):
-    datapath = rootpath / "data" / "human_experiments"
+    # rootpath is path to datasets folder...
+    # TODO: move these functions to a common python script in paper directory...
+    datapath = rootpath / "human_experiments"
     taxfile = datapath / "taxonomy.csv"
     countfile = datapath / "count_data.csv"
 
@@ -169,7 +171,8 @@ def get_human_timeseries_dataset(min_abundance=0.005, min_reads=250, max_reads=1
 
 
 def get_mouse_diet_perturbations_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, subj_remove=['JX09'], num_consistent_subjects=2,rootpath = Path("./")):
-    datapath = rootpath / "data" / "mouse_experiments"
+    # rootpath is path to datasets folder...
+    datapath = rootpath / "mouse_experiments"
     taxfile = datapath / "tax.csv"
     countfile = datapath / "mouse_counts.csv.gz"
 

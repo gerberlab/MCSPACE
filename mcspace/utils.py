@@ -338,15 +338,11 @@ def flatten_data(data):
                     subj_labels = np.array([ig, isx])
                 else:
                     subj_labels = np.vstack([subj_labels, np.array([ig, isx])])
-                # gslabel = f"{grp}{sub}"
-                # subj_labels.append(gslabel)
         
     return flatreads, subj_labels, cluster_labels
 
 
 def get_mcspace_cooccur_prob(model, data, otu_threshold, nsamples=100):
-    # time_idx, subj_idx,
-    #! return full tensor over all times and subjects (or return dict??)
     cooccur_prob = 0
     for i in range(nsamples):
         loss, theta, beta, gamma, _ = model(data)
@@ -358,6 +354,7 @@ def get_mcspace_cooccur_prob(model, data, otu_threshold, nsamples=100):
         prob_sample = summand.sum(axis=(0,1,2))/(nsubj*ntime)
         cooccur_prob += prob_sample
     cooccur_prob /= nsamples
+    # return full tensor over all times and subjects
     return cooccur_prob
 
 

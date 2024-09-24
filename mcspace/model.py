@@ -42,7 +42,7 @@ class MCSPACE(nn.Module):
 
         self.use_sparse_weights = use_sparse_weights
 
-        #! adding mixing contamination
+        # mixing contamination
         self.use_contamination = use_contamination
         self.contamination_clusters = contamination_clusters
 
@@ -103,8 +103,7 @@ class MCSPACE(nn.Module):
         return total
 
     def forward(self, data):
-        counts = data['count_data'] # is dict over times and subjects
-        # onehot_counts = data['onehot_counts'] #dict over times and subjects -> LxOxJ (one hot for each read J)
+        counts = data['count_data'] # dict over times and subjects
 
         beta, KL_beta, gamma = self.beta_params(data)
         theta = F.softmax(self.theta_params, dim=1)

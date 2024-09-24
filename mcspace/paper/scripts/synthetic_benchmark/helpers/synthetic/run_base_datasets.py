@@ -8,7 +8,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
-import mcspace.visualization as vis
 mpl.use('agg')
 
 
