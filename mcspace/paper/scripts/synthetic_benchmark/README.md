@@ -29,6 +29,7 @@ bash run_assemblage_recovery_MCSPACE.sh [dataset] [run_id]
 * Options for `run_id`:
 - For the `Human` dataset: 0 to 199
 - For the `Mouse` dataset: 0 to 249
+
 The script will run the MCSPACE model on the selected synthetic datasets and save the inference results to the following directory: `paper/output/assemblage_recovery/mcspace/`
 
 ## Step 3: Run the GMM model on synthetic datasets
@@ -50,6 +51,7 @@ bash run_assemblage_recovery_GMM.sh [dataset] [run_id]
 * Options for `run_id`:
 - For the `Human` dataset: 0 to 199
 - For the `Mouse` dataset: 0 to 249
+
 The script will run the GMM on the selected synthetic datasets and save the inference results to the following directory: `paper/output/assemblage_recovery/gmm_basic_runs/`
 
 ## Step 4: Evaluate inference results for MCSPACE and GMM in recovering underlying assemblages in synthetic data
