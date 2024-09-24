@@ -9,7 +9,7 @@
 
 # Load a suitable module for python
 module load miniconda3
-conda activate mcfinal
+conda activate mcspace
 cd ../../../scripts
 
 bash synthetic_benchmark/evaluate_pairwise_MCSPACE.sh

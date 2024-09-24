@@ -10,7 +10,7 @@
 
 # Load a suitable module for python
 module load miniconda3
-conda activate mcfinal
+conda activate mcspace
 cd ../../../scripts
 
 bash cross_validation/run_cv_GMM_2dim.sh $SLURM_ARRAY_TASK_ID

@@ -10,7 +10,7 @@
 
 # Load a suitable module for python
 module load miniconda3
-conda activate mcfinal
+conda activate mcspace
 cd ../../../scripts
 
 bash synthetic_benchmark/run_assemblage_recovery_MCSPACE.sh Human $SLURM_ARRAY_TASK_ID
