@@ -2,7 +2,7 @@
 Sparse Bayesian mixture model for learning community subtypes and perturbation effects from MaPS-seq experimental data.
 
 <p align="center">
-<img src="https://github.com/gerberlab/MCSPACE/tree/main/media/mcspace_overview.pdf" />
+<img src="https://github.com/gerberlab/MCSPACE/tree/main/media/mcspace_overview.svg" />
 </p>
 
 
