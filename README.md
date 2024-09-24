@@ -1,7 +1,10 @@
 # MCSPACE
 Sparse Bayesian mixture model for learning community subtypes and perturbation effects from MaPS-seq experimental data.
 
-![](https://github.com/gerberlab/MCSPACE/media/mcspace_overview.svg)
+<p align="center">
+<img src="/media/mcspace_overview.svg" />
+</p>
+
 
 ## Install from source
 First install the MCSPACE package:
