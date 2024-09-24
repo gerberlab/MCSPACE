@@ -442,3 +442,10 @@ def apply_taxonomy_threshold(taxonomy, threshold=0.5):
     mapper = {x:x.capitalize() for x in list(ptaxa2.columns)}
     ptaxa3 = ptaxa2.rename(columns=mapper)
     return ptaxa3
+
+
+def get_subj_averaged_assemblage_proportions(betadf):
+    subjave = betadf.loc[:,['Time','Assemblage','Value']].groupby(by=['Time','Assemblage']).mean()
+    subjave.reset_index(inplace=True)
+    betamat = subjave.pivot(index='Time', columns='Assemblage', values='Value')
+    return betamat
