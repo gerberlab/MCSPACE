@@ -18,7 +18,7 @@ def run_case(basepath, case, reads, num_otus):
 
     data = get_data(reads, device)
 
-    num_assemblages = 30
+    num_assemblages = 100
     times = list(reads.keys())
     subjects = list(reads[times[0]].keys())
     perturbed_times = []
@@ -45,7 +45,7 @@ def run_case(basepath, case, reads, num_otus):
                     process_var_prior,
                     device,
                     add_process_var,
-                    use_sparse_weights=False,
+                    use_sparse_weights=True,
                     use_contamination=True,
                     contamination_clusters=data['group_garbage_clusters']
                     )
@@ -76,16 +76,16 @@ def run_case(basepath, case, reads, num_otus):
 
 
 def main():
+    np.random.seed(42)
+    torch.manual_seed(42)
+
     rootpath = Path("./")
-    basepath = rootpath / "paper_cluster" / "semi_synthetic_data"
+    basepath = rootpath / "paper" / "scripts" / "synthetic_benchmark" / "helpers" / "synthetic"
 
-    torch.manual_seed(0)
-    np.random.seed(0)
-
-    names = ['Human', 'Mouse']
-    dsets = [get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset]
+    names = ['Human'] #, 'Mouse']
+    dsets = [get_human_timeseries_dataset] #, get_mouse_diet_perturbations_dataset]
     for dset, name in zip(dsets, names):
-        reads, num_otus, times, subjects, dataset = dset()
+        reads, num_otus, times, subjects, dataset = dset(rootpath=rootpath / "paper" / "datasets")
         t = times[0]
         counts = {0: reads[t]} # take first timepoint
         run_case(basepath, name, counts, num_otus)

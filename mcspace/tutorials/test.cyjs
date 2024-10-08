@@ -1,0 +1,484 @@
+{
+  "format_version" : "1.0",
+  "generated_by" : "cytoscape-3.10.2",
+  "target_cytoscapejs_version" : "~2.1",
+  "data" : {
+    "shared_name" : "graph_data_Otu2.csv",
+    "name" : "graph_data_Otu2.csv",
+    "SUID" : 437,
+    "__Annotations" : [ "" ],
+    "selected" : true
+  },
+  "elements" : {
+    "nodes" : [ {
+      "data" : {
+        "id" : "488",
+        "shared_name" : "Otu2",
+        "Source_name" : "Akkermansia Otu2",
+        "Target_name" : "Akkermansia Otu2",
+        "HF_ra" : 0.0583123396694039,
+        "name" : "Otu2",
+        "HFHF_ra" : 0.4066692410657803,
+        "S1_ra" : 0.0226076707864801,
+        "SUID" : 488,
+        "LP_ra" : 0.229467344780763,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 0.06887318537785347,
+        "y" : -0.2586529071514434
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "486",
+        "shared_name" : "Otu17",
+        "Source_name" : "",
+        "Target_name" : "Roseburia Otu17",
+        "HF_ra" : 0.0426948616902033,
+        "name" : "Otu17",
+        "HFHF_ra" : 0.0037547966736989,
+        "S1_ra" : 4.518242397656E-4,
+        "SUID" : 486,
+        "LP_ra" : 0.0375195552284518,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 39.11656834528996,
+        "y" : -124.54095576359676
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "484",
+        "shared_name" : "Otu7",
+        "Source_name" : "",
+        "Target_name" : "Clostridium_XlVa Otu7",
+        "HF_ra" : 0.1557431245843569,
+        "name" : "Otu7",
+        "HFHF_ra" : 9.237688671296E-4,
+        "S1_ra" : 0.0025784118721882,
+        "SUID" : 484,
+        "LP_ra" : 0.089202223966519,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 127.22207905695988,
+        "y" : -29.29860041691707
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "482",
+        "shared_name" : "Otu38",
+        "Source_name" : "",
+        "Target_name" : "Cellulosilyticum Otu38",
+        "HF_ra" : 0.0022562141918266,
+        "name" : "Otu38",
+        "HFHF_ra" : 4.161266454805E-4,
+        "S1_ra" : 0.009101624522979,
+        "SUID" : 482,
+        "LP_ra" : 0.0194591954350471,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 28.69989277766301,
+        "y" : 127.21409489558293
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "480",
+        "shared_name" : "Otu6",
+        "Source_name" : "",
+        "Target_name" : "E. coprostanoligenes Otu6",
+        "HF_ra" : 0.0703005579610665,
+        "name" : "Otu6",
+        "HFHF_ra" : 0.0052234944887459,
+        "S1_ra" : 0.0034726818557828,
+        "SUID" : 480,
+        "LP_ra" : 0.133280411362648,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 124.56879879878117,
+        "y" : 38.25651432917668
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "478",
+        "shared_name" : "Otu32",
+        "Source_name" : "",
+        "Target_name" : "Lachnospiraceae Otu32",
+        "HF_ra" : 0.0354897615810235,
+        "name" : "Otu32",
+        "HFHF_ra" : 2.028467558072104E-6,
+        "S1_ra" : 0.0020795565766699,
+        "SUID" : 478,
+        "LP_ra" : 0.0064840635750442,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -28.696576338547928,
+        "y" : -127.32408259465144
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "476",
+        "shared_name" : "Otu26",
+        "Source_name" : "",
+        "Target_name" : "Lacrimispora Otu26",
+        "HF_ra" : 0.0235427850857377,
+        "name" : "Otu26",
+        "HFHF_ra" : 1.55896397094E-4,
+        "S1_ra" : 1.749304791095E-4,
+        "SUID" : 476,
+        "LP_ra" : 0.0040458295476734,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -96.73325846745418,
+        "y" : 89.81065251277043
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "474",
+        "shared_name" : "Otu41",
+        "Source_name" : "",
+        "Target_name" : "Hespellia Otu41",
+        "HF_ra" : 0.0390005164469281,
+        "name" : "Otu41",
+        "HFHF_ra" : 0.0046287920170774,
+        "S1_ra" : 0.0011358934692301,
+        "SUID" : 474,
+        "LP_ra" : 0.0067631754403313,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -39.088834028977615,
+        "y" : 124.7505634014423
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "472",
+        "shared_name" : "Otu67",
+        "Source_name" : "",
+        "Target_name" : "Lachnospiraceae Otu67",
+        "HF_ra" : 0.0144709022715687,
+        "name" : "Otu67",
+        "HFHF_ra" : 0.0011838085336535,
+        "S1_ra" : 7.084610952764099E-5,
+        "SUID" : 472,
+        "LP_ra" : 0.001007809245948,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 90.87361409113957,
+        "y" : 97.7505634014423
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "470",
+        "shared_name" : "Otu20",
+        "Source_name" : "",
+        "Target_name" : "M. gordoncarteri Otu20",
+        "HF_ra" : 0.0029616835527122,
+        "name" : "Otu20",
+        "HFHF_ra" : 0.0053961810966332,
+        "S1_ra" : 0.0066859319340437,
+        "SUID" : 470,
+        "LP_ra" : 0.0440746573731303,
+        "selected" : false
+      },
+      "position" : {
+        "x" : 96.7455985729511,
+        "y" : -89.46217463566707
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "468",
+        "shared_name" : "Otu77",
+        "Source_name" : "",
+        "Target_name" : "Clostridium_XlVa Otu77",
+        "HF_ra" : 0.0111409082698325,
+        "name" : "Otu77",
+        "HFHF_ra" : 1.765360972664591E-6,
+        "S1_ra" : 0.001120123512616,
+        "SUID" : 468,
+        "LP_ra" : 0.007468233971546,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -127.37096903874324,
+        "y" : 29.53648259089543
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "466",
+        "shared_name" : "Otu10",
+        "Source_name" : "",
+        "Target_name" : "F. rodentium Otu10",
+        "HF_ra" : 0.0041520418649506,
+        "name" : "Otu10",
+        "HFHF_ra" : 0.0294015145627781,
+        "S1_ra" : 0.0035118867332736,
+        "SUID" : 466,
+        "LP_ra" : 0.0732026475695117,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -124.83445475651668,
+        "y" : -38.37144587590144
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "464",
+        "shared_name" : "Otu29",
+        "Source_name" : "",
+        "Target_name" : "Romboutsia Otu29",
+        "HF_ra" : 0.0413262518122792,
+        "name" : "Otu29",
+        "HFHF_ra" : 6.197750626597E-4,
+        "S1_ra" : 0.0043203315387169,
+        "SUID" : 464,
+        "LP_ra" : 0.0408342663819591,
+        "selected" : false
+      },
+      "position" : {
+        "x" : -90.57133219792293,
+        "y" : -98.06295893742488
+      },
+      "selected" : false
+    } ],
+    "edges" : [ {
+      "data" : {
+        "id" : "514",
+        "source" : "488",
+        "target" : "486",
+        "shared_name" : "Otu2 (interacts with) Otu17",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.011751901848124588,
+        "name" : "Otu2 (interacts with) Otu17",
+        "interaction" : "interacts with",
+        "SUID" : 514,
+        "HFHF" : 6.387406264406916E-4,
+        "selected" : false,
+        "S1" : 0.0031871014473683554,
+        "HF" : 0.01732472612375159
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "512",
+        "source" : "488",
+        "target" : "484",
+        "shared_name" : "Otu2 (interacts with) Otu7",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.03199482660782507,
+        "name" : "Otu2 (interacts with) Otu7",
+        "interaction" : "interacts with",
+        "SUID" : 512,
+        "HFHF" : 0.003934658497393199,
+        "selected" : false,
+        "S1" : 0.008385434527178472,
+        "HF" : 0.008828265297130435
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "510",
+        "source" : "488",
+        "target" : "482",
+        "shared_name" : "Otu2 (interacts with) Otu38",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.016046281418693197,
+        "name" : "Otu2 (interacts with) Otu38",
+        "interaction" : "interacts with",
+        "SUID" : 510,
+        "HFHF" : 7.758924570165252E-4,
+        "selected" : false,
+        "S1" : 0.035769525982238176,
+        "HF" : 0.007565746371728692
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "508",
+        "source" : "488",
+        "target" : "488",
+        "shared_name" : "Otu2 (interacts with) Otu2",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.0,
+        "name" : "Otu2 (interacts with) Otu2",
+        "interaction" : "interacts with",
+        "SUID" : 508,
+        "HFHF" : 0.0,
+        "selected" : false,
+        "S1" : 0.0,
+        "HF" : 0.0
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "506",
+        "source" : "488",
+        "target" : "480",
+        "shared_name" : "Otu2 (interacts with) Otu6",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.02925360170880218,
+        "name" : "Otu2 (interacts with) Otu6",
+        "interaction" : "interacts with",
+        "SUID" : 506,
+        "HFHF" : 0.0037761408323677553,
+        "selected" : false,
+        "S1" : 0.01898968550344,
+        "HF" : 0.014271491518157715
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "504",
+        "source" : "488",
+        "target" : "478",
+        "shared_name" : "Otu2 (interacts with) Otu32",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.002508990927105224,
+        "name" : "Otu2 (interacts with) Otu32",
+        "interaction" : "interacts with",
+        "SUID" : 504,
+        "HFHF" : 1.9173337070951864E-4,
+        "selected" : false,
+        "S1" : 0.002666961628795104,
+        "HF" : 0.01196883459573223
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "502",
+        "source" : "488",
+        "target" : "476",
+        "shared_name" : "Otu2 (interacts with) Otu26",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.0014398192746081398,
+        "name" : "Otu2 (interacts with) Otu26",
+        "interaction" : "interacts with",
+        "SUID" : 502,
+        "HFHF" : 1.2884824721294034E-4,
+        "selected" : false,
+        "S1" : 0.002190440505039599,
+        "HF" : 0.015389949636608521
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "500",
+        "source" : "488",
+        "target" : "474",
+        "shared_name" : "Otu2 (interacts with) Otu41",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.0042361249835088195,
+        "name" : "Otu2 (interacts with) Otu41",
+        "interaction" : "interacts with",
+        "SUID" : 500,
+        "HFHF" : 0.0011055806762287224,
+        "selected" : false,
+        "S1" : 0.005583784952279506,
+        "HF" : 0.03329402927144535
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "498",
+        "source" : "488",
+        "target" : "472",
+        "shared_name" : "Otu2 (interacts with) Otu67",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.001431956540667847,
+        "name" : "Otu2 (interacts with) Otu67",
+        "interaction" : "interacts with",
+        "SUID" : 498,
+        "HFHF" : 3.1136683210253953E-4,
+        "selected" : false,
+        "S1" : 0.0042102966340799046,
+        "HF" : 0.034736889474102056
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "496",
+        "source" : "488",
+        "target" : "470",
+        "shared_name" : "Otu2 (interacts with) Otu20",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.01612310470412225,
+        "name" : "Otu2 (interacts with) Otu20",
+        "interaction" : "interacts with",
+        "SUID" : 496,
+        "HFHF" : 0.001082677225827352,
+        "selected" : false,
+        "S1" : 0.014917975328964057,
+        "HF" : 0.004516493302121535
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "494",
+        "source" : "488",
+        "target" : "468",
+        "shared_name" : "Otu2 (interacts with) Otu77",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.00257148965464499,
+        "name" : "Otu2 (interacts with) Otu77",
+        "interaction" : "interacts with",
+        "SUID" : 494,
+        "HFHF" : 1.6955299555614672E-4,
+        "selected" : false,
+        "S1" : 0.0032273133331913386,
+        "HF" : 0.010203956855709177
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "492",
+        "source" : "488",
+        "target" : "466",
+        "shared_name" : "Otu2 (interacts with) Otu10",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.028584600065006578,
+        "name" : "Otu2 (interacts with) Otu10",
+        "interaction" : "interacts with",
+        "SUID" : 492,
+        "HFHF" : 0.003398653428538742,
+        "selected" : false,
+        "S1" : 0.006108530695656502,
+        "HF" : 0.012568230502017354
+      },
+      "selected" : false
+    }, {
+      "data" : {
+        "id" : "490",
+        "source" : "488",
+        "target" : "464",
+        "shared_name" : "Otu2 (interacts with) Otu29",
+        "shared_interaction" : "interacts with",
+        "LP" : 0.01507486671144934,
+        "name" : "Otu2 (interacts with) Otu29",
+        "interaction" : "interacts with",
+        "SUID" : 490,
+        "HFHF" : 2.3253524621156193E-4,
+        "selected" : false,
+        "S1" : 0.016646093674491796,
+        "HF" : 0.037995697907668026
+      },
+      "selected" : false
+    } ]
+  }
+}

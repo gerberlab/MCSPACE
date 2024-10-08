@@ -154,7 +154,7 @@ def gen_semisyn_data(base_sample, rootdir, outdir):
 
     npart_cases = [10000, 5000, 1000, 500, 100]
     nreads_cases = [10000, 5000, 1000, 500, 100]
-    nclust_cases = [5, 10, 15, 20, 25]
+    nclust_cases = [30, 40, 50, 60, 70] #[5, 10, 15, 20, 25] #! UPDATED
     pgarb_cases = [0.0, 0.025, 0.05, 0.075, 0.1]
     dsets = np.arange(10)
 
@@ -166,7 +166,7 @@ def gen_semisyn_data(base_sample, rootdir, outdir):
     negbin_n = datafit['negbin_n']
     negbin_p = datafit['negbin_p']
     print(f"negbin params: p = {negbin_p}, n = {negbin_n}")
-    nclust_default = 15
+    nclust_default = 56 #! UPDATED
     
 
     for ds in dsets:
@@ -221,10 +221,18 @@ def main(rootdir, outdir):
     gen_semisyn_data('Human', rootdir, outdir)
 
 
+def main2():
+    rootdir = "./paper/"
+    outdir = "./test/"
+    # gen_semisyn_data('Mouse', rootdir, outdir)
+    gen_semisyn_data('Human', rootdir, outdir)
+
+
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-d", dest='rootdir', help='project directory path')
-    parser.add_argument("-o", dest="outdir", help="output directory path")
-    args = parser.parse_args()
-    main(args.rootdir, args.outdir)
+    # import argparse
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("-d", dest='rootdir', help='project directory path')
+    # parser.add_argument("-o", dest="outdir", help="output directory path")
+    # args = parser.parse_args()
+    # main(args.rootdir, args.outdir)
+    main2()

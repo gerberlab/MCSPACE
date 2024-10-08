@@ -5,6 +5,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# TODO: add documentation on main class/functions and their argument options
 
 class DataSet:
     """
@@ -111,73 +112,58 @@ class DataSet:
         else:
             return self.reads
 
-    def plot_relative_abundance(self, subject, ax, taxlevel="Family", topN=20):
-        # TODO: implement topN and taxlevel...; and subject...
+    def get_particle_stats(self): #, reads, times, subjects):
+        ptms = []
+        psubjs = []
+        num_particles = []
+
+        for t in self.times:
+            for s in self.subjects:
+                counts = self.reads[t][s]
+                npart = counts.shape[0]
+                
+                ptms.append(t)
+                psubjs.append(s)
+                num_particles.append(npart)
+                
+        npart_df = pd.DataFrame({'Time': ptms, 'Subject': psubjs, 'Number particles': num_particles})
+        return npart_df
+
+    def get_read_stats(self):
+        tms = []
+        subjs = []
+        num_reads = []
+        particle_id = []
+
+        for t in self.times:
+            for s in self.subjects:
+                counts = self.reads[t][s]
+                npart = counts.shape[0]
+                nreads_all = counts.sum(axis=1)
+                
+                for lidx in range(npart):
+                    tms.append(t)
+                    subjs.append(s)
+                    particle_id.append(lidx)
+                    num_reads.append(nreads_all[lidx])
+        nreads_df = pd.DataFrame({'Time': tms, 'Subject': subjs, 'Particle': particle_id, 'Number reads': num_reads})
+        return nreads_df
+    
+    def get_relative_abundances(self):
         taxonomy = self.get_taxonomy()
+        num_otus = taxonomy.shape[0]
         multiind = pd.MultiIndex.from_frame(taxonomy)
-
-        # create relative abundance dataframes
-        dfs = []
-        notus = len(self.otu_index)
-        nsub = len(self.subjects)
-        for tm in self.times:
-            ra = np.zeros((nsub,notus))
-            for i,sub in enumerate(self.subjects):
-                temp = self.reads[tm][sub]
-                rabun = temp.sum(axis=0)/temp.sum()
-                ra[i,:] = rabun
-            dftemp = pd.DataFrame(data=ra.T, index=multiind, columns=self.subjects)
-            dfs.append(dftemp)
-
-        n_time = len(self.times)
-        FONTSIZE = 16
-        fig, ax = plt.subplots(figsize=(25,5), ncols=n_time, sharey=True)
-        for i,grp in enumerate(self.times):
-            # diet = diets[i]
-            temp = dfs[i]
-            grouped = temp.groupby(level=['Order','Family']).sum()
-            grouped.T.plot(kind='bar',stacked=True, ax=ax[i], cmap='tab20')
-            if i < 6:
-                ax[i].get_legend().remove()
-            else:
-                ax[i].legend(bbox_to_anchor=(1.01,1.01), title="(Order, Family)")
-            ax[i].set_title(f"Day {grp}", fontsize=FONTSIZE)
-            ax[i].set_xlabel("Subject", fontsize=FONTSIZE)
-            ax[i].set_xticklabels(ax[i].get_xticklabels(), fontsize=FONTSIZE)
-        ax[0].set_yticks([0,0.2,0.4,0.6,0.8,1.0])
-        ax[0].set_yticklabels(ax[0].get_yticklabels(), fontsize=FONTSIZE)
-        # plt.savefig(outpath / "diet_pert_data_RD1000.png", bbox_inches="tight")
-        return fig, ax
-
-    def get_data_stats(self):
-        # TODO: might want to spit out values somehow instead -- option to return dataframe?
-        # TODO RENAME COLUMNS...
-        rd_stats = {}
-        rd_stats['times'] = []
-        rd_stats['subjs'] = []
-        rd_stats['mean_rd'] = []
-        rd_stats['std_rd'] = []
-        rd_stats['min_rd'] = []
-        rd_stats['rd25'] = []
-        rd_stats['rd50'] = []
-        rd_stats['rd75'] = []
-        rd_stats['max_rd'] = []
-        rd_stats['npart'] = [] 
-
-        for tm in self.times:
-            for sub in self.subjects:
-                temp = self.reads[tm][sub]
-                rds = temp.sum(axis=1)
-                rd_stats['times'].append(tm)
-                rd_stats['subjs'].append(sub)
-                rd_stats['npart'].append(temp.shape[0])
-                rd_stats['mean_rd'].append(np.mean(rds))
-                rd_stats['std_rd'].append(np.std(rds))
-                rd_stats['min_rd'].append(np.amin(rds))
-                rd_stats['max_rd'].append(np.amax(rds))
-                rd_stats['rd25'].append(np.percentile(rds, q=25))
-                rd_stats['rd50'].append(np.percentile(rds, q=50))
-                rd_stats['rd75'].append(np.percentile(rds, q=75))
-
-        rdstatsdf = pd.DataFrame(rd_stats)
-        return rdstatsdf
+        ntime = len(self.times)
+        
+        radfs = {}
+        for s in self.subjects:
+            ra = np.zeros((ntime, num_otus))
+            for i,t in enumerate(self.times):
+                counts = self.reads[t][s]
+                rabun = counts/counts.sum(axis=1, keepdims=True)
+                bulk_rabun = np.mean(rabun, axis=0)
+                ra[i,:] = bulk_rabun
+            df = pd.DataFrame(data=ra.T, index=multiind, columns=self.times)
+            radfs[s] = df
+        return radfs # separate dataframe for each subject
+    

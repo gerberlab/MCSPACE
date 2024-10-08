@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="SUID" attr.type="long" for="node" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="node" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="node" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="node" id="selected"/>
+    <key attr.name="Source name" attr.type="string" for="node" id="Source name"/>
+    <key attr.name="Target name" attr.type="string" for="node" id="Target name"/>
+    <key attr.name="S1_ra" attr.type="double" for="node" id="S1_ra"/>
+    <key attr.name="HF_ra" attr.type="double" for="node" id="HF_ra"/>
+    <key attr.name="HFHF_ra" attr.type="double" for="node" id="HFHF_ra"/>
+    <key attr.name="LP_ra" attr.type="double" for="node" id="LP_ra"/>
+    <key attr.name="SUID" attr.type="long" for="edge" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="edge" id="shared name"/>
+    <key attr.name="shared interaction" attr.type="string" for="edge" id="shared interaction"/>
+    <key attr.name="name" attr.type="string" for="edge" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="edge" id="selected"/>
+    <key attr.name="interaction" attr.type="string" for="edge" id="interaction"/>
+    <key attr.name="S1" attr.type="double" for="edge" id="S1"/>
+    <key attr.name="HF" attr.type="double" for="edge" id="HF"/>
+    <key attr.name="HFHF" attr.type="double" for="edge" id="HFHF"/>
+    <key attr.name="LP" attr.type="double" for="edge" id="LP"/>
+    <key attr.name="SUID" attr.type="long" for="graph" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="graph" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="graph" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="graph" id="selected"/>
+    <key attr.name="__Annotations" attr.type="string" for="graph" id="__Annotations"/>
+    <graph edgedefault="directed" id="graph_data_Otu2.csv">
+        <node id="867">
+            <data key="SUID">867</data>
+            <data key="shared name">Otu17</data>
+            <data key="name">Otu17</data>
+            <data key="selected">false</data>
+            <data key="Target name">Roseburia Otu17</data>
+            <data key="S1_ra">4.518242397656E-4</data>
+            <data key="HF_ra">0.0426948616902033</data>
+            <data key="HFHF_ra">0.0037547966736989</data>
+            <data key="LP_ra">0.0375195552284518</data>
+        </node>
+        <node id="863">
+            <data key="SUID">863</data>
+            <data key="shared name">Otu7</data>
+            <data key="name">Otu7</data>
+            <data key="selected">false</data>
+            <data key="Target name">Clostridium_XlVa Otu7</data>
+            <data key="S1_ra">0.0025784118721882</data>
+            <data key="HF_ra">0.1557431245843569</data>
+            <data key="HFHF_ra">9.237688671296E-4</data>
+            <data key="LP_ra">0.089202223966519</data>
+        </node>
+        <node id="859">
+            <data key="SUID">859</data>
+            <data key="shared name">Otu38</data>
+            <data key="name">Otu38</data>
+            <data key="selected">false</data>
+            <data key="Target name">Cellulosilyticum Otu38</data>
+            <data key="S1_ra">0.009101624522979</data>
+            <data key="HF_ra">0.0022562141918266</data>
+            <data key="HFHF_ra">4.161266454805E-4</data>
+            <data key="LP_ra">0.0194591954350471</data>
+        </node>
+        <node id="855">
+            <data key="SUID">855</data>
+            <data key="shared name">Otu6</data>
+            <data key="name">Otu6</data>
+            <data key="selected">false</data>
+            <data key="Target name">E. coprostanoligenes Otu6</data>
+            <data key="S1_ra">0.0034726818557828</data>
+            <data key="HF_ra">0.0703005579610665</data>
+            <data key="HFHF_ra">0.0052234944887459</data>
+            <data key="LP_ra">0.133280411362648</data>
+        </node>
+        <node id="851">
+            <data key="SUID">851</data>
+            <data key="shared name">Otu32</data>
+            <data key="name">Otu32</data>
+            <data key="selected">false</data>
+            <data key="Target name">Lachnospiraceae Otu32</data>
+            <data key="S1_ra">0.0020795565766699</data>
+            <data key="HF_ra">0.0354897615810235</data>
+            <data key="HFHF_ra">2.028467558072104E-6</data>
+            <data key="LP_ra">0.0064840635750442</data>
+        </node>
+        <node id="847">
+            <data key="SUID">847</data>
+            <data key="shared name">Otu26</data>
+            <data key="name">Otu26</data>
+            <data key="selected">false</data>
+            <data key="Target name">Lacrimispora Otu26</data>
+            <data key="S1_ra">1.749304791095E-4</data>
+            <data key="HF_ra">0.0235427850857377</data>
+            <data key="HFHF_ra">1.55896397094E-4</data>
+            <data key="LP_ra">0.0040458295476734</data>
+        </node>
+        <node id="843">
+            <data key="SUID">843</data>
+            <data key="shared name">Otu41</data>
+            <data key="name">Otu41</data>
+            <data key="selected">false</data>
+            <data key="Target name">Hespellia Otu41</data>
+            <data key="S1_ra">0.0011358934692301</data>
+            <data key="HF_ra">0.0390005164469281</data>
+            <data key="HFHF_ra">0.0046287920170774</data>
+            <data key="LP_ra">0.0067631754403313</data>
+        </node>
+        <node id="839">
+            <data key="SUID">839</data>
+            <data key="shared name">Otu67</data>
+            <data key="name">Otu67</data>
+            <data key="selected">false</data>
+            <data key="Target name">Lachnospiraceae Otu67</data>
+            <data key="S1_ra">7.084610952764099E-5</data>
+            <data key="HF_ra">0.0144709022715687</data>
+            <data key="HFHF_ra">0.0011838085336535</data>
+            <data key="LP_ra">0.001007809245948</data>
+        </node>
+        <node id="835">
+            <data key="SUID">835</data>
+            <data key="shared name">Otu20</data>
+            <data key="name">Otu20</data>
+            <data key="selected">false</data>
+            <data key="Target name">M. gordoncarteri Otu20</data>
+            <data key="S1_ra">0.0066859319340437</data>
+            <data key="HF_ra">0.0029616835527122</data>
+            <data key="HFHF_ra">0.0053961810966332</data>
+            <data key="LP_ra">0.0440746573731303</data>
+        </node>
+        <node id="831">
+            <data key="SUID">831</data>
+            <data key="shared name">Otu77</data>
+            <data key="name">Otu77</data>
+            <data key="selected">false</data>
+            <data key="Target name">Clostridium_XlVa Otu77</data>
+            <data key="S1_ra">0.001120123512616</data>
+            <data key="HF_ra">0.0111409082698325</data>
+            <data key="HFHF_ra">1.765360972664591E-6</data>
+            <data key="LP_ra">0.007468233971546</data>
+        </node>
+        <node id="827">
+            <data key="SUID">827</data>
+            <data key="shared name">Otu10</data>
+            <data key="name">Otu10</data>
+            <data key="selected">false</data>
+            <data key="Target name">F. rodentium Otu10</data>
+            <data key="S1_ra">0.0035118867332736</data>
+            <data key="HF_ra">0.0041520418649506</data>
+            <data key="HFHF_ra">0.0294015145627781</data>
+            <data key="LP_ra">0.0732026475695117</data>
+        </node>
+        <node id="823">
+            <data key="SUID">823</data>
+            <data key="shared name">Otu29</data>
+            <data key="name">Otu29</data>
+            <data key="selected">false</data>
+            <data key="Target name">Romboutsia Otu29</data>
+            <data key="S1_ra">0.0043203315387169</data>
+            <data key="HF_ra">0.0413262518122792</data>
+            <data key="HFHF_ra">6.197750626597E-4</data>
+            <data key="LP_ra">0.0408342663819591</data>
+        </node>
+        <node id="818">
+            <data key="SUID">818</data>
+            <data key="shared name">Otu2</data>
+            <data key="name">Otu2</data>
+            <data key="selected">false</data>
+            <data key="Source name">Akkermansia Otu2</data>
+            <data key="Target name">Akkermansia Otu2</data>
+            <data key="S1_ra">0.0226076707864801</data>
+            <data key="HF_ra">0.0583123396694039</data>
+            <data key="HFHF_ra">0.4066692410657803</data>
+            <data key="LP_ra">0.229467344780763</data>
+        </node>
+        <edge source="818" target="867">
+            <data key="SUID">920</data>
+            <data key="shared name">Otu2 (interacts with) Otu17</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu17</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.0031871014473683554</data>
+            <data key="HF">0.01732472612375159</data>
+            <data key="HFHF">6.387406264406916E-4</data>
+            <data key="LP">0.011751901848124588</data>
+        </edge>
+        <edge source="818" target="863">
+            <data key="SUID">916</data>
+            <data key="shared name">Otu2 (interacts with) Otu7</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu7</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.008385434527178472</data>
+            <data key="HF">0.008828265297130435</data>
+            <data key="HFHF">0.003934658497393199</data>
+            <data key="LP">0.03199482660782507</data>
+        </edge>
+        <edge source="818" target="859">
+            <data key="SUID">912</data>
+            <data key="shared name">Otu2 (interacts with) Otu38</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu38</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.035769525982238176</data>
+            <data key="HF">0.007565746371728692</data>
+            <data key="HFHF">7.758924570165252E-4</data>
+            <data key="LP">0.016046281418693197</data>
+        </edge>
+        <edge source="818" target="818">
+            <data key="SUID">908</data>
+            <data key="shared name">Otu2 (interacts with) Otu2</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu2</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.0</data>
+            <data key="HF">0.0</data>
+            <data key="HFHF">0.0</data>
+            <data key="LP">0.0</data>
+        </edge>
+        <edge source="818" target="855">
+            <data key="SUID">904</data>
+            <data key="shared name">Otu2 (interacts with) Otu6</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu6</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.01898968550344</data>
+            <data key="HF">0.014271491518157715</data>
+            <data key="HFHF">0.0037761408323677553</data>
+            <data key="LP">0.02925360170880218</data>
+        </edge>
+        <edge source="818" target="851">
+            <data key="SUID">900</data>
+            <data key="shared name">Otu2 (interacts with) Otu32</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu32</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.002666961628795104</data>
+            <data key="HF">0.01196883459573223</data>
+            <data key="HFHF">1.9173337070951864E-4</data>
+            <data key="LP">0.002508990927105224</data>
+        </edge>
+        <edge source="818" target="847">
+            <data key="SUID">896</data>
+            <data key="shared name">Otu2 (interacts with) Otu26</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu26</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.002190440505039599</data>
+            <data key="HF">0.015389949636608521</data>
+            <data key="HFHF">1.2884824721294034E-4</data>
+            <data key="LP">0.0014398192746081398</data>
+        </edge>
+        <edge source="818" target="843">
+            <data key="SUID">892</data>
+            <data key="shared name">Otu2 (interacts with) Otu41</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu41</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.005583784952279506</data>
+            <data key="HF">0.03329402927144535</data>
+            <data key="HFHF">0.0011055806762287224</data>
+            <data key="LP">0.0042361249835088195</data>
+        </edge>
+        <edge source="818" target="839">
+            <data key="SUID">888</data>
+            <data key="shared name">Otu2 (interacts with) Otu67</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu67</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.0042102966340799046</data>
+            <data key="HF">0.034736889474102056</data>
+            <data key="HFHF">3.1136683210253953E-4</data>
+            <data key="LP">0.001431956540667847</data>
+        </edge>
+        <edge source="818" target="835">
+            <data key="SUID">884</data>
+            <data key="shared name">Otu2 (interacts with) Otu20</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu20</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.014917975328964057</data>
+            <data key="HF">0.004516493302121535</data>
+            <data key="HFHF">0.001082677225827352</data>
+            <data key="LP">0.01612310470412225</data>
+        </edge>
+        <edge source="818" target="831">
+            <data key="SUID">880</data>
+            <data key="shared name">Otu2 (interacts with) Otu77</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu77</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.0032273133331913386</data>
+            <data key="HF">0.010203956855709177</data>
+            <data key="HFHF">1.6955299555614672E-4</data>
+            <data key="LP">0.00257148965464499</data>
+        </edge>
+        <edge source="818" target="827">
+            <data key="SUID">876</data>
+            <data key="shared name">Otu2 (interacts with) Otu10</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu10</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.006108530695656502</data>
+            <data key="HF">0.012568230502017354</data>
+            <data key="HFHF">0.003398653428538742</data>
+            <data key="LP">0.028584600065006578</data>
+        </edge>
+        <edge source="818" target="823">
+            <data key="SUID">871</data>
+            <data key="shared name">Otu2 (interacts with) Otu29</data>
+            <data key="shared interaction">interacts with</data>
+            <data key="name">Otu2 (interacts with) Otu29</data>
+            <data key="selected">false</data>
+            <data key="interaction">interacts with</data>
+            <data key="S1">0.016646093674491796</data>
+            <data key="HF">0.037995697907668026</data>
+            <data key="HFHF">2.3253524621156193E-4</data>
+            <data key="LP">0.01507486671144934</data>
+        </edge>
+    </graph>
+</graphml>
