@@ -1,8 +1,8 @@
 from setuptools import setup 
 
 setup(name='mcspace',
-    version='0.1.0',
-    description='MCSPACE model for MaPS-seq data',
+    version='1.0.0',
+    description='MCSPACE model for analyzing MaPS-seq and SAMPL-seq co-localization data',
     author='Gary Uppal',
     packages=['mcspace'],
     install_requires=[
@@ -12,11 +12,14 @@ setup(name='mcspace',
                     'seaborn',
                     'pandas',
                     'scipy',
+                    'scikit-learn',
                     'jupyterlab',
                     'ipykernel',
-                    # 'scikit-bio',
+                    'biopython',
+                    'ete3',
+                    'networkx',
                     'composition-stats',
-                    'statsmodels' # add networkx and ete...; biophyton
+                    'statsmodels'
                     ],
     python_requires=">=3.8",
 )
