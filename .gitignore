@@ -12,3 +12,6 @@ mcspace/paper/figures/main_figures
 mcspace/paper/figures/supplemental_figures
 mcspace/dev
 mcspace/paper_old
+mcspace/MCSPACE_paper/output
+mcspace/MCSPACE_paper/scripts
+mcspace/MCSPACE_paper/job_scheduling
