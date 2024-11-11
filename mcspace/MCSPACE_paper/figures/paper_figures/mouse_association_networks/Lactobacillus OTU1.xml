@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d11" for="edge" attr.name="LP" attr.type="float" />
+  <key id="d10" for="edge" attr.name="HFHF" attr.type="float" />
+  <key id="d9" for="edge" attr.name="HF" attr.type="float" />
+  <key id="d8" for="edge" attr.name="S1" attr.type="float" />
+  <key id="d7" for="node" attr.name="LP_sqrt" attr.type="float" />
+  <key id="d6" for="node" attr.name="LP" attr.type="float" />
+  <key id="d5" for="node" attr.name="HFHF_sqrt" attr.type="float" />
+  <key id="d4" for="node" attr.name="HFHF" attr.type="float" />
+  <key id="d3" for="node" attr.name="HF_sqrt" attr.type="float" />
+  <key id="d2" for="node" attr.name="HF" attr.type="float" />
+  <key id="d1" for="node" attr.name="S1_sqrt" attr.type="float" />
+  <key id="d0" for="node" attr.name="S1" attr.type="float" />
+  <graph edgedefault="undirected">
+    <node id="Lactobacillus OTU1">
+      <data key="d0">0.410498986641566</data>
+      <data key="d1">0.6407027287608239</data>
+      <data key="d2">0.1107517381509145</data>
+      <data key="d3">0.33279533973737446</data>
+      <data key="d4">0.2029015834753712</data>
+      <data key="d5">0.4504470928703739</data>
+      <data key="d6">0.0126229605133024</data>
+      <data key="d7">0.11235639952091024</data>
+    </node>
+    <node id="Eisenbergiella OTU18">
+      <data key="d0">0.0101068302368124</data>
+      <data key="d1">0.10053770554778142</data>
+      <data key="d2">0.0028616082272492</data>
+      <data key="d3">0.05350334781347051</data>
+      <data key="d4">0.0523628871887922</data>
+      <data key="d5">0.228831569475875</data>
+      <data key="d6">0.0041161782864946</data>
+      <data key="d7">0.06416524204345059</data>
+    </node>
+    <node id="Turicibacter OTU3">
+      <data key="d0">0.1063261851668357</data>
+      <data key="d1">0.32607849540691225</data>
+      <data key="d2">0.0119300635997205</data>
+      <data key="d3">0.10922940812675175</data>
+      <data key="d4">0.0170851338965197</data>
+      <data key="d5">0.13071393918216873</data>
+      <data key="d6">0.0603705689427442</data>
+      <data key="d7">0.24570626557486117</data>
+    </node>
+    <node id="Roseburia OTU17">
+      <data key="d0">0.0004518242397656</data>
+      <data key="d1">0.021279667285124548</data>
+      <data key="d2">0.0426948616902033</data>
+      <data key="d3">0.2066297696127141</data>
+      <data key="d4">0.0037547966736989</data>
+      <data key="d5">0.06128455493596164</data>
+      <data key="d6">0.0375195552284518</data>
+      <data key="d7">0.19370223341110912</data>
+    </node>
+    <node id="Clostridium_XVIII OTU34">
+      <data key="d0">0.0011728353953609</data>
+      <data key="d1">0.03426128128603628</data>
+      <data key="d2">0.039344523102045</data>
+      <data key="d3">0.19835705962240163</data>
+      <data key="d4">0.0062882617736856</data>
+      <data key="d5">0.07930486601517968</data>
+      <data key="d6">0.0049318028613924</data>
+      <data key="d7">0.07023391532153395</data>
+    </node>
+    <node id="Lachnospiraceae OTU43">
+      <data key="d0">0.026430024454991</data>
+      <data key="d1">0.16257621122104857</data>
+      <data key="d2">0.0053550128110752</data>
+      <data key="d3">0.07318478537971673</data>
+      <data key="d4">0.0024053301701011</data>
+      <data key="d5">0.04905435933840233</data>
+      <data key="d6">0.0032822703942656</data>
+      <data key="d7">0.0572998289200378</data>
+    </node>
+    <node id="Ruminococcaceae OTU9">
+      <data key="d0">0.0549681795140107</data>
+      <data key="d1">0.23445506928622956</data>
+      <data key="d2">0.0008378409644744</data>
+      <data key="d3">0.028962751327772714</data>
+      <data key="d4">0.0015299607960817</data>
+      <data key="d5">0.03912749411963025</data>
+      <data key="d6">0.0022522026411024</data>
+      <data key="d7">0.04746791169940384</data>
+    </node>
+    <node id="Enterocloster OTU14">
+      <data key="d0">0.0176007731060963</data>
+      <data key="d1">0.13267167409095393</data>
+      <data key="d2">0.0134174554841592</data>
+      <data key="d3">0.11583805714944981</data>
+      <data key="d4">0.0011868374325179</data>
+      <data key="d5">0.034465017518026886</data>
+      <data key="d6">0.0021045042861563</data>
+      <data key="d7">0.045885774333188495</data>
+    </node>
+    <node id="Cellulosilyticum OTU38">
+      <data key="d0">0.009101624522979</data>
+      <data key="d1">0.095407675388194</data>
+      <data key="d2">0.0022562141918266</data>
+      <data key="d3">0.047510148303563524</data>
+      <data key="d4">0.0004161266454805</data>
+      <data key="d5">0.02042367854918648</data>
+      <data key="d6">0.0194591954350471</data>
+      <data key="d7">0.13949980442655502</data>
+    </node>
+    <node id="Romboutsia OTU29">
+      <data key="d0">0.0043203315387169</data>
+      <data key="d1">0.06573683547842032</data>
+      <data key="d2">0.0413262518122792</data>
+      <data key="d3">0.20329105197297592</data>
+      <data key="d4">0.0006197750626597</data>
+      <data key="d5">0.024915357967721433</data>
+      <data key="d6">0.0408342663819591</data>
+      <data key="d7">0.2020773772146677</data>
+    </node>
+    <edge source="Lactobacillus OTU1" target="Eisenbergiella OTU18">
+      <data key="d8">0.003331944407616443</data>
+      <data key="d9">0.004072980784484508</data>
+      <data key="d10">0.010722413394924961</data>
+      <data key="d11">0.011096701023412689</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Turicibacter OTU3">
+      <data key="d8">0.04183140569767233</data>
+      <data key="d9">0.0028088179307043126</data>
+      <data key="d10">0.0055432202755513115</data>
+      <data key="d11">0.004326713300067257</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Roseburia OTU17">
+      <data key="d8">0.0002732251072274964</data>
+      <data key="d9">0.008646238383302224</data>
+      <data key="d10">0.00048453942104928266</data>
+      <data key="d11">0.012890860500308793</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Clostridium_XVIII OTU34">
+      <data key="d8">0.0002202793461170581</data>
+      <data key="d9">0.011127403992047648</data>
+      <data key="d10">0.0009874619499614585</data>
+      <data key="d11">0.008738484902709754</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Lachnospiraceae OTU43">
+      <data key="d8">0.018311881836355636</data>
+      <data key="d9">0.013751571751431133</data>
+      <data key="d10">0.0015507509973029506</data>
+      <data key="d11">0.034073091535883004</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Ruminococcaceae OTU9">
+      <data key="d8">0.020441415158653622</data>
+      <data key="d9">0.002552159052926894</data>
+      <data key="d10">0.0007170864174006528</data>
+      <data key="d11">0.018172112149371266</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Enterocloster OTU14">
+      <data key="d8">0.007481402241028514</data>
+      <data key="d9">0.013079499034321951</data>
+      <data key="d10">0.002550810781760259</data>
+      <data key="d11">0.008767573259892815</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Cellulosilyticum OTU38">
+      <data key="d8">0.0033144829888712085</data>
+      <data key="d9">0.0008507853277142705</data>
+      <data key="d10">0.00035858671110289747</data>
+      <data key="d11">0.015986823792758217</data>
+    </edge>
+    <edge source="Lactobacillus OTU1" target="Romboutsia OTU29">
+      <data key="d8">0.0010435818339312832</data>
+      <data key="d9">0.020684244395048165</data>
+      <data key="d10">0.00038871284875106123</data>
+      <data key="d11">0.050101948060643206</data>
+    </edge>
+  </graph>
+</graphml>

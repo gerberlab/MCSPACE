@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d11" for="edge" attr.name="LP" attr.type="float" />
+  <key id="d10" for="edge" attr.name="HFHF" attr.type="float" />
+  <key id="d9" for="edge" attr.name="HF" attr.type="float" />
+  <key id="d8" for="edge" attr.name="S1" attr.type="float" />
+  <key id="d7" for="node" attr.name="LP_sqrt" attr.type="float" />
+  <key id="d6" for="node" attr.name="LP" attr.type="float" />
+  <key id="d5" for="node" attr.name="HFHF_sqrt" attr.type="float" />
+  <key id="d4" for="node" attr.name="HFHF" attr.type="float" />
+  <key id="d3" for="node" attr.name="HF_sqrt" attr.type="float" />
+  <key id="d2" for="node" attr.name="HF" attr.type="float" />
+  <key id="d1" for="node" attr.name="S1_sqrt" attr.type="float" />
+  <key id="d0" for="node" attr.name="S1" attr.type="float" />
+  <graph edgedefault="undirected">
+    <node id="Akkermansia OTU2">
+      <data key="d0">0.0226076707864801</data>
+      <data key="d1">0.15036179962503807</data>
+      <data key="d2">0.0583123396694039</data>
+      <data key="d3">0.2414815514059074</data>
+      <data key="d4">0.4066692410657803</data>
+      <data key="d5">0.6377070182033284</data>
+      <data key="d6">0.229467344780763</data>
+      <data key="d7">0.4790285427620811</data>
+    </node>
+    <node id="Roseburia OTU17">
+      <data key="d0">0.0004518242397656</data>
+      <data key="d1">0.021279667285124548</data>
+      <data key="d2">0.0426948616902033</data>
+      <data key="d3">0.2066297696127141</data>
+      <data key="d4">0.0037547966736989</data>
+      <data key="d5">0.06128455493596164</data>
+      <data key="d6">0.0375195552284518</data>
+      <data key="d7">0.19370223341110912</data>
+    </node>
+    <node id="Clostridium_XVIII OTU34">
+      <data key="d0">0.0011728353953609</data>
+      <data key="d1">0.03426128128603628</data>
+      <data key="d2">0.039344523102045</data>
+      <data key="d3">0.19835705962240163</data>
+      <data key="d4">0.0062882617736856</data>
+      <data key="d5">0.07930486601517968</data>
+      <data key="d6">0.0049318028613924</data>
+      <data key="d7">0.07023391532153395</data>
+    </node>
+    <node id="Bacteroidales OTU25">
+      <data key="d0">0.0067526612920119</data>
+      <data key="d1">0.08218066251869657</data>
+      <data key="d2">0.0344156188269456</data>
+      <data key="d3">0.1855171658551995</data>
+      <data key="d4">0.0014035918250859</data>
+      <data key="d5">0.03747788447986225</data>
+      <data key="d6">0.0067658913515818</data>
+      <data key="d7">0.0822611168875174</data>
+    </node>
+    <node id="Bacteroidales OTU22">
+      <data key="d0">0.0417135555568772</data>
+      <data key="d1">0.20424141489148867</data>
+      <data key="d2">0.0152330659329891</data>
+      <data key="d3">0.1234263583396557</data>
+      <data key="d4">0.0056684652032951</data>
+      <data key="d5">0.0752958511692052</data>
+      <data key="d6">0.0050599383005949</data>
+      <data key="d7">0.07114027200253664</data>
+    </node>
+    <node id="Clostridium_XlVa OTU7">
+      <data key="d0">0.0025784118721882</data>
+      <data key="d1">0.050787910689338266</data>
+      <data key="d2">0.1557431245843569</data>
+      <data key="d3">0.39464430134534684</data>
+      <data key="d4">0.0009237688671296</data>
+      <data key="d5">0.030410012613111492</data>
+      <data key="d6">0.089202223966519</data>
+      <data key="d7">0.2986690877317554</data>
+    </node>
+    <node id="F. rodentium OTU10">
+      <data key="d0">0.0035118867332736</data>
+      <data key="d1">0.05926961053755626</data>
+      <data key="d2">0.0041520418649506</data>
+      <data key="d3">0.06444409875970492</data>
+      <data key="d4">0.0294015145627781</data>
+      <data key="d5">0.17147161445200806</data>
+      <data key="d6">0.0732026475695117</data>
+      <data key="d7">0.27056172598782646</data>
+    </node>
+    <node id="Cellulosilyticum OTU38">
+      <data key="d0">0.009101624522979</data>
+      <data key="d1">0.095407675388194</data>
+      <data key="d2">0.0022562141918266</data>
+      <data key="d3">0.047510148303563524</data>
+      <data key="d4">0.0004161266454805</data>
+      <data key="d5">0.02042367854918648</data>
+      <data key="d6">0.0194591954350471</data>
+      <data key="d7">0.13949980442655502</data>
+    </node>
+    <node id="Lacrimispora OTU26">
+      <data key="d0">0.0001749304791095</data>
+      <data key="d1">0.0132638787354793</data>
+      <data key="d2">0.0235427850857377</data>
+      <data key="d3">0.1534398419112119</data>
+      <data key="d4">0.000155896397094</data>
+      <data key="d5">0.012525829197861512</data>
+      <data key="d6">0.0040458295476734</data>
+      <data key="d7">0.06361469600393764</data>
+    </node>
+    <node id="E. coprostanoligenes OTU6">
+      <data key="d0">0.0034726818557828</data>
+      <data key="d1">0.05893794919899063</data>
+      <data key="d2">0.0703005579610665</data>
+      <data key="d3">0.26514440963570496</data>
+      <data key="d4">0.0052234944887459</data>
+      <data key="d5">0.0722806646949646</data>
+      <data key="d6">0.133280411362648</data>
+      <data key="d7">0.3650772676607625</data>
+    </node>
+    <node id="M. gordoncarteri OTU20">
+      <data key="d0">0.0066859319340437</data>
+      <data key="d1">0.08177366283861633</data>
+      <data key="d2">0.0029616835527122</data>
+      <data key="d3">0.05443053878763465</data>
+      <data key="d4">0.0053961810966332</data>
+      <data key="d5">0.07346550957172487</data>
+      <data key="d6">0.0440746573731303</data>
+      <data key="d7">0.20994203336428438</data>
+    </node>
+    <node id="Romboutsia OTU29">
+      <data key="d0">0.0043203315387169</data>
+      <data key="d1">0.06573683547842032</data>
+      <data key="d2">0.0413262518122792</data>
+      <data key="d3">0.20329105197297592</data>
+      <data key="d4">0.0006197750626597</data>
+      <data key="d5">0.024915357967721433</data>
+      <data key="d6">0.0408342663819591</data>
+      <data key="d7">0.2020773772146677</data>
+    </node>
+    <edge source="Akkermansia OTU2" target="Roseburia OTU17">
+      <data key="d8">0.0035225897211425415</data>
+      <data key="d9">0.007667527987629734</data>
+      <data key="d10">0.00011824188776522382</data>
+      <data key="d11">0.01793829175485234</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Clostridium_XVIII OTU34">
+      <data key="d8">0.0030080530949049013</data>
+      <data key="d9">0.01111469360469236</data>
+      <data key="d10">0.0015302382212241082</data>
+      <data key="d11">0.0017250822660730388</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Bacteroidales OTU25">
+      <data key="d8">0.007683354230903748</data>
+      <data key="d9">0.013509190532351866</data>
+      <data key="d10">0.00045823301964757507</data>
+      <data key="d11">0.002730644654833717</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Bacteroidales OTU22">
+      <data key="d8">0.03019422924458546</data>
+      <data key="d9">0.013655382995633437</data>
+      <data key="d10">0.0007347102036385252</data>
+      <data key="d11">0.0014301896869079772</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Clostridium_XlVa OTU7">
+      <data key="d8">0.010874700116745649</data>
+      <data key="d9">0.009695413145783007</data>
+      <data key="d10">0.0006273722328491839</data>
+      <data key="d11">0.033413641955130274</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="F. rodentium OTU10">
+      <data key="d8">0.005465584771803496</data>
+      <data key="d9">0.007481440215218972</data>
+      <data key="d10">0.0015331389741484035</data>
+      <data key="d11">0.014085497664898463</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Cellulosilyticum OTU38">
+      <data key="d8">0.03945280284540958</data>
+      <data key="d9">0.009476671964945324</data>
+      <data key="d10">0.0006849926059227454</data>
+      <data key="d11">0.019897575161796004</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Lacrimispora OTU26">
+      <data key="d8">0.0026245272754624005</data>
+      <data key="d9">0.016903382321487595</data>
+      <data key="d10">0.00010110126740007267</data>
+      <data key="d11">0.0018259427181118388</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="E. coprostanoligenes OTU6">
+      <data key="d8">0.01245610840899629</data>
+      <data key="d9">0.015014763356825873</data>
+      <data key="d10">0.0011541666084185164</data>
+      <data key="d11">0.03608941257358278</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="M. gordoncarteri OTU20">
+      <data key="d8">0.004980814176008755</data>
+      <data key="d9">0.013443957334849887</data>
+      <data key="d10">0.0002803232298915397</data>
+      <data key="d11">0.020200186967817196</data>
+    </edge>
+    <edge source="Akkermansia OTU2" target="Romboutsia OTU29">
+      <data key="d8">0.01809719111008661</data>
+      <data key="d9">0.04165121751928447</data>
+      <data key="d10">0.0001291970519829382</data>
+      <data key="d11">0.015328331562659203</data>
+    </edge>
+  </graph>
+</graphml>
