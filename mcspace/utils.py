@@ -6,6 +6,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from composition_stats import ilr, ilr_inv
 from sklearn.metrics import auc
+import networkx as nx
 
 
 MODEL_FILE = "model.pt"
@@ -123,13 +124,13 @@ def get_bayes_factors(post_prob, prior_prob):
     return post_odds*inv_prior_odds
 
 
-def get_summary_results(model, data, n_samples=1000):
+def get_summary_results(model, data, n_samples=1000, gamma_percentile=0.95):
     if model.use_sparse_weights is True:
         gamma_probs = np.concatenate([[1],model.beta_params.sparsity_params.q_probs.cpu().detach().clone().numpy()])
     else:
         gamma_probs = np.ones(model.num_assemblages)
     #* using 95th percentile for model selection
-    gammasub = (gamma_probs>0.95)
+    gammasub = (gamma_probs>gamma_percentile)
 
     if model.num_perturbations > 0:
         pert_probs = model.beta_params.perturbation_indicators.q_probs.cpu().detach().clone().numpy()
@@ -175,8 +176,8 @@ def get_summary_results(model, data, n_samples=1000):
     return pert_bf, beta_summary, thetasub, pi_summary, mean_loss
 
 
-def get_posterior_summary_data(model, data, taxonomy, times, subjects):
-    pert_bf, beta_summary, theta_summary, pi_summary, mean_loss = get_summary_results(model, data)
+def get_posterior_summary_data(model, data, taxonomy, times, subjects, gamma_percentile=0.95):
+    pert_bf, beta_summary, theta_summary, pi_summary, mean_loss = get_summary_results(model, data, gamma_percentile=gamma_percentile)
     ncomm, ntime, nsubj = beta_summary.shape
     assemblages = [f"A{i+1}" for i in range(ncomm)]
 
@@ -449,3 +450,99 @@ def get_subj_averaged_assemblage_proportions(betadf):
     subjave.reset_index(inplace=True)
     betamat = subjave.pivot(index='Time', columns='Assemblage', values='Value')
     return betamat
+
+
+#! for association figures
+def filter_assoc_scores(alpha, radf, otuf, ra_threshold, edge_threshold):
+    taxa = alpha.index[(alpha>edge_threshold).any(axis=1)]
+    taxa2 = radf.loc[taxa,:].index[(radf.loc[taxa,:]>ra_threshold).any(axis=1)]
+    taxa3 = list(set(taxa2).union(set([otuf]))) # include at least self
+    alpha_filtered = alpha.loc[taxa3,:]
+    return alpha_filtered
+
+
+def get_assoc_scores(theta, beta, otuf): #, radf, ra_threshold=0.01, edge_threshold=0.01):
+    assemblages = theta.columns
+    thetasimp = theta.reset_index()[['Otu'] + list(assemblages)].set_index('Otu')
+    theta_self = thetasimp.loc[otuf,:].values # 1xK
+    theta_assoc = thetasimp.values # OxK
+    betavals = beta.loc[:,assemblages].values # ntime x K
+    numerator = np.sum(betavals[:,None,:]*theta_assoc*theta_self, axis=-1)
+    denominator = 0.5*(np.sum(betavals[:,None,:]*theta_self, axis=-1) + np.sum(betavals[:,None,:]*theta_assoc, axis=-1))
+    edgevals = numerator/denominator
+    alpha = pd.DataFrame(edgevals, index=beta.index, columns=thetasimp.index)
+    # alpha = filter_assoc_scores(df_temp.T, radf, otuf, ra_threshold, edge_threshold)
+    return alpha.T
+
+
+# def get_node_edge_weights(theta, beta, otuf, radf, ra_threshold=0.01, edge_threshold=0.01):
+#     alpha = get_assoc_scores(theta, beta, otuf, radf, ra_threshold, edge_threshold)
+#     node_weights = radf.loc[alpha.index,:]
+#     edge_weights = alpha
+#     return node_weights, edge_weights
+
+
+def get_lowest_level_name(oidx, taxonomy):
+    def _get_lowest_level(otu, taxonomy):
+        taxonomies = ['Species','Genus', 'Family', 'Order', 'Class', 'Phylum', 'Domain']
+        for level in taxonomies:
+            levelid = taxonomy.loc[otu,level]
+            if levelid != 'na':
+                return levelid, level
+
+    def _format_name(name, level):
+        if level == 'Species':
+            genus, species = name.split(' ')
+            s = f'{genus[0]}. {species}'
+        else:
+            s = name
+        return s
+    
+    name, level = _get_lowest_level(oidx, taxonomy)
+    newname = _format_name(name, level)
+    newid = newname + ' ' + oidx.upper()
+    return newid
+
+
+def update_names(df, taxonomy):
+    mapper = {}
+    for oidx in df.index:
+        newid = get_lowest_level_name(oidx, taxonomy)
+        mapper[oidx] = newid
+    newdf = df.rename(index=mapper)
+    return newdf
+
+
+def output_association_network_to_graphML(source_otu, node_weights, edge_weights, taxonomy, outfile):
+    EPS = 1e-6
+    graph = nx.Graph()
+    source = get_lowest_level_name(source_otu, taxonomy)
+
+    # add edges
+    for target in node_weights.index:
+        if target != source:
+            graph.add_edge(source, target)
+
+    # node attributes
+    node_attributes = {}
+    for node in node_weights.index:
+        node_attributes[node] = {}
+        for t in node_weights.columns:
+            node_attributes[node][t] = node_weights.loc[node,t]
+            # add sqrt of weight for cytoscape scaling
+            tsqrt = f"{t}_sqrt"
+            node_attributes[node][tsqrt] = np.sqrt(node_weights.loc[node,t] + EPS)
+    nx.set_node_attributes(graph, node_attributes)
+
+    # edge attributes
+    edge_attributes = {}
+    for target in node_weights.index:
+        if target != source:
+            edge = (source, target)
+            edge_attributes[edge] = {}
+            for t in edge_weights.columns:
+                edge_attributes[edge][t] = edge_weights.loc[target,t]
+    nx.set_edge_attributes(graph, edge_attributes)
+
+    # output to file
+    nx.write_graphml(graph,outfile)

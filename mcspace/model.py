@@ -4,6 +4,19 @@ import torch.nn as nn
 import torch.nn.functional as F
 from mcspace.assemblage_proportions import AssemblageProportions
 from mcspace.garbage_weights import ContaminationWeights
+from mcspace.utils import ilr_transform_data, inv_ilr_transform_data
+from sklearn.cluster import KMeans
+
+
+def flatten_data(reads):
+    times = list(reads.keys())
+    subjs = list(reads[times[0]].keys())
+    combreads = []
+    for t in times:
+        for s in subjs:
+            combreads.append(reads[t][s].cpu().detach().clone().numpy())
+    allreads = np.concatenate(combreads, axis=0)    
+    return allreads
 
 
 class MCSPACE(nn.Module):
@@ -62,12 +75,26 @@ class MCSPACE(nn.Module):
                                                  use_sparse_weights,
                                                  add_process_variance)
         self.optimizer = torch.optim.Adam(self.parameters(), lr=self.lr)
+        # self.optimizer = torch.optim.RMSprop(self.parameters(), lr=self.lr)
+
+    def kmeans_init(self, data, seed=0):
+        counts = flatten_data(data['count_data'])
+        ilr_data = ilr_transform_data(counts)
+        kmodel = KMeans(n_clusters=self.num_assemblages, random_state=seed)
+        res = kmodel.fit(ilr_data)
+        clusters = np.log(inv_ilr_transform_data(res.cluster_centers_))
+        clusters -= np.mean(clusters) #! allowed to invert softmax by constant; this centers it...
+        self.theta_params.data = torch.from_numpy(clusters).float()
 
     def set_temps(self, epoch, num_epochs):
         if self.use_sparse_weights:
             self.beta_params.sparsity_params.set_temp(epoch, num_epochs)
         if self.num_perturbations > 0:
             self.beta_params.perturbation_indicators.set_temp(epoch, num_epochs)
+
+    #! if not called, should stick to default full value
+    def anneal_gamma_prior(self, epoch, num_epochs):
+        self.beta_params.sparsity_params.anneal_prior_power(epoch, num_epochs)
 
     def compute_loglik_multinomial(self, beta, theta, counts):
         EPS = 1e-6
@@ -118,4 +145,5 @@ class MCSPACE(nn.Module):
 
         KL = KL_beta + KL_pi
         self.ELBO_loss = -(loglik - KL)
+        self.loglik = loglik
         return self.ELBO_loss, theta, beta, gamma, pi

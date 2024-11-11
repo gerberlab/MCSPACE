@@ -2,12 +2,14 @@ import torch
 import numpy as np
 
 
-def train_model(model, data, num_epochs, verbose=True):
+def train_model(model, data, num_epochs, anneal_prior=True, verbose=True):
     model.train() 
     ELBOs = np.zeros(num_epochs) 
 
     for epoch in range(0, num_epochs):
         model.set_temps(epoch, num_epochs)
+        if anneal_prior:
+            model.anneal_gamma_prior(epoch, num_epochs)
         model.forward(data)
         model.optimizer.zero_grad() 
         model.ELBO_loss.backward() 

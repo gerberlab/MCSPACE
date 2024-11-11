@@ -5,7 +5,6 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# TODO: add documentation on main class/functions and their argument options
 
 class DataSet:
     """
@@ -58,7 +57,6 @@ class DataSet:
         self.subjects = np.setdiff1d(self.subjects, np.array(to_remove))
 
     def consistency_filtering(self, num_consistent_subjects, min_abundance=0.005, min_reads=1000, max_reads=10000):
-        # TODO: add consistency over time points too??
         taxa_presence = dict() # dict over days
         for tm in self.times:
             otu_sub_group = dict()

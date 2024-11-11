@@ -267,6 +267,20 @@ class SparsityIndicatorPowerScale(SparsityIndicator):
         self.log_prior = torch.log(self.prior_prob) #.to(self.device)
         self.prior_power = prob_power
 
+        self.start_power = 1
+        self.stop_power = prob_power
+
+    def anneal_prior_power(self, epoch, num_epochs):
+        percent = epoch/num_epochs
+        if percent < 0.1:
+            self.prior_power = self.start_power
+            return
+        if (percent >= 0.1) & (percent <= 0.9):
+            interp = (percent-0.1)/0.8
+            self.prior_power = (1.0-interp)*self.start_power + interp*self.stop_power
+            return
+        self.concrete_temperature = self.stop_power
+
     def forward(self):
         self.sample_gamma()
         q = torch.sigmoid(self.q_gamma_params)
@@ -360,5 +374,11 @@ class AssemblageProportions(nn.Module):
         self.x_latent = x_latent
         self.var_process = var_process
         KL = KL_delta + KL_c + KL_var_process + KL_gamma + KL_x_latent
+        self.KL_delta = KL_delta
+        self.KL_c = KL_c
+        self.KL_var_process = KL_var_process
+        self.KL_gamma = KL_gamma
+        self.KL_x_latent = KL_x_latent
+
         return beta, KL, gamma
     
