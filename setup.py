@@ -21,5 +21,10 @@ setup(name='mcspace',
                     'composition-stats',
                     'statsmodels'
                     ],
+    entry_points={
+        'console_scripts': [
+            'mcspace=mcspace.cli:main'
+        ]
+    },
     python_requires=">=3.8",
 )
