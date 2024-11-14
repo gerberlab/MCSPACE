@@ -1,6 +1,6 @@
 # Synthetic benchmarking
 
-These job submission scripts run the scripts in the `paper/scripts/synthetic_benchmark` [directory](../../../scripts/synthetic_benchmark/README.md) to perform the synthetic benchmarking analysis.
+These job submission scripts run the scripts in the `MCSPACE_paper/scripts/synthetic_benchmark` [directory](../../../scripts/synthetic_benchmark/README.md) to perform the synthetic benchmarking analysis.
 
 ## Step 1: Generate semi-synthetic data
 ```
@@ -8,34 +8,18 @@ sbatch generate_semisyn_data.sh
 ```
 
 ## Step 2: Run MCSPACE model inference on synthetic datasets
-The model inference is split into two parts: one for running the human synthetic datasets and one for running the mouse synthetic datasets.
-
-To run the Human datasets, execute:
+The run model inference on the synthetic datasets, execute:
 ```
 sbatch run_MCSPACE_Human.sh
 ```
-This will submit an array of 200 jobs, each running MCSPACE on a different Human synthetic dataset condition.
-
-To run the Mouse datasets, execute:
-```
-sbatch run_MCSPACE_Mouse.sh
-```
-This will submit an array of 250 jobs, each running MCSPACE on a different Mouse synthetic dataset condition.
+This will submit an array of 100 jobs, each running MCSPACE on a different Human semi-synthetic dataset condition.
 
 ## Step 3: Run the GMM model on synthetic datasets
-The GMM inference is split into two parts: one for running the human synthetic datasets and one for running the mouse synthetic datasets.
-
-To run the Human datasets, execute:
+To run GMM inference on synthetic datasets, execute:
 ```
 sbatch run_GMM_Human.sh
 ```
-This will submit an array of 200 jobs, each running the GMM on a different Human synthetic dataset condition.
-
-To run the Mouse datasets, execute:
-```
-sbatch run_GMM_Mouse.sh
-```
-This will submit an array of 250 jobs, each running the GMM on a different Mouse synthetic dataset condition.
+This will submit an array of 100 jobs, each running the GMM on a different Human semi-synthetic dataset condition.
 
 ## Step 4: Evaluate inference results for MCSPACE and GMM in recovering underlying assemblages in synthetic data
 ```
@@ -53,4 +37,4 @@ sbatch run_FISHER.sh
 ```
 
 ## Step 7: Run the SIM9 algorithm for pairwise analysis on synthetic datasets
-### TO DO...
+The SIM9 algorithm involves running an R script. Refer to the [readme](../../../scripts/synthetic_benchmark/README.md) (step 7) for details on how to run the analysis.
