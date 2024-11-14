@@ -126,9 +126,17 @@ def evaluate_gmm(case, fold, basepath, datapath, modeldir, klist):
 
 
 def evaluate_gmm_basic(case, fold, basepath, datapath):
+    #* already saved best aic model
     modeldir = "gmm_basic"
-    klist = np.arange(2,101)
-    cos_err, read_depths = evaluate_gmm(case, fold, basepath, datapath, modeldir, klist)
+    modelpath = basepath / modeldir / case / f"Fold_F{fold}"
+    model = pickle_load(modelpath / MODEL_FILE)
+    #* load test data
+    testfile = datapath / f"test_F{fold}.pkl"
+    testdata = pickle_load(testfile)
+    #* get downsampled reads
+    dsreads = pickle_load(datapath / f"ds0.5_F{fold}.pkl")
+    #* for each heldout particle, get predictions and evaluate metrics
+    cos_err, read_depths = eval_cos_err_gmm(model, testdata, dsreads)
     return cos_err, read_depths
 
 

@@ -188,15 +188,15 @@ def get_best_gmm_model(casepath, nk_list, seed_list):
     return kmin, seedmin
 
 
-def eval_gmm_metrics(respath, gt_data, klist, seeds):
-    # find k,seed with min AIC
-    kmin, seedmin = get_best_gmm_model(respath, klist, seeds)
-    modelpath = respath / f"K_{kmin}_seed_{seedmin}"
+def eval_gmm_metrics(respath, gt_data):
+    #* already saved best aic seed
+    modelpath = respath 
     #* get community error
     res = pickle_load(modelpath / RESULT_FILE)
     comm_err = calc_nearest_comms_error(res['theta'], gt_data['theta'])
     #* calc nmi
     learned_labels = res['labels']
+    kmin = res['theta'].shape[0]
     flatreads, subj_labels, cluster_labels = flatten_data(gt_data)
     nmi = calcNMI(cluster_labels, learned_labels)
     return nmi, comm_err, kmin
@@ -211,11 +211,11 @@ def evaluate_case(basepath, datapath, res, ds, npart, nreads, base_sample):
 
     # evaluate model
     models = ["gmm", "mcspace"]
-    ncomm_lists = [np.arange(2,101), "pass"]
-    for mod, klist in zip(models, ncomm_lists):
+    # ncomm_lists = [np.arange(2,101), "pass"]
+    for mod in models: #, klist in zip(models, ncomm_lists):
         if mod == "gmm":
             respath = basepath / f"{mod}_basic_runs" / base_sample / case
-            nmi, comm_err, nk_learned = eval_gmm_metrics(respath, gtdata, klist, seeds)
+            nmi, comm_err, nk_learned = eval_gmm_metrics(respath, gtdata) #, klist, seeds)
         else:
             respath = basepath / mod / base_sample / case
             nmi, comm_err, nk_learned_samples = eval_mcspace_metrics(respath, gtdata, seeds)
