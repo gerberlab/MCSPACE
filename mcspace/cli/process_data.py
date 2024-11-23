@@ -1,10 +1,8 @@
-from torch.optim.optimizer import required
-
 from .base import CLIModule
 import argparse
 from mcspace.data_utils import parse
 from mcspace.utils import pickle_save, get_device
-
+import torch
 
 class ProcessDataCLI(CLIModule):
     def __init__(self, subcommand):
