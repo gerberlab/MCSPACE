@@ -135,7 +135,8 @@ def plot_assemblages(ax, thetadf, otu_order, beta_order, cmap=None, logscale=Tru
         green = sns.light_palette("green", reverse=False, as_cmap=True)
         green.set_under('white')
         cmap=green
-    cbar_kws = dict(extend='min')
+    # cbar_kws = dict(extend='min')
+    cbar_kws = dict(use_gridspec=False, location="bottom")
 
     ax=sns.heatmap(thetaplot, ax=ax, cmap=cmap, vmin=vmin, vmax=vmax, linecolor=linecolor, linewidth=linewidth,
                xticklabels=xticklabels, yticklabels=yticklabels, square=square, cbar=cbar, cbar_kws=cbar_kws)
@@ -143,6 +144,9 @@ def plot_assemblages(ax, thetadf, otu_order, beta_order, cmap=None, logscale=Tru
 
 
 
+# ====================================================================
+# check/remove
+# ====================================================================
 # #! plotting association changes
 # def get_assemblages_containing_taxon(thetadf, oidx, otu_threshold=0.05):
 #     thetasub = thetadf.loc[thetadf.index.get_level_values('Otu') == oidx,:]

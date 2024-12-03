@@ -1,8 +1,8 @@
 from .base import CLIModule
-import argparse
 from mcspace.data_utils import parse
 from mcspace.utils import pickle_save, get_device
 import torch
+
 
 class ProcessDataCLI(CLIModule):
     def __init__(self, subcommand):
@@ -26,7 +26,7 @@ class ProcessDataCLI(CLIModule):
                             required=False, default=10000, help='Maximum number of reads allowed in particles for filtering')
         parser.add_argument('--min_abundance', '-minabun', type=float, dest='min_abundance',
                             required=False, default=0.005, help='Minimum abundance of OTU for filtering')
-        parser.add_argument('--device', '-d', type=str, dest='device', choices=['GPU', 'CPU'],
+        parser.add_argument('--device', '-dev', type=str, dest='device', choices=['GPU', 'CPU'],
                             required=False, default=None, help='GPU or CPU')
 
     def main(self, args):

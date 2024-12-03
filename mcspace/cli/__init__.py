@@ -1,11 +1,13 @@
 from .base import dispatch
 from .process_data import ProcessDataCLI
+from .model_inference import RunInferenceCLI
+
 
 def main():
-    print("Hello world!!")
     # ================== Mapping of subcommands to cli modules.
     clis = [
-        ProcessDataCLI(subcommand="parse")
+        ProcessDataCLI(subcommand="parse"),
+        RunInferenceCLI(subcommand="infer")
     ]
 
     dispatch({
