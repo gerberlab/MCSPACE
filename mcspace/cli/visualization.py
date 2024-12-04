@@ -1,5 +1,3 @@
-from torch.optim.optimizer import required
-
 from .base import CLIModule
 from mcspace.visualization import render_assemblages, render_assemblage_proportions, export_association_networks_to_cytoscape
 from mcspace.utils import pickle_load
