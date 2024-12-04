@@ -1,4 +1,6 @@
-from mcspace.utils import pickle_load, get_subj_averaged_assemblage_proportions
+from mcspace.utils import pickle_load, get_subj_averaged_assemblage_proportions, \
+    get_lowest_level_name, get_assoc_scores, filter_assoc_scores, update_names, \
+    output_association_network_to_graphML
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -305,7 +307,52 @@ def render_assemblage_proportions(results,
     return ax, ax_cbar, ax_bf
 
 
-# export association networks to cytoscape
-def export_association_networks_to_cytoscape():
-    pass
+# export association networks to cytoscape =======================
+def export_association_networks_to_cytoscape(oidx,
+                                             results,
+                                             outfile,
+                                             ra_threshold=0.01,
+                                             edge_threshold=0.01):
+    """
 
+    Parameters
+    ----------
+    oidx: otu index of hub taxon for which associations are computed and exported
+    results: pickle file of mcspace inference results
+    outfile: name of xml file to output association networks to
+    ra_threshold: relative abundance threshold for which taxa to keep (taxa with relative abundance
+        below the given threshold on all time points are removed)
+    edge_threshold: threshold for which edges to keep (taxa with an edge less than the threshold on
+        all time points are removed)
+
+    Returns
+    -------
+    xml file giving subject averaged associations of key taxon over time
+    """
+    beta = results['assemblage_proportions']
+    times = beta['Time'].unique()
+    subjects = beta['Subject'].unique()
+    taxlevels = ['Otu', 'Domain', 'Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species']
+    theta = results['assemblages'].reset_index()
+    taxonomy = theta[taxlevels].copy()
+    taxonomy = taxonomy.set_index("Otu")
+    thetadf = theta.set_index(taxlevels)
+    beta_order = thetadf.columns
+    avebeta = get_subj_averaged_assemblage_proportions(beta)
+    radf = results['relative_abundances']
+    radf.columns = radf.columns.astype(int)
+
+    otu_name = get_lowest_level_name(oidx, taxonomy)
+
+    # get edges and node weights
+    alpha = get_assoc_scores(thetadf, avebeta, oidx)
+
+    ew = filter_assoc_scores(alpha, radf, oidx,
+                                ra_threshold=ra_threshold, edge_threshold=edge_threshold)
+    nw = radf.loc[ew.index, :]
+
+    # update labels for taxa
+    nw3 = update_names(nw, taxonomy)
+    ew3 = update_names(ew, taxonomy)
+    # output to file
+    output_association_network_to_graphML(oidx, nw3, ew3, taxonomy, outfile)
