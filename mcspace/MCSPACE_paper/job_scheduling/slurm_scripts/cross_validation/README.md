@@ -1,6 +1,6 @@
 # Cross validation
 
-These job submission scripts run the scripts in the `paper/scripts/cross_validation` [directory](../../../scripts/cross_validation/README.md) to perform the cross-validated read prediction analysis.
+These job submission scripts run the scripts in the `MCSPACE_paper/scripts/cross_validation` [directory](../../../scripts/cross_validation/README.md) to perform the cross-validated read prediction analysis.
 
 ## Step 1: Split data into test and train datasets 
 ```

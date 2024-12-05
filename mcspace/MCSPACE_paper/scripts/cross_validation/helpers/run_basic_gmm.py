@@ -11,11 +11,22 @@ from mcspace.comparators.comparator_models import BasicGaussianMixture
 from pathlib import Path
 import time 
 from mcspace.data_utils import get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset
+from distutils.dir_util import copy_tree, remove_tree
+# from shutil import copytree, rmtree
+
+
+def get_min_aic_k(modelbasepath, klist):
+    aics = {}
+    for k in klist:
+        res = pickle_load(modelbasepath / f"K_{k}" / RESULT_FILE)
+        aics[k] = res['aic']
+    min_aic_k = min(aics, key=aics.get)
+    return min_aic_k
 
 
 def run_case(basepath, case, fold):
     datapath = basepath / "holdout_data" / case
-    outpathbase = basepath / "gmm_basic" / case / f"Fold_F{fold}"
+    outpathbase = basepath / "gmm_basic_temp" / case / f"Fold_F{fold}"
     outpathbase.mkdir(exist_ok=True, parents=True)
 
     reads = pickle_load(datapath / f"train_F{fold}.pkl")
@@ -32,6 +43,24 @@ def run_case(basepath, case, fold):
         #* save results
         pickle_save(outpath / RESULT_FILE, results)
         pickle_save(outpath / MODEL_FILE, model)
+
+    #* save best aic run and remove temp runs
+    best_outpath = basepath / "gmm_basic" / case / f"Fold_F{fold}"
+    best_outpath.mkdir(exist_ok=True, parents=True)
+
+    # get best run
+    min_k = get_min_aic_k(outpathbase, klist)
+    bestmodelpath = outpathbase / f"K_{min_k}"
+
+    # copy to main output
+    copy_tree(bestmodelpath, best_outpath)
+    print(f"COPIED BEST MODEL: {bestmodelpath} to {best_outpath}")
+    
+    # remove temp files
+    time.sleep(1)
+    print("removing temporary files...")
+    if os.path.exists(outpathbase):
+        remove_tree(outpathbase)
     print(f"done case: {case}, fold: {fold}")
 
 

@@ -11,6 +11,7 @@ from mcspace.comparators.comparator_models import BasicGaussianMixture
 from pathlib import Path
 import time 
 from mcspace.data_utils import get_human_timeseries_dataset, get_mouse_diet_perturbations_dataset
+from distutils.dir_util import copy_tree, remove_tree
 
 
 def combine_samples(reads):
@@ -24,28 +25,69 @@ def combine_samples(reads):
     return allreads
 
 
-def run_case(basepath, datapathbase, case, seed, base_sample):
-    np.random.seed(seed)
+def get_best_gmm_model(casepath, nk_list, seed_list):
+    # loop over seeds and k, compute average aic for each k
+    # take k with min aic and seed with min aic given k
+    n_k = len(nk_list)
+    n_seed = len(seed_list)
+    aics = np.zeros((n_k, n_seed))
 
-    outpathbase = basepath / "gmm_basic_runs" / base_sample / case
-    outpathbase.mkdir(exist_ok=True, parents=True)
+    for i, k in enumerate(nk_list):
+        for j, seed in enumerate(seed_list):
+            respath = casepath / f"K_{k}_seed_{seed}"
+            params = pickle_load(respath / RESULT_FILE)
+            aics[i,j] = params['aic']
+    
+    aicmed = np.median(aics, axis=1)
+    min_idx = np.argmin(aicmed)
+    kmin = nk_list[min_idx]
+    min_seed_idx = np.argmin(aics[min_idx,:])
+    seedmin = seed_list[min_seed_idx]
+    return kmin, seedmin
 
-    sim_dataset = pickle_load(datapathbase / base_sample / f"data_{case}.pkl")
-    counts = sim_dataset['reads']
-    reads = combine_samples(counts) #[0]['s1']
 
-    klist = np.arange(2,101)
-    for ncomm in klist:
-        print(f"...fitting k = {ncomm}")
-        outpath = outpathbase / f"K_{ncomm}_seed_{seed}"
-        outpath.mkdir(exist_ok=True, parents=True)
+def run_case(basepath, datapathbase, case, base_sample, seed_list):
+    for seed in seed_list:
+        np.random.seed(seed)
 
-        model = BasicGaussianMixture(ncomm)
-        model.fit_model(reads)
-        results = model.get_params()
-        #* save results
-        pickle_save(outpath / RESULT_FILE, results)
-        pickle_save(outpath / MODEL_FILE, model)
+        outpathbase = basepath / "gmm_basic_runs_temp" / base_sample / case
+        outpathbase.mkdir(exist_ok=True, parents=True)
+
+        sim_dataset = pickle_load(datapathbase / base_sample / f"data_{case}.pkl")
+        counts = sim_dataset['reads']
+        reads = combine_samples(counts) #[0]['s1']
+
+        klist = np.arange(2,101)
+        for ncomm in klist:
+            print(f"...fitting k = {ncomm}")
+            outpath = outpathbase / f"K_{ncomm}_seed_{seed}"
+            outpath.mkdir(exist_ok=True, parents=True)
+
+            model = BasicGaussianMixture(ncomm)
+            model.fit_model(reads)
+            results = model.get_params()
+            #* save results
+            pickle_save(outpath / RESULT_FILE, results)
+            pickle_save(outpath / MODEL_FILE, model)
+
+    #* save best aic run and remove temp runs
+    best_outpath = basepath / "gmm_basic_runs" / base_sample / case
+    best_outpath.mkdir(exist_ok=True, parents=True)
+
+    # get best run
+    min_k, min_seed = get_best_gmm_model(outpathbase, klist, seed_list)
+    bestmodelpath = outpathbase / f"K_{min_k}_seed_{min_seed}"
+
+    # copy to main output
+    copy_tree(bestmodelpath, best_outpath)
+    print(f"COPIED BEST MODEL: {bestmodelpath} to {best_outpath}")
+
+        # remove temp files
+    time.sleep(1)
+    print("removing temporary files...")
+    if os.path.exists(outpathbase):
+        remove_tree(outpathbase)
+
     print(f"done case: {case}")
 
 
@@ -80,8 +122,8 @@ def main(rootdir, outdir, run_idx, base_sample):
     case = all_cases[run_idx]
 
     print(f"running case: {case}")
-    for seed in range(10):
-        run_case(outpathbase, datapathbase, case, seed, base_sample) 
+    seed_list = np.arange(10)
+    run_case(outpathbase, datapathbase, case, base_sample, seed_list) 
     print("***DONE***")
     et = time.time()
     elapsed_time = et - st

@@ -1,6 +1,6 @@
 # Analysis of main datasets
 
-These job submission scripts run the scripts in the `paper/scripts/analysis` [directory](../../../scripts/analysis/README.md) to perform MCSPACE model inference on the human and mouse datasets. 
+These job submission scripts run the scripts in the `MCSPACE_paper/scripts/analysis` [directory](../../../scripts/analysis/README.md) to perform MCSPACE model inference on the human and mouse datasets. 
 
 ## Run MCSPACE on Human dataset
 ```

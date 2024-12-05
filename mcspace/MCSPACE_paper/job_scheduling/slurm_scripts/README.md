@@ -1,6 +1,6 @@
 # Job scheduling
 
-This directory contains all the scripts used to run the main paper analysis on the ERISTwo compute cluster using the SLURM workload manager. Each batch job distribution script calls one of the main analysis scripts in the `paper/scripts/` directory. 
+This directory contains all the scripts used to run the main paper analysis on the ERISTwo compute cluster using the SLURM workload manager. Each batch job distribution script calls one of the main analysis scripts in the `MCSPACE_paper/scripts/` directory. 
 
 Each script should be called from the directory it is in, for example, for generating synthetic datasets, you would run
 ```
