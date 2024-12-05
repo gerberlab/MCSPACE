@@ -2,7 +2,75 @@ import numpy as np
 import torch
 from pathlib import Path
 from mcspace.dataset import DataSet
+from mcspace.utils import get_device, pickle_save
 import pandas as pd
+
+
+def process_perturbation_data(perturbations, times_remove):
+    # convert perturbations into format for model input
+    # 0 = not present or keep on just drift, 1 = turns on, -1 turns off
+
+    times_all = set(perturbations['Time'].values)
+    times_keep = list(times_all - set(times_remove))
+    perturbations_sorted = perturbations.loc[perturbations['Time'].isin(times_keep),:]
+    perturbations_sorted = perturbations_sorted.sort_values(by='Time')
+    pert_conditions = perturbations_sorted['Perturbed'].values
+
+    pmodel = []
+    xprev = 0
+    for x in pert_conditions:
+        if x == 0:
+            # depends on previous condition
+            if xprev == 0:
+                y = 0
+            else:
+                y = -1
+        if x == 1:  # depends on previous condition
+            if xprev == 0:
+                y = 1
+            else:
+                y = 0
+        xprev = x
+        pmodel.append(y)
+    return pmodel
+
+
+def parse(counts, taxa, perturbations, subjects_remove=None, times_remove=None,
+          otus_remove=None, num_consistent_subjects = 1, min_abundance = 0.005,
+          min_reads = 250, max_reads = 10000, device = get_device()):
+    if otus_remove is None:
+        otus_remove = []
+    if subjects_remove is None:
+        subjects_remove = []
+    if times_remove is None:
+        times_remove = []
+
+    # * create dataset object
+    gzip = False
+    if str(counts).endswith("gz"):
+        gzip = True
+    dataset = DataSet(counts, taxa, gzip=gzip)
+
+    #* get perturbation information
+    perts= pd.read_csv(perturbations)
+    pmodel = process_perturbation_data(perts, times_remove)
+
+    #* process and filter dataset
+    dataset.remove_subjects(subjects_remove)
+    dataset.remove_times(times_remove)
+    dataset.remove_otus(otus_remove)
+
+    dataset.consistency_filtering(num_consistent_subjects, min_abundance, min_reads, max_reads)
+    dataset.filter_particle_data(min_reads, max_reads)
+
+    #* create dict to pickle and output
+    reads = dataset.get_reads()
+    inference_data = get_data(reads, device)
+    taxonomy = dataset.get_taxonomy()
+
+    #* output to file
+    data = {'perturbations': pmodel, 'dataset': dataset, 'taxonomy': taxonomy, 'inference_data': inference_data}
+    return data
 
 
 def get_basic_data(reads_in, device, dtype=torch.float):

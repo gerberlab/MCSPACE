@@ -164,4 +164,3 @@ class DataSet:
             df = pd.DataFrame(data=ra.T, index=multiind, columns=self.times)
             radfs[s] = df
         return radfs # separate dataframe for each subject
-    
