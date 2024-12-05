@@ -1,8 +1,6 @@
 # MCSPACE
 
-
 The MCSPACE software package implements a custom, generative AI-based model for identifying, from sequencing data, spatially co-localized groups of microbes, termed assemblages, and detecting changes in the proportions of these assemblages over time and due to introduced perturbations.
-
 
 ## Installation
 ### Install the MCSPACE package from pip via source:

@@ -81,8 +81,14 @@ Data is prepared for model inference using the `parse` function as described bel
 **Returns**:
 - `processed_data`: A dictionary of objects used in the MCSPACE inference step.
 
-Example: `processed_data = parse(counts.csv,taxonomy.csv,perturbations.csv)`
-
+**Python example:**
+ ```
+ processed_data = parse(counts.csv,taxonomy.csv,perturbations.csv)
+ ```
+**CLI example:**
+```
+mcspace parse --counts counts.csv --taxonomy taxonomy.csv --perturbations perturbations.csv --outfile processed_data.pkl
+```
 
 ## Running inference
 Model inference is perfomed using the `run_inference` function as described below. See the [tutorial](../tutorials/running_inference.ipynb) for an example on performing the running model inference step.
@@ -107,7 +113,14 @@ Model inference is perfomed using the `run_inference` function as described belo
 - `use_kmeans_init`: Specifies whether to use a kmeans initialization for assemblage parameters. Default value is True.
 - `device`: Specifies whether to use the CPU or GPU for model inference. By default, the software automatically detects and utilizes the GPU if available.
 
-Example: `run_inference(processed_data, "./results/")`
+**Python example:** 
+```
+run_inference(processed_data, "./results/")
+```
+**CLI example:**
+```
+mcspace infer --data processed_data.pkl --outdir ./results/
+```
 
 ## Visualizing results
 Methods for visualizing results include: `render_assemblages`, `render_assemblage_proportions`, and `export_association_networks_to_cytoscape`, each described below. See the [tutorial](../tutorials/visualizating_results.ipynb) for examples on using the visualization methods.
@@ -131,6 +144,14 @@ We visualize assemblages with the function `render_assemblages` as described bel
 - `ax_theta`: Axis object for assemblage heatmap.
 - `ax_cbar`: Axis object for legend colorbar.
 
+**Python example:**
+```
+render_assemblages(results, assemblages.pdf)
+```
+**CLI example:**
+```
+mcspace render-assemblages --results results.pkl --outfile assemblages.pdf
+```
 
 ### Visualizing assemblage proportions
 We visualize assemblage proportions using the `render_assemblage_proportions` function as decribed below:
@@ -154,6 +175,14 @@ We visualize assemblage proportions using the `render_assemblage_proportions` fu
 - `ax_cbar`: Axis object for legend colorbar.
 - `ax_bf`: Axis object for Bayes Factor legend.
 
+**Python example:**
+```
+render_assemblage_proportions(results, assemblage_proportions.pdf)
+```
+**CLI example:**
+```
+mcspace render-assemblage-proportions --results results.pkl --outfile assemblage_proportions.pdf
+```
 
 ### Exporting association networks for cytoscape
 The function `export_association_networks_to_cytoscape` exports association networks over time, for a specified taxon to an xml file which can be interactively explored in cytoscape. The function is described below:
@@ -173,4 +202,9 @@ For example, to export networks for **Otu2**, to the file **otu2_associations.xm
 export_association_networks_to_cytoscape("Otu2",
                                          results,
                                          outpath/"otu2_associations.xml")
+```
+
+**CLI example**:
+```
+mcspace associations-to-cytoscape --otu Otu2 --results results.pkl --outfile otu2_associations.xml
 ```

@@ -9,6 +9,7 @@ bash synthetic_benchmark/generate_synthetic_data.sh
 Before running scripts, please ensure that the [MCSPACE](https://github.com/gerberlab/MCSPACE) package is installed. Refer to the main package github for instructions on installation.
 
 For details on running a particular analysis, refer to the accompanying sub-documentation:
-1. [Analysis of main datasets](analysis/README.md)
-2. [Synthetic benchmarking](synthetic_benchmark/README.md)
-3. [Cross validation](cross_validation/README.md)
+1. [Processing SAMPL-seq sequencing data](read_processing/README.md)
+2. [Analysis of main datasets](analysis/README.md)
+3. [Synthetic benchmarking](synthetic_benchmark/README.md)
+4. [Cross validation](cross_validation/README.md)
