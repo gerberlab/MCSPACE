@@ -3,6 +3,8 @@ mcspace/__pycache__/
 mcspace/.ipynb_checkpoints
 mcspace/MCSPACE_paper/figures/_tmp_sub
 mcspace/tutorials/_old
+mcspace/tutorials/results
+mcspace/tutorials/figures
 mcspace/paper_old
 mcspace/MCSPACE_paper/output
 mcspace/dev

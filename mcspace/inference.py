@@ -28,7 +28,7 @@ def get_relative_abundances(data, times, subjects, taxonomy):
     return radf
 
 
-def save_best_model_posterior_summary(runs_outpath, seeds, outpath):
+def save_best_model_posterior_summary(runs_outpath, seeds, outpath, inference_data):
     respath = get_min_loss_path(runs_outpath, seeds)
     model = torch.load(respath / MODEL_FILE)
     data = pickle_load(respath / DATA_FILE)
@@ -51,6 +51,10 @@ def save_best_model_posterior_summary(runs_outpath, seeds, outpath):
     thetadf.to_csv(outpath / "assemblages.csv")
     betadf.to_csv(outpath / "assemblage_proportions.csv")
     if pertsdf is not None:
+        # rename perturbation labels to perturbed times
+        ptimes = [x for x,p in zip(times,inference_data['perturbations']) if p==1]
+        pert_relabel = {f'P{i+1}': t for i,t in enumerate(ptimes)}
+        pertsdf.rename(columns=pert_relabel,inplace=True)
         pertsdf.to_csv(outpath / "perturbation_bayes_factors.csv")
     radf.to_csv(outpath / "relative_abundances.csv")
     # summary dict
@@ -180,4 +184,4 @@ def run_inference(data,
                           device)
 
     # get best model and save posterior summary
-    save_best_model_posterior_summary(runs_outpath, seeds, outpath)
+    save_best_model_posterior_summary(runs_outpath, seeds, outpath, data)

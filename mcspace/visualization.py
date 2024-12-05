@@ -77,22 +77,22 @@ def render_assemblages(results,
     tree_ratio = 1.0 #1.0/1.3
     fig = plt.figure(figsize=(8.5,8.5*aspect_ratio/tree_ratio))
 
-    gs = fig.add_gridspec(nrows=2, ncols=3,
+    gs = fig.add_gridspec(nrows=3, ncols=3,
                           width_ratios=[0.1,0.2,1],
-                          height_ratios=[1,0.03],
+                          height_ratios=[1,0.1,0.03],
                           hspace=0.3)
 
     if treefile is not None:
         ax_tree = fig.add_subplot(gs[0,0])
         tree = _get_pruned_tree(treefile, otu_order, temppath=Path("./_tmp_sub"))
-        ax_tree, otu_order = vt.plot_phylo_tree(ax_tree, tree, taxonomy, fontsize=fontsize)
+        ax_tree, otu_order = vt.plot_phylo_tree(ax_tree, tree, taxonomy, fontsize=fontsize, text_len=41+ncomm)
     else:
         ax_tree = None
 
     ax_theta = fig.add_subplot(gs[0,2])
 
     if legend is True:
-        legend_gs = gs[1,2].subgridspec(1,4, width_ratios=[2,1,1,1])
+        legend_gs = gs[2,2].subgridspec(1,4, width_ratios=[2,1,1,1])
         ax_cbar = fig.add_subplot(legend_gs[0,3])
         ax_taxa_lgd = fig.add_subplot(legend_gs[0,1])
     else:
@@ -125,7 +125,7 @@ def render_assemblages(results,
         lgd_xpos = 0.5
         lgd_ypos = 2.5
         indent_xpos = lgd_xpos + 0.1
-        dy = 0.5
+        dy = 1.0
         lgd_fontsize = fontsize
 
         levels = ['Species', 'Genus', 'Family', 'Order', 'Class', 'Phylum', 'Domain']
@@ -218,11 +218,11 @@ def render_assemblage_proportions(results,
         hratios = [nsubj]*ntime
     else:
         hratios = [ntime]
-    hratios.append(0.3*ntime*4)
-    hratios.append(0.1*ntime*2)
+    hratios.append(0.5*ntime*4)
+    hratios.append(0.15*ntime*4)
     ncomm = len(beta_order)
     aspect_ratio = (ntime*nsubj)/ncomm
-    plot_ratio = (ntime*nsubj + ntime)/(ntime*nsubj)
+    plot_ratio = 1.5*(ntime*nsubj + ntime)/(ntime*nsubj)
     fig = plt.figure(figsize=(8.5,8.5*aspect_ratio*plot_ratio))
     gs = fig.add_gridspec(nrows=nplots + 2, ncols=1,
                           height_ratios=hratios,
@@ -301,6 +301,7 @@ def render_assemblage_proportions(results,
                 ax_bf.scatter(i + 0.5, 0.5, s=ind_sizes[i], c='goldenrod')
             ax_bf.set_xticklabels([r'$\sqrt{10} \leq BF < 10$',r'$10 \leq BF < 100$',r'$BF > 100$'],fontsize=fontsize,rotation=20,
                                   ha='right',rotation_mode='anchor')
+            ax_bf.set_yticks([])
             ax_bf.set_title("Bayes factor",fontsize=fontsize)
     plt.savefig(outfile,bbox_inches="tight")
 

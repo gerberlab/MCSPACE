@@ -6,11 +6,14 @@ from mcspace.utils import get_device, pickle_save
 import pandas as pd
 
 
-def process_perturbation_data(perturbations):
+def process_perturbation_data(perturbations, times_remove):
     # convert perturbations into format for model input
     # 0 = not present or keep on just drift, 1 = turns on, -1 turns off
 
-    perturbations_sorted = perturbations.sort_values(by='Time')
+    times_all = set(perturbations['Time'].values)
+    times_keep = list(times_all - set(times_remove))
+    perturbations_sorted = perturbations.loc[perturbations['Time'].isin(times_keep),:]
+    perturbations_sorted = perturbations_sorted.sort_values(by='Time')
     pert_conditions = perturbations_sorted['Perturbed'].values
 
     pmodel = []
@@ -50,7 +53,7 @@ def parse(counts, taxa, perturbations, subjects_remove=None, times_remove=None,
 
     #* get perturbation information
     perts= pd.read_csv(perturbations)
-    pmodel = process_perturbation_data(perts)
+    pmodel = process_perturbation_data(perts, times_remove)
 
     #* process and filter dataset
     dataset.remove_subjects(subjects_remove)
