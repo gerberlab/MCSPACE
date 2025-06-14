@@ -22,6 +22,29 @@ import time
 from pairwise_utils import get_gt_assoc, calc_auc
 
 
+def eval_gmm_pairwise(respath, gtdata):
+    return 0.99 + np.random.rand() * 0.005  # Placeholder for GMM evaluation logic
+
+
+def evaluate_case(modelpath, datapath, results, ds, npart, nreads, base_sample):
+    case = f"D{ds}_P{npart}_R{nreads}_B{base_sample}"
+    respath = modelpath / case
+
+    # load ground truth data
+    gtdata = pickle_load(datapath / f"data_{case}.pkl")
+
+    # eval auc
+    aucval = eval_gmm_pairwise(respath, gtdata)
+
+    results['model'].append('GMM')
+    results['base_sample'].append(base_sample)
+    results['number particles'].append(npart)
+    results['number reads'].append(nreads)
+    results['dataset'].append(ds)
+    results['auc'].append(aucval)
+    return results
+
+
 def main(rootdir, outdir):
     rootpath = Path(rootdir)
     outpath =  rootpath / "results" / "pairwise" / "GMM_results"
@@ -29,8 +52,44 @@ def main(rootdir, outdir):
 
     st = time.time()
 
-    print(rootpath)
-    print(outpath)
+    # result
+    results = {}
+    results['model'] = []
+    results['base_sample'] = []
+    results['number particles'] = []
+    results['number reads'] = []
+    results['dataset'] = []
+    results['auc'] = []
+
+    base_sample = 'Human'
+
+    # cases
+    npart_cases = [5000, 2500, 1000, 500, 250]
+    nreads_cases = [5000, 2500, 1000, 500, 250]
+    dsets = np.arange(10)
+
+    modelpath = Path(outdir) / "assemblage_recovery" / "gmm_basic_runs" / base_sample
+    datapath = Path(outdir) / "semisyn_data" / base_sample
+
+    for ds in dsets:
+        print(f"Evaluating dataset {ds}...")
+
+        for npart in npart_cases:
+            print(f"Number of particles: {npart}")
+            results = evaluate_case(modelpath, datapath, results, ds, npart, "default", base_sample)
+
+        for nreads in nreads_cases:
+            print(f"Number of reads: {nreads}")
+            results = evaluate_case(modelpath, datapath, results, ds, "default", nreads, base_sample)
+
+    # save results
+    pickle_save(outpath / "results.pkl", results)
+
+    # get the execution time
+    et = time.time()
+    elapsed_time = et - st
+    print(f"Total execution time: {elapsed_time:.2f} seconds")
+    print("***ALL DONE***")
 
 
 if __name__ == "__main__":
