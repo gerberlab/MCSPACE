@@ -17,13 +17,31 @@ import torch
 from pathlib import Path
 from mcspace.model import MCSPACE
 from mcspace.data_utils import get_data
-from mcspace.utils import get_device, pickle_load, pickle_save, MODEL_FILE, get_mcspace_cooccur_prob
+from mcspace.utils import get_device, pickle_load, pickle_save, RESULT_FILE, MODEL_FILE, get_mcspace_cooccur_prob
 import time
 from pairwise_utils import get_gt_assoc, calc_auc
 
 
 def eval_gmm_pairwise(respath, gtdata):
-    return 0.99 + np.random.rand() * 0.005  # Placeholder for GMM evaluation logic
+    gt_theta = gtdata['theta']
+    otu_threshold = 0.005
+    nthres = 100
+
+    gt_assoc = get_gt_assoc(gt_theta, otu_threshold=otu_threshold)
+    
+    #* get learned communities
+    modelpath = respath 
+    res = pickle_load(modelpath / RESULT_FILE)
+    
+    theta = res['theta'] # shape = (K, O)
+    beta = res['weights'] # shape = (K,)
+
+    # pvals_ij = \sum_k beta_k * (theta_ki > otu_threshold) * (theta_kj > otu_threshold)
+    summand = beta[:,None,None]*(theta[:,None,:] > otu_threshold)*(theta[:,:,None] > otu_threshold)
+    pvals = summand.sum(axis=0) # shape = (O, O)
+
+    auc_val, true_pos, false_pos, true_neg, false_neg = calc_auc(gt_assoc, pvals, nthres)
+    return auc_val
 
 
 def evaluate_case(modelpath, datapath, results, ds, npart, nreads, base_sample):
@@ -99,3 +117,9 @@ if __name__ == "__main__":
     parser.add_argument("-o", dest='outpath', help='output path')
     args = parser.parse_args()
     main(args.rootpath, args.outpath)
+
+#! debugging
+    # rootpath = "/home/gary/PROJECTS-wsl/MCSPACE_revisions/MCSPACE/mcspace/MCSPACE_paper/"
+    # outpath = "/home/gary/PROJECTS-wsl/MCSPACE_revisions/MCSPACE/mcspace/MCSPACE_paper/output/"
+
+    # main(rootpath, outpath)
