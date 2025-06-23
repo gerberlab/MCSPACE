@@ -1,6 +1,7 @@
 mcspace.egg-info
 mcspace/__pycache__/
 mcspace/MCSPACE_paper/figures/.ipynb_checkpoints
+mcspace/MCSPACE_paper/results/sensitivity_analysis
 mcspace/.ipynb_checkpoints
 mcspace/MCSPACE_paper/figures/_tmp_sub
 mcspace/tutorials/_old

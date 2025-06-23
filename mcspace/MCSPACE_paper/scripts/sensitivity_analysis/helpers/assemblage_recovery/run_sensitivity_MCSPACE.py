@@ -52,12 +52,6 @@ def run_case(outpathbase, datapathbase, case, prms, seed):
     process_var_prior = 0.01
     add_process_var=True
 
-#! HERE - need to add model param options to init!!!
-    #* override model params with case params
-    # TODO: process var scale -x
-    # TODO: perturbation var scale -x
-    # TODO: garbage var scale
-
     model = MCSPACE(num_assemblages,
                     num_otus,
                     times,
@@ -70,14 +64,18 @@ def run_case(outpathbase, datapathbase, case, prms, seed):
                     device,
                     add_process_var,
                     use_contamination=True,
-                    contamination_clusters=data['group_garbage_clusters']
+                    contamination_clusters=data['group_garbage_clusters'],
+                    process_var_prior_scale=prms['process_var_scale'],
+                    perturbation_magnitude_prior_scale=prms['perturbation_var_scale'],
+                    garbage_prior_scale=prms['garbage_var_scale']
                 )
     model.kmeans_init(data, seed=seed)
     model.to(device)
 
     print('here')
 
-    num_epochs = 5000
+    # TODO: add back when running
+    num_epochs = 5 #! FOR NOW, ADD BACK WHEN RUNNGIN 000
     ELBOs = train_model(model, data, num_epochs, anneal_prior=True)
     torch.save(model, outpath / MODEL_FILE)
 
@@ -113,6 +111,7 @@ def get_cases(process_var_scale, perturbation_var_scale, garbage_var_scale, dset
                     'process_var_scale': process_var_scale[0],  # default
                     'perturbation_var_scale': perturbation_var_scale[0],  # default
                     'garbage_var_scale': gvar}
+            run_params.append(prms)
     return all_cases, run_params
 
 
@@ -135,6 +134,8 @@ def main(rootdir, outdir, run_idx):
         garbage_var_scale, 
         dsets)
     print(len(all_cases), "cases")
+    if len(all_cases) != len(run_params):
+        raise ValueError("Number of cases and run parameters do not match.")
     case = all_cases[run_idx]
     prms = run_params[run_idx]
 
@@ -174,4 +175,5 @@ if __name__ == "__main__":
     rootdir = "./MCSPACE_paper"
     outdir = "./MCSPACE_paper/output/"
 
-    main(rootdir, outdir, 0)
+    # main(rootdir, outdir, 89)
+    run_all(rootdir, outdir)
