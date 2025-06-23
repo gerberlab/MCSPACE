@@ -35,7 +35,10 @@ class MCSPACE(nn.Module):
                 use_sparse_weights=True,
                 use_contamination=False,
                 contamination_clusters=None,
-                lr=5e-3):
+                lr=5e-3,
+                process_var_prior_scale=10,
+                perturbation_magnitude_prior_scale=100,
+                garbage_prior_scale=10):
         super().__init__()
 
         self.num_assemblages = num_assemblages 
@@ -59,7 +62,7 @@ class MCSPACE(nn.Module):
         self.use_contamination = use_contamination
         self.contamination_clusters = contamination_clusters
 
-        self.garbage_weights = ContaminationWeights(self.num_time, self.device)
+        self.garbage_weights = ContaminationWeights(self.num_time, self.device, prior_var=garbage_prior_scale)
 
         self.theta_params = nn.Parameter(torch.normal(0, 1, size=(self.num_assemblages, self.num_otus), device=self.device, requires_grad=True))
         self.beta_params = AssemblageProportions(num_assemblages,
@@ -73,7 +76,9 @@ class MCSPACE(nn.Module):
                                                  perturbation_prior,
                                                  device,
                                                  use_sparse_weights,
-                                                 add_process_variance)
+                                                 add_process_variance,
+                                                 process_var_prior_scale,
+                                                 perturbation_magnitude_prior_scale)
         self.optimizer = torch.optim.Adam(self.parameters(), lr=self.lr)
         # self.optimizer = torch.optim.RMSprop(self.parameters(), lr=self.lr)
 

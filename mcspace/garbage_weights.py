@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 
 class ContaminationWeights(nn.Module):
-    def __init__(self, num_groups, device, stochastic=True):
+    def __init__(self, num_groups, device, stochastic=True, prior_var=10):
         super().__init__()
         self.num_groups = num_groups
         self.stochastic = stochastic
@@ -14,7 +14,7 @@ class ContaminationWeights(nn.Module):
 
         if self.stochastic is True:
             self.prior_mean = torch.logit(torch.tensor(0.05)) # so expected value is around 5%
-            self.prior_var = 10 # diffuse prior
+            self.prior_var = prior_var # diffuse prior
             self.q_mu = nn.Parameter(torch.normal(0, 1, size=(num_groups,)), requires_grad=True)
             self.q_var = nn.Parameter(torch.normal(0, 1, size=(num_groups,)), requires_grad=True)
         else:
