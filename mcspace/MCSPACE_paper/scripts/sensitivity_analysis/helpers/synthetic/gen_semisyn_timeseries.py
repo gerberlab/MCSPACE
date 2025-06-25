@@ -262,8 +262,3 @@ if __name__ == "__main__":
     parser.add_argument("-o", dest="outdir", help="output directory path")
     args = parser.parse_args()
     main(args.rootdir, args.outdir)
-
-    # rootdir = "./MCSPACE_paper"
-    # outdir = "./MCSPACE_paper/output/"
-
-    # main(rootdir, outdir)

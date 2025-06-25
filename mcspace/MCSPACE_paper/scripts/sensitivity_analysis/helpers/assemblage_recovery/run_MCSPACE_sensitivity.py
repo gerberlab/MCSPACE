@@ -162,11 +162,6 @@ if __name__ == "__main__":
         print("RUNNING ALL CASES")
         run_all(args.rootpath, args.outpath)
     else:
-        print(f"Running {args.dset} case {args.idx}")
+        print(f"Running case {args.idx}")
         main(args.rootpath, args.outpath, args.idx)
-        
-    # rootdir = "./MCSPACE_paper"
-    # outdir = "./MCSPACE_paper/output/"
-
-    # # main(rootdir, outdir, 89)
-    # run_all(rootdir, outdir)
+ 
