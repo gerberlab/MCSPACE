@@ -20,7 +20,6 @@ mpl.use('agg')
 
 
 def run_case(outpathbase, datapathbase, case, prms, seed):
-# def run_case(outpathbase, datapathbase, case, seed, base_sample):
     device = get_device()
     torch.manual_seed(seed)
     np.random.seed(seed)
@@ -38,19 +37,17 @@ def run_case(outpathbase, datapathbase, case, prms, seed):
     num_otus = reads[times[0]][subjects[0]].shape[1]
     data = get_data(reads, device)
 
-    num_assemblages = 100
-
-    perturbation_prior = 0.5/num_assemblages
-    sparsity_prior = 0.5/num_assemblages
-
+    sparsity_prior = 0.5
     num_reads = 0
     for t in times:
         for s in subjects:
             num_reads += reads[t][s].sum()
     sparsity_prior_power = 0.005*num_reads
 
+    num_assemblages = 100
     process_var_prior = 0.01
     add_process_var=True
+    perturbation_prior = 0.5/num_assemblages
 
     model = MCSPACE(num_assemblages,
                     num_otus,
@@ -74,8 +71,7 @@ def run_case(outpathbase, datapathbase, case, prms, seed):
 
     print('here')
 
-    # TODO: add back when running
-    num_epochs = 5 #! FOR NOW, ADD BACK WHEN RUNNGIN 000
+    num_epochs = 5000
     ELBOs = train_model(model, data, num_epochs, anneal_prior=True)
     torch.save(model, outpath / MODEL_FILE)
 
@@ -117,7 +113,7 @@ def get_cases(process_var_scale, perturbation_var_scale, garbage_var_scale, dset
 
 def main(rootdir, outdir, run_idx):
     st = time.time()
-    n_seeds = 1 # TODO: increase to 10 for final full runs
+    n_seeds = 10
 
     rootpath = Path(rootdir)
     outpathbase = Path(outdir) / "sensitivity_analysis" / "assemblage_recovery"
@@ -142,7 +138,6 @@ def main(rootdir, outdir, run_idx):
     print(f"running case: {case}")
     for seed in range(n_seeds):
         run_case(outpathbase, datapathbase, case, prms, seed) 
-        print("RUNNING...")
     print("***DONE***")
     et = time.time()
     elapsed_time = et - st
@@ -156,24 +151,22 @@ def run_all(rootdir, outdir):
 
 
 if __name__ == "__main__":
-
-    # import argparse
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("-d", dest='rootpath', help='root path')
-    # parser.add_argument("-o", dest='outpath', help='output path')
-    # parser.add_argument("-run_all", dest='run_all', help='option to run all cases', action='store_true')    
-    # parser.add_argument("-idx", type=int, dest='idx', help='run number (200 total cases for human; 250 for mouse datasets)')
-    # parser.add_argument("-dset", dest='dset', help='dataset case (Human or Mouse)')
-    # args = parser.parse_args()
-    # if args.run_all is True:
-    #     print("RUNNING ALL CASES")
-    #     run_all(args.rootpath, args.outpath)
-    # else:
-    #     print(f"Running {args.dset} case {args.idx}")
-    #     main(args.rootpath, args.outpath, args.idx, args.dset)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", dest='rootpath', help='root path')
+    parser.add_argument("-o", dest='outpath', help='output path')
+    parser.add_argument("-run_all", dest='run_all', help='option to run all cases', action='store_true')    
+    parser.add_argument("-idx", type=int, dest='idx', help='run number (90 total cases, options are: 0-89)', default=0)
+    args = parser.parse_args()
+    if args.run_all is True:
+        print("RUNNING ALL CASES")
+        run_all(args.rootpath, args.outpath)
+    else:
+        print(f"Running {args.dset} case {args.idx}")
+        main(args.rootpath, args.outpath, args.idx)
         
-    rootdir = "./MCSPACE_paper"
-    outdir = "./MCSPACE_paper/output/"
+    # rootdir = "./MCSPACE_paper"
+    # outdir = "./MCSPACE_paper/output/"
 
-    # main(rootdir, outdir, 89)
-    run_all(rootdir, outdir)
+    # # main(rootdir, outdir, 89)
+    # run_all(rootdir, outdir)

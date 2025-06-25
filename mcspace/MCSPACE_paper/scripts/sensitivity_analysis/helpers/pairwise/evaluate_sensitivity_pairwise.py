@@ -110,11 +110,11 @@ def get_mcspace_min_loss_seed(respath, gt_data, seeds):
 
 def eval_mcspace_pairwise_auc(respath, gt_data, seeds):
     min_seed = get_mcspace_min_loss_seed(respath, gt_data, seeds)
-    reads = gt_data['reads'] #![0]['s1']
+    reads = gt_data['reads']
     gt_theta = gt_data['theta']
 
     device = get_device()
-    otu_threshold = 0.005
+    otu_threshold = 0.002
     nthres = 100
     data = get_data(reads, device)
     gt_assoc = get_gt_assoc(gt_theta, otu_threshold=otu_threshold)
@@ -129,44 +129,44 @@ def eval_mcspace_pairwise_auc(respath, gt_data, seeds):
     return auc_val
 
 
-# def eval_mcspace_pairwise_f1(respath, reads, gt_theta):
-#     device = get_device()
-#     otu_threshold = 0.005
-#     nthres = 100
-#     data = get_data(reads, device)
-#     gt_assoc = get_gt_assoc(gt_theta, otu_threshold=otu_threshold)
-#     # load model
-#     modelfile = respath / MODEL_FILE
-#     model = torch.load(modelfile)
-#     # eval mcspace posterior probs
-#     pvals_all = get_mcspace_cooccur_binary_prob(model, data, otu_threshold, nsamples=1000)
-#     pvals = pvals_all[0,0,:,:] #! first time and subject index
-#     # eval f1
-#     notus = gt_assoc.shape[0]
-#     gt_pv_upper_tri = gt_assoc[np.triu_indices(notus, k=1)]
-#     mcspace_pv_upper_tri = pvals[np.triu_indices(notus, k=1)]
+def eval_mcspace_pairwise_f1(respath, reads, gt_theta):
+    device = get_device()
+    otu_threshold = 0.002
+    nthres = 100
+    data = get_data(reads, device)
+    gt_assoc = get_gt_assoc(gt_theta, otu_threshold=otu_threshold)
+    # load model
+    modelfile = respath / MODEL_FILE
+    model = torch.load(modelfile)
+    # eval mcspace posterior probs
+    pvals_all = get_mcspace_cooccur_binary_prob(model, data, otu_threshold, nsamples=1000)
+    pvals = pvals_all #[0,0,:,:] #! first time and subject index
+    # eval f1
+    notus = gt_assoc.shape[0]
+    gt_pv_upper_tri = gt_assoc[np.triu_indices(notus, k=1)]
+    mcspace_pv_upper_tri = pvals[np.triu_indices(notus, k=1)]
 
-#     true_labels = (gt_pv_upper_tri >= 0.5).astype(int)
-#     predicted_labels = (mcspace_pv_upper_tri >= 0.5).astype(int)
-#     f1 = f1_score(true_labels, predicted_labels)
-#     print('here')
-#     return f1
+    true_labels = (gt_pv_upper_tri >= 0.5).astype(int)
+    predicted_labels = (mcspace_pv_upper_tri >= 0.5).astype(int)
+    f1 = f1_score(true_labels, predicted_labels)
+    print('here')
+    return f1
 
 
-# def eval_mcspace_pairwise_auc_vary_otu_threshold(respath, reads, gt_theta):
-#     device = get_device()
-#     thresholds = np.linspace(0,1,1000)
+def eval_mcspace_pairwise_auc_vary_otu_threshold(respath, reads, gt_theta):
+    device = get_device()
+    thresholds = np.linspace(0,1,1000)
 
-#     data = get_data(reads, device)
-#     gt_assoc = get_gt_assoc(gt_theta, otu_threshold=0.005)
-#     # load model
-#     modelfile = respath / MODEL_FILE
-#     model = torch.load(modelfile)
-#     # eval mcspace posterior probs
-#     mcprobs = get_mcspace_cooccur_binary_prob_vs_otu_threshold(model, data, thresholds)
-#     # eval auc
-#     auc_val = calc_auc_vs_otu_thresholds(gt_assoc, mcprobs, thresholds)
-#     return auc_val
+    data = get_data(reads, device)
+    gt_assoc = get_gt_assoc(gt_theta, otu_threshold=0.005)
+    # load model
+    modelfile = respath / MODEL_FILE
+    model = torch.load(modelfile)
+    # eval mcspace posterior probs
+    mcprobs = get_mcspace_cooccur_binary_prob_vs_otu_threshold(model, data, thresholds)
+    # eval auc
+    auc_val = calc_auc_vs_otu_thresholds(gt_assoc, mcprobs, thresholds)
+    return auc_val
 
 
 def eval_mcspace_pairwise(respath, gt_data, seeds):
@@ -177,10 +177,7 @@ def eval_mcspace_pairwise(respath, gt_data, seeds):
 
 
 def evaluate_case(modelpath, datapath, results, ds, procvar, pertvar, garbvar):
-# def evaluate_case(modelpath, datapath, results, ds, npart, nreads, base_sample):
-    # case = f"D{ds}_P{npart}_R{nreads}_B{base_sample}"
-    # seeds = np.arange(10)
-    n_seeds = 1 # TODO: change to 10
+    n_seeds = 10
     seeds = np.arange(n_seeds)
     case = f"D{ds}_PROC{procvar}_PERT{pertvar}_G{garbvar}"
     dsetname = f"data_D{ds}_timeseries.pkl"
@@ -191,7 +188,7 @@ def evaluate_case(modelpath, datapath, results, ds, procvar, pertvar, garbvar):
     gtdata = pickle_load(datapath / dsetname)
 
     # eval fisher
-    aucval, f1, aucval_otuthreshold = eval_mcspace_pairwise(respath, gtdata, seeds)
+    aucval, _, _ = eval_mcspace_pairwise(respath, gtdata, seeds)
 
     results['model'].append('mcspace')
     
@@ -214,9 +211,6 @@ def main(rootdir, outdir):
     # result
     results = {}
     results['model'] = []
-    # results['base_sample'] = []
-    # results['number particles'] = []
-    # results['number reads'] = []
     results['process_var_scale'] = []
     results['perturbation_var_scale'] = []
     results['garbage_var_scale'] = []
@@ -227,11 +221,10 @@ def main(rootdir, outdir):
     process_var_scale = [10, 100, 1000]
     perturbation_var_scale = [100, 1000, 10000]
     garbage_var_scale = [10, 100, 1000]
-    dsets = np.arange(2) #TODO: change back10)
+    dsets = np.arange(10) 
 
     modelpath = Path(outdir) / "sensitivity_analysis" / "assemblage_recovery" / "mcspace"
     datapath = Path(outdir) / "sensitivity_analysis" / "synthetic" # path to semi-synthetic data
-
 
     for ds in dsets:
         print(f"analyzing dataset {ds}...")
@@ -262,16 +255,15 @@ def main(rootdir, outdir):
 
 
 if __name__ == "__main__":
-    # TODO: add back
-    # import argparse
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("-d", dest='rootpath', help='root path')
-    # parser.add_argument("-o", dest='outpath', help='output path')
-    # args = parser.parse_args()
-    # main(args.rootpath, args.outpath)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", dest='rootpath', help='root path')
+    parser.add_argument("-o", dest='outpath', help='output path')
+    args = parser.parse_args()
+    main(args.rootpath, args.outpath)
 
-    rootdir = "./MCSPACE_paper"
-    outdir = "./MCSPACE_paper/output/"
+    # rootdir = "./MCSPACE_paper"
+    # outdir = "./MCSPACE_paper/output/"
 
-    main(rootdir, outdir)
+    # main(rootdir, outdir)
     

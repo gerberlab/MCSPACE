@@ -162,7 +162,7 @@ def eval_mcspace_metrics(respath, gt_data, seeds):
     # nmi_samples = calc_nmi_samples(z_samples, cluster_labels)
 
     # take median results and return
-    nmi = np.nan #!np.median(nmi_samples)
+    nmi = np.nan #!np.median(nmi_samples) - not using
     comm_err = np.median(comm_err_samples)
     return nmi, comm_err, nk_learned
 
@@ -203,8 +203,7 @@ def eval_gmm_metrics(respath, gt_data):
 
 
 def evaluate_case(basepath, datapath, res, ds, procvar, pertvar, garbvar):
-# def evaluate_case(basepath, datapath, res, ds, npart, nreads, base_sample):
-    n_seeds = 1 # TODO: change to 10
+    n_seeds = 10
     seeds = np.arange(n_seeds)
     case = f"D{ds}_PROC{procvar}_PERT{pertvar}_G{garbvar}"
     dsetname = f"data_D{ds}_timeseries.pkl"
@@ -254,7 +253,7 @@ def main(rootdir, outdir):
     process_var_scale = [10, 100, 1000]
     perturbation_var_scale = [100, 1000, 10000]
     garbage_var_scale = [10, 100, 1000]
-    dsets = np.arange(10)
+    dsets = np.arange(10) 
 
     datapath = Path(outdir) / "sensitivity_analysis" / "synthetic" # path to semi-synthetic data
     for ds in dsets:
@@ -291,16 +290,15 @@ def main(rootdir, outdir):
 
 
 if __name__ == "__main__":
-    # TODO: add back
-    # import argparse
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument("-d", dest='rootpath', help='root path')
-    # parser.add_argument("-o", dest='outpath', help='output path')
-    # args = parser.parse_args()
-    # main(args.rootpath, args.outpath)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", dest='rootpath', help='root path')
+    parser.add_argument("-o", dest='outpath', help='output path')
+    args = parser.parse_args()
+    main(args.rootpath, args.outpath)
 
-    rootdir = "./MCSPACE_paper"
-    outdir = "./MCSPACE_paper/output/"
+    # rootdir = "./MCSPACE_paper"
+    # outdir = "./MCSPACE_paper/output/"
 
-    main(rootdir, outdir)
+    # main(rootdir, outdir)
     
