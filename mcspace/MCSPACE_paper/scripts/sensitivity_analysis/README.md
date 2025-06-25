@@ -13,17 +13,17 @@ This generates the semi-synthetic datasets used for evaluating sensitivity bench
 ## Step 2: Run MCSPACE model inference on synthetic datasets
 To run the MCSPACE model for inference on synthetic datasets, use the following command:
 ```bash
-bash run_senstivity_MCSPACE.sh [run_all] [run_id]
+bash sensitivity_analysis/run_senstivity_MCSPACE.sh [run_all] [run_id]
 ```
 ### Running all cases sequentially
 To execute all cases sequentially, run the command:
 ```bash
-bash run_senstivity_MCSPACE.sh run_all
+bash sensitivity_analysis/run_senstivity_MCSPACE.sh run_all
 ```
 ### Running specific cases
 For running multiple cases in parallel (e.g. by using a job scheduler) or focusing on specific cases, you can provide a `run_id` parameter. To run a particular case, use the command:
 ```bash
-bash run_senstivity_MCSPACE.sh [run_id]
+bash sensitivity_analysis/run_senstivity_MCSPACE.sh [run_id]
 ```
 * Options for `run_id`: 0 to 89
 
@@ -32,14 +32,14 @@ The script will run the MCSPACE model on the selected synthetic datasets and sen
 ## Step 3: Evaluate inference results for MCSPACE in recovering underlying assemblages in synthetic data
 To evaluate benchmarking metrics on MCSPACE, after running inference, run the command:
 ```bash
-bash evaluate_sensitivity_assemblages.sh
+bash sensitivity_analysis/evaluate_sensitivity_assemblages.sh
 ```
 This computes the NMI, assemblage recovery error, and error in number of assemblages, and outputs the results in `MCSPACE_paper/results/sensitivity_analysis/assemblage_recovery/`
 
 ## Step 4: Evaluate pairwise inference results for MCSPACE
 To compute the AUC for MCSPACE in recoverying pairwise associations, run the command:
 ```bash
-bash evaluate_sensitivity_pairwise.sh
+bash sensitivity_analysis/evaluate_sensitivity_pairwise.sh
 ```
 The results are output in `MCSPACE_paper/results/sensitivity_analysis/pairwise/mcspace_results`
 
