@@ -238,6 +238,31 @@ def get_human_timeseries_dataset(min_abundance=0.005, min_reads=250, max_reads=1
     return reads, num_otus, times, subjects, dataset
 
 
+def get_human_inulin_perturbation_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, rootpath=Path("./")):
+    #* paths to data
+    datapath = rootpath / "human_inulin_perturbed"
+    taxfile = datapath / "taxonomy.csv"
+    countfile = datapath / "count_data.csv"
+
+    #* create dataset object
+    dataset = DataSet(countfile, taxfile)
+
+    #* filter otus
+    num_consistent_subjects=1
+    dataset.consistency_filtering(num_consistent_subjects=num_consistent_subjects, min_abundance=min_abundance, min_reads=min_reads, max_reads=max_reads)
+
+    #* filter particles
+    dataset.filter_particle_data(min_reads=min_reads, max_reads=max_reads)
+
+    #* return reads, number otus, times, and subjects...
+    reads = dataset.get_reads()
+    num_otus = len(dataset.otu_index)
+    times = dataset.times
+    num_subjects = len(dataset.subjects)
+    subjects = dataset.subjects
+    return reads, num_otus, times, subjects, dataset
+
+
 def get_mouse_diet_perturbations_dataset(min_abundance=0.005, min_reads=250, max_reads=10000, subj_remove=['JX09'], num_consistent_subjects=2,rootpath = Path("./")):
     # rootpath is path to datasets folder...
     datapath = rootpath / "mouse_experiments"

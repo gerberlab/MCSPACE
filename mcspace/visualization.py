@@ -110,7 +110,7 @@ def render_assemblages(results,
         ax_theta.set_ylabel("")
     else:
         new_labels = _update_names(ax_theta.get_yticklabels(), taxonomy)
-        ax_theta.set_yticklabels(new_labels, fontsize=fontsize)
+        ax_theta.set_yticklabels(new_labels, fontsize=fontsize, rotation=0)
         ax_theta.set_ylabel("OTU", fontsize=fontsize)
     ax_theta = vt.add_border(ax_theta)
 

@@ -409,7 +409,7 @@ def get_min_loss_path(runpath, seeds):
 
     for seed in seeds:
         respath = runpath / f"seed_{seed}"
-        model = torch.load(respath / MODEL_FILE)
+        model = torch.load(respath / MODEL_FILE, weights_only=False)
         data = pickle_load(respath / DATA_FILE)
 
         n_samples = 100
@@ -492,7 +492,12 @@ def get_lowest_level_name(oidx, taxonomy):
 
     def _format_name(name, level):
         if level == 'Species':
-            genus, species = name.split(' ')
+            x = name.split(' ')
+            if len(x) == 2:
+                genus, species = x
+            else:
+                genus = '_' # TODO: get this from previous taxonomic rank
+                species = x[0]
             s = f'{genus[0]}. {species}'
         else:
             s = name
