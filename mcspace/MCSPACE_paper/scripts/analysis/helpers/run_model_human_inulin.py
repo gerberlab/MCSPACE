@@ -30,9 +30,7 @@ def main(rootdir, outdir):
     
     run_inference(processed_data,
                 outpath,
-                n_seeds=1,
-                device=device,
-                n_epochs=10)
+                device=device)
 
     # get the execution time
     et = time.time()
