@@ -126,6 +126,7 @@ def run_inference_seed(data,
     torch.save(model, outpath / MODEL_FILE)
     pickle_save(outpath / DATA_FILE, inference_data)
     pickle_save(outpath / "taxonomy.pkl", taxonomy)
+    pickle_save(outpath / "elbos.pkl", elbos)
 
 
 def run_inference(data,
