@@ -121,6 +121,14 @@ run_inference(processed_data, "./results/")
 ```
 mcspace infer --data processed_data.pkl --outdir ./results/
 ```
+### Model outputs
+Inference results are saved to the `outpath` directory specified when running the model. This directory includes the following outputs:
+- `assemblages.csv`: A csv file containing the learned assemblages, with rows corresponding to each OTU and columns for each assemblages.
+- `assemblage_proportions.csv`: A csv file giving the posterior summary of inferred assemblage proportions, in long format, for each assemblage at each timepoint for each subject.
+- `perturbation_bayes_factors.csv`: A csv file containing the perturbation Bayes factors with columns corresponding to each perturbed timepoint and rows for each assemblage.
+- `runs`: Folder containing model inference results for each seed run. The `model.pt` file in each folder gives the saved pytorch model for each corresponding seed. The `elbos.pkl` file gives the ELBO loss at each epoch for the run to help users monitor and assess model convergence and training quality.
+- `best_model`: Folder containing inference results for the seed with the lowest average ELBO loss, and which is used to generate posterior summaries.
+- `results.pkl`: A pickle file containing posterior summaries of inferred parameters. This contains the same information as the csv files. This file can be used with our visulization functions for easy visualization of model results. See next tutorial `visualizating_results.ipynb` for more details.
 
 ## Visualizing results
 Methods for visualizing results include: `render_assemblages`, `render_assemblage_proportions`, and `export_association_networks_to_cytoscape`, each described below. See the [tutorial](../tutorials/visualizating_results.ipynb) for examples on using the visualization methods.
