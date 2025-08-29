@@ -1,0 +1,763 @@
+Otu,Domain,Phylum,Order,Class,Family,Genus,Species
+Otu1,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Agathobacter,rectalis
+Otu10,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,bromii
+Otu1001,Bacteria,Actinobacteriota,na,na,na,na,na
+Otu1002,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu1003,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1030,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1032,Bacteria,Firmicutes,Oscillospirales,Clostridia,Hydrogenoanaerobacterium,na,na
+Otu104,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1048,Bacteria,na,na,na,na,na,na
+Otu1053,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1057,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1060,Bacteria,Firmicutes,Lachnospirales,Clostridia,na,na,na
+Otu1061,Bacteria,na,na,na,na,na,na
+Otu1067,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu107,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,Intestinibacter,na
+Otu108,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,Colidextribacter,na
+Otu1082,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1085,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu109,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1093,Bacteria,Firmicutes,na,na,na,na,na
+Otu11,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Bacteroidaceae,Bacteroides,uniformis
+Otu110,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Coprococcus,na
+Otu1108,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu111,Bacteria,Firmicutes,Veillonellales-Selenomonadales,Negativicutes,Veillonellaceae,Veillonella,na
+Otu1133,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] saphenum group,na
+Otu1139,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu1149,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu115,Bacteria,Firmicutes,Oscillospirales,Clostridia,Butyricicoccaceae,Butyricicoccus,na
+Otu1150,Bacteria,Actinobacteriota,na,Actinobacteria,na,na,na
+Otu1156,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1160,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu1164,Bacteria,Proteobacteria,Burkholderiales,Gammaproteobacteria,Sutterellaceae,Parasutterella,na
+Otu1165,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu1166,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,na,na
+Otu1167,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu117,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-010,na
+Otu1174,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1177,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu118,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1180,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu1187,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu12,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu120,Bacteria,Proteobacteria,Enterobacterales,Gammaproteobacteria,na,na,na
+Otu1209,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,na,na
+Otu121,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1210,Bacteria,Firmicutes,na,na,na,na,na
+Otu1213,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1219,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu122,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu123,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Candidatus Stoquefichus,na
+Otu1231,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1236,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] oxidoreducens group,na
+Otu1247,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1248,Bacteria,Bacteroidota,na,Bacteroidia,na,na,na
+Otu1249,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu125,Bacteria,Firmicutes,Lactobacillales,Bacilli,na,na,na
+Otu126,Bacteria,Firmicutes,na,na,na,na,na
+Otu1265,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu127,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,UCG-002,na
+Otu1272,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu128,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] ruminantium group,na
+Otu1281,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1292,Bacteria,Firmicutes,na,na,na,na,na
+Otu13,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Blautia,masiliensis
+Otu130,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu1307,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu1308,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1312,Bacteria,na,na,na,na,na,na
+Otu1320,Bacteria,na,na,na,na,na,na
+Otu1328,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1330,Bacteria,Firmicutes,na,na,na,na,na
+Otu1332,Bacteria,na,na,na,na,na,na
+Otu1339,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu135,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu1357,Bacteria,Firmicutes,Veillonellales-Selenomonadales,Negativicutes,Selenomonadaceae,na,na
+Otu1360,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1361,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1369,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu138,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriales Incertae Sedis,na,na
+Otu1385,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] oxidoreducens group,na
+Otu1397,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,Enterorhabdus,na
+Otu14,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Roseburia,inulinivorans
+Otu1405,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu1406,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1408,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu141,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1413,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu142,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1423,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu143,Bacteria,Firmicutes,Oscillospirales,Clostridia,Butyricicoccaceae,Butyricicoccus,na
+Otu1438,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu144,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Barnesiellaceae,Coprobacter,na
+Otu1440,Bacteria,na,na,na,na,na,na
+Otu1442,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1446,Bacteria,na,na,na,na,na,na
+Otu1450,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1452,Bacteria,na,na,na,na,na,na
+Otu1458,Bacteria,na,na,na,na,na,na
+Otu146,Bacteria,Firmicutes,Christensenellales,Clostridia,Christensenellaceae,Christensenellaceae R-7 group,na
+Otu1460,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1473,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,na,na,na
+Otu148,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Faecalitalea,na
+Otu1489,Bacteria,Actinobacteriota,na,Coriobacteriia,na,na,na
+Otu149,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Frisingicoccus,na
+Otu1495,Bacteria,na,na,na,na,na,na
+Otu1496,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] eligens group,na
+Otu1499,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu15,Bacteria,Firmicutes,Acidaminococcales,Negativicutes,Acidaminococcaceae,Acidaminococcaceae,na
+Otu1506,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelotrichaceae UCG-003,na
+Otu1509,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu151,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,na
+Otu1518,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Anaerotruncus,na
+Otu1519,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,na,na,na
+Otu1539,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,na,na
+Otu1544,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1547,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu1548,Bacteria,Actinobacteriota,na,Actinobacteria,na,na,na
+Otu1549,Bacteria,na,na,na,na,na,na
+Otu155,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1551,Bacteria,na,na,na,na,na,na
+Otu1552,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1553,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1557,Bacteria,na,na,na,na,na,na
+Otu156,Bacteria,Firmicutes,Hungateiclostridiaceae,Clostridia,UCG-012,na,na
+Otu1564,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-001,na
+Otu157,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,Colidextribacter,na
+Otu1571,Bacteria,Firmicutes,Desulfitobacteriales,Desulfitobacteriia,Desulfitobacteriaceae,Desulfosporosinus,na
+Otu1576,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1578,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu158,Bacteria,Firmicutes,Veillonellales-Selenomonadales,Negativicutes,Veillonellaceae,Megasphaera,na
+Otu1585,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1591,Bacteria,na,na,na,na,na,na
+Otu1599,Bacteria,Firmicutes,na,na,na,na,na
+Otu16,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Dorea,longicatena
+Otu160,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,Eggerthella,na
+Otu1610,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelotrichaceae UCG-003,na
+Otu1612,Bacteria,Firmicutes,Acidaminococcales,Negativicutes,Acidaminococcaceae,Phascolarctobacterium,na
+Otu1624,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu1628,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu163,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1631,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Phocea,na
+Otu1636,Bacteria,na,na,na,na,na,na
+Otu164,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Butyrivibrio,na
+Otu1646,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1651,Bacteria,na,na,na,na,na,na
+Otu166,Bacteria,Firmicutes,Veillonellales-Selenomonadales,Negativicutes,na,na,na
+Otu1662,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu1666,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu167,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnoclostridium,na
+Otu1678,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Pseudobutyrivibrio,na
+Otu1684,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu1689,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu169,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,Intestinimonas,na
+Otu1690,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1692,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1693,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu17,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Roseburia,faecis/torques
+Otu170,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1700,Bacteria,Actinobacteriota,na,Actinobacteria,na,na,na
+Otu1704,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1710,Bacteria,Firmicutes,na,na,na,na,na
+Otu1717,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] eligens group,na
+Otu1724,Bacteria,na,na,na,na,na,na
+Otu1735,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu174,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1747,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,na
+Otu175,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Catonella,na
+Otu1751,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu177,Bacteria,Firmicutes,Lactobacillales,Bacilli,na,na,na
+Otu1770,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] oxidoreducens group,na
+Otu1777,Bacteria,na,na,na,na,na,na
+Otu178,Bacteria,Actinobacteriota,Actinomycetales,Actinobacteria,Actinomycetaceae,Actinomyces,na
+Otu1781,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1786,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospira,na
+Otu1787,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu18,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Bacteroidaceae,Bacteroides,na
+Otu180,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu181,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu182,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu183,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1835,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,Collinsella,na
+Otu1841,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu1846,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1850,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1856,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu186,Bacteria,Firmicutes,Lactobacillales,Bacilli,Streptococcaceae,Streptococcus,na
+Otu1862,Bacteria,Firmicutes,Christensenellales,Clostridia,Christensenellaceae,Catabacter,na
+Otu1864,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1868,Bacteria,Firmicutes,Lachnospirales,Clostridia,na,na,na
+Otu1871,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1872,Bacteria,na,na,na,na,na,na
+Otu188,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,Terrisporobacter,na
+Otu1888,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu189,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu1907,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1908,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu1909,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu191,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1915,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1916,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1927,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu193,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1940,Bacteria,na,na,na,na,na,na
+Otu1942,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1959,Bacteria,na,na,na,na,na,na
+Otu1962,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1969,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1971,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu1985,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu1992,Bacteria,Firmicutes,na,na,na,na,na
+Otu1993,Bacteria,na,na,na,na,na,na
+Otu1996,Bacteria,na,na,na,na,na,na
+Otu1999,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae AC2044 group,na
+Otu2,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,prausnitzii
+Otu20,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,Colinsella,aerofaciens
+Otu200,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu2012,Bacteria,Actinobacteriota,na,na,na,na,na
+Otu2024,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2025,Bacteria,na,na,na,na,na,na
+Otu2029,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2032,Bacteria,na,na,na,na,na,na
+Otu2034,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2038,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2039,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2051,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2055,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu2056,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu206,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2061,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2064,Bacteria,Actinobacteriota,na,Coriobacteriia,na,na,na
+Otu2066,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelatoclostridium,na
+Otu2068,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu207,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII AD3011 group,na
+Otu2080,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu2088,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu21,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelotrichaceae,UCG-003
+Otu2100,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2101,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2104,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu2115,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] hallii group,na
+Otu2119,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2120,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Phocea,na
+Otu2121,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2127,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2139,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2142,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2143,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu215,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Angelakisella,na
+Otu2156,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2158,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu216,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] brachy group,na
+Otu2167,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2170,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2192,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu220,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Candidatus Stoquefichus,na
+Otu2200,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2207,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu221,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2222,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu223,Bacteria,Firmicutes,Lactobacillales,Bacilli,Lactobacillaceae,Lactobacillus,na
+Otu2231,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2234,Bacteria,Firmicutes,na,na,na,na,na
+Otu224,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu2249,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2256,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2264,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2266,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelotrichaceae UCG-003,na
+Otu2268,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu227,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Turicibacter,na
+Otu228,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2287,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu229,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Tyzzerella,na
+Otu2293,Bacteria,Firmicutes,na,na,na,na,na
+Otu23,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Blautia,faecis/phocaeensis
+Otu2305,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2308,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Paludicola,na
+Otu231,Bacteria,Cyanobacteria,Chloroplast,Cyanobacteriia,na,na,na
+Otu2319,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2323,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2326,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu233,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Candidatus Stoquefichus,na
+Otu2338,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu234,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2349,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2357,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu236,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,na,na
+Otu2363,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu237,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Catenibacillus,na
+Otu2375,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu238,Bacteria,Firmicutes,Clostridiales,Clostridia,Clostridiaceae,na,na
+Otu2392,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu24,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Anaerostipes,hadrus
+Otu2411,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu242,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu244,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2441,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae XPB1014 group,na
+Otu2443,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2451,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2455,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2456,Bacteria,na,na,na,na,na,na
+Otu246,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu2466,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnoclostridium,na
+Otu2467,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu2470,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu2472,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2476,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu2483,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu249,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,UCG-005,na
+Otu2490,Bacteria,Firmicutes,Hungateiclostridiaceae,Clostridia,na,na,na
+Otu2496,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2498,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Hungatella,na
+Otu2505,Bacteria,na,na,na,na,na,na
+Otu251,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu2523,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu2526,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,Collinsella,na
+Otu253,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UBA1819,na
+Otu2538,Bacteria,Firmicutes,Bacillales,Bacilli,Planococcaceae,Sporosarcina,na
+Otu254,Bacteria,Firmicutes,Lactobacillales,Bacilli,Streptococcaceae,Streptococcus,na
+Otu255,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Holdemania,na
+Otu2563,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Paludicola,na
+Otu2586,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-004,na
+Otu2589,Bacteria,na,na,na,na,na,na
+Otu259,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu2599,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,na,na
+Otu26,Bacteria,Firmicutes,Oscillospirales,Clostridia,[Eubacterium] coprostanoligenes group,Faecalibacterium,longum
+Otu2602,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2609,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2614,Bacteria,na,na,na,na,na,na
+Otu2617,Bacteria,na,na,na,na,na,na
+Otu262,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Mogibacterium,na
+Otu2621,Bacteria,Firmicutes,na,na,na,na,na
+Otu2629,Bacteria,na,na,na,na,na,na
+Otu263,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu2636,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2638,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu2646,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2652,Bacteria,na,na,na,na,na,na
+Otu2656,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnoclostridium,na
+Otu266,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,GCA-900066575,na
+Otu2667,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2668,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospira,na
+Otu2669,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2671,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2672,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2677,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2684,Bacteria,Actinobacteriota,na,Actinobacteria,na,na,na
+Otu2691,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu27,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Rikenellaceae,Alistipes,marseille-P8752
+Otu270,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,na,na,na
+Otu2709,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu271,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,UCG-005,na
+Otu2712,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2723,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu273,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2731,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2752,Bacteria,Actinobacteriota,na,na,na,na,na
+Otu2760,Bacteria,na,na,na,na,na,na
+Otu278,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] fissicatena group,na
+Otu2780,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu279,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Turicibacter,na
+Otu2797,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu2799,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu28,Bacteria,Euryarchaeota,Methanobacteriales,Methanobacteria,Methanobacteriaceae,Methanosphaera,na
+Otu280,Bacteria,Firmicutes,Lactobacillales,Bacilli,Streptococcaceae,Lactococcus,na
+Otu2809,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu281,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,Oscillibacter,na
+Otu2812,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2814,Bacteria,na,na,na,na,na,na
+Otu2816,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2828,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2837,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2839,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu284,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII AD3011 group,na
+Otu2844,Bacteria,na,na,na,na,na,na
+Otu285,Bacteria,Firmicutes,Oscillospirales,Clostridia,[Eubacterium] coprostanoligenes group,na,na
+Otu2853,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2854,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu2857,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu286,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Candidatus Soleaferrea,na
+Otu2862,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu2865,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,na,na,na
+Otu2870,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu2889,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2896,Bacteria,na,na,na,na,na,na
+Otu29,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Cibiobacter,Qucibialis
+Otu2902,Bacteria,Actinobacteriota,na,Coriobacteriia,na,na,na
+Otu2904,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2914,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Acetitomaculum,na
+Otu2917,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2929,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,na,na
+Otu2934,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2935,Bacteria,na,na,na,na,na,na
+Otu294,Bacteria,Firmicutes,na,na,na,na,na
+Otu2943,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu297,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Moryella,na
+Otu2970,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2975,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2977,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2978,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2982,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu2983,Bacteria,na,na,na,na,na,na
+Otu2984,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu299,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu2993,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Bacteroidaceae,Bacteroides,dorei/vulgatus
+Otu30,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospira,eligens
+Otu3000,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu302,Bacteria,Firmicutes,Clostridiales,Clostridia,Clostridiaceae,na,na
+Otu3022,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3026,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu3028,Bacteria,na,na,na,na,na,na
+Otu3043,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,na
+Otu3044,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3054,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu306,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] nodatum group,na
+Otu3065,Bacteria,na,na,na,na,na,na
+Otu3071,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3072,Bacteria,na,na,na,na,na,na
+Otu3078,Bacteria,Firmicutes,na,na,na,na,na
+Otu3079,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3081,Bacteria,Firmicutes,na,na,na,na,na
+Otu3084,Bacteria,na,na,na,na,na,na
+Otu309,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,Gordonibacter,na
+Otu3090,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3091,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3095,Bacteria,Firmicutes,na,na,na,na,na
+Otu31,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3103,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae XPB1014 group,na
+Otu3116,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu312,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3122,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3131,Bacteria,Actinobacteriota,na,na,na,na,na
+Otu3133,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu314,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII AD3011 group,na
+Otu3142,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3147,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3153,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,Collinsella,na
+Otu3162,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Shuttleworthia,na
+Otu3170,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3184,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3199,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,na,na
+Otu32,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Tannerellaceae,Parabacteroides,distasonis
+Otu3200,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3205,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu321,Bacteria,Firmicutes,Christensenellales,Clostridia,Christensenellaceae,Christensenellaceae R-7 group,na
+Otu3212,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3229,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,FD2005,na
+Otu323,Bacteria,Firmicutes,Lactobacillales,Bacilli,Leuconostocaceae,Leuconostoc,na
+Otu3232,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,na
+Otu3233,Bacteria,na,na,na,na,na,na
+Otu3242,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-001,na
+Otu3251,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu3252,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu326,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] nodatum group,na
+Otu3261,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3266,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3272,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3275,Bacteria,na,na,na,na,na,na
+Otu3282,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3287,Bacteria,na,na,na,na,na,na
+Otu3292,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3295,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3305,Bacteria,na,na,na,na,na,na
+Otu3328,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu333,Bacteria,Bacteroidota,Flavobacteriales,Bacteroidia,Flavobacteriaceae,Imtechella,na
+Otu3331,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu3344,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3348,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae XPB1014 group,na
+Otu335,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII UCG-001,na
+Otu336,Bacteria,Cyanobacteria,Chloroplast,Cyanobacteriia,na,na,na
+Otu3361,Bacteria,Firmicutes,na,na,na,na,na
+Otu3375,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu338,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Caproiciproducens,na
+Otu3387,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3388,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu34,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Subdoligranulum,variabile
+Otu3402,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3403,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3409,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Fusicatenibacter,na
+Otu3412,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu343,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Holdemania,na
+Otu3447,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3450,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3452,Bacteria,na,na,na,na,na,na
+Otu3453,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3462,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3467,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3471,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3473,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae XPB1014 group,na
+Otu348,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu3480,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3493,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3496,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3497,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3498,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] eligens group,na
+Otu3501,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK3A20 group,na
+Otu3507,Bacteria,Bacteroidota,na,na,na,na,na
+Otu3515,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu3516,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu3523,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3526,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3527,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3531,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu354,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,Slackia,na
+Otu3544,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3555,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3558,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu358,Bacteria,Firmicutes,Oscillospirales,Clostridia,Butyricicoccaceae,UCG-008,na
+Otu3585,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3586,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3587,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu359,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu3591,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu36,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu360,Bacteria,Firmicutes,Lactobacillales,Bacilli,Lactobacillaceae,Lactobacillus,na
+Otu3601,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3619,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu362,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3623,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3625,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3628,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu3637,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu364,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,NK4A214 group,na
+Otu3642,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3643,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Coprococcus,na
+Otu3651,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3655,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu366,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII AD3011 group,na
+Otu3664,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3672,Bacteria,na,na,na,na,na,na
+Otu3680,Bacteria,na,na,na,na,na,na
+Otu3687,Bacteria,Firmicutes,na,na,na,na,na
+Otu369,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,Family XIII AD3011 group,na
+Otu3690,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3699,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu3703,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lactonifactor,na
+Otu3709,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu371,Bacteria,Firmicutes,Lachnospirales,Clostridia,Defluviitaleaceae,Defluviitaleaceae UCG-011,na
+Otu3711,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3712,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu372,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] ventriosum group,na
+Otu3730,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,na,na
+Otu3733,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu3753,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,na,na
+Otu3762,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Coriobacteriaceae,Enorma,na
+Otu3765,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu3766,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3792,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3793,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3795,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu38,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Tannerellaceae,Parabacteroides,merdae
+Otu3804,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu381,Bacteria,na,na,na,na,na,na
+Otu3819,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu382,Bacteria,Firmicutes,Eubacteriales,Clostridia,Anaerofustaceae,Anaerofustis,na
+Otu383,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu3830,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3831,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Faecalibacterium,na
+Otu3832,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,UCG-001,na
+Otu3833,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3843,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu3846,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu3853,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu3861,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3863,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3864,Bacteria,Firmicutes,na,Bacilli,na,na,na
+Otu3866,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu3868,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3872,Bacteria,na,na,na,na,na,na
+Otu3873,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu388,Bacteria,Firmicutes,Lactobacillales,Bacilli,Leuconostocaceae,Weissella,na
+Otu3885,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3894,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu390,Bacteria,Actinobacteriota,Micrococcales,Actinobacteria,na,na,na
+Otu3900,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu391,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu3915,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu392,Bacteria,Firmicutes,na,na,na,na,na
+Otu394,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu395,Bacteria,Firmicutes,na,na,na,na,na
+Otu397,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu4,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Rumincoccus,bicirculans/flavefaciens
+Otu40,Bacteria,Synergistota,Synergistales,Synergistia,Synergistaceae,Cloacibacillus,na
+Otu400,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,GCA-900066755,na
+Otu404,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu407,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,DNF00809,na
+Otu41,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,[Eubacterium] siraeum group,na
+Otu415,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu416,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Roseburia,na
+Otu42,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu420,Bacteria,na,na,na,na,na,na
+Otu421,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-006,na
+Otu424,Bacteria,Firmicutes,Oscillospirales,Clostridia,[Eubacterium] coprostanoligenes group,na,na
+Otu426,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,Enterorhabdus,na
+Otu428,Bacteria,Firmicutes,na,na,na,na,na
+Otu429,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] brachy group,na
+Otu43,Bacteria,Firmicutes,Lactobacillales,Bacilli,Streptococcaceae,Streptococcus,na
+Otu434,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu44,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,Colidextribacter,na
+Otu442,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,na,na
+Otu447,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu45,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu451,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu46,Bacteria,Proteobacteria,Burkholderiales,Gammaproteobacteria,Sutterellaceae,Parasutterella,na
+Otu464,Bacteria,Firmicutes,Oscillospirales,Clostridia,UCG-010,na,na
+Otu465,Bacteria,Firmicutes,na,na,na,na,na
+Otu47,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Fusicatenibacter,na
+Otu470,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu48,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospira,pectinoschiza
+Otu481,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu483,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu49,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] xylanophilum group,na
+Otu490,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu493,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu496,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu497,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,na,na
+Otu5,Bacteria,Firmicutes,Bacillales,Bacilli,Planococcaceae,na,na
+Otu50,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] oxidoreducens group,na
+Otu512,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,GCA-900066575,na
+Otu518,Bacteria,Actinobacteriota,Actinomycetales,Actinobacteria,Actinomycetaceae,Actinomyces,na
+Otu52,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae,UCG-001
+Otu520,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelotrichaceae,Solobacterium,na
+Otu529,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu53,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,[Eubacterium] ventriosum group,na
+Otu54,Bacteria,Firmicutes,Lactobacillales,Bacilli,Lactobacillaceae,Pediococcus,na
+Otu540,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu541,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,[Eubacterium] nodatum group,na
+Otu545,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu546,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu547,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ethanoligenenaceae,Acetanaerobacterium,na
+Otu55,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Marinifilaceae,Odoribacter,na
+Otu555,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,Peptostreptococcus,na
+Otu559,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu560,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,na,na,na
+Otu561,Bacteria,na,na,na,na,na,na
+Otu563,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu564,Bacteria,Firmicutes,na,na,na,na,na
+Otu565,Bacteria,Firmicutes,Oscillospirales,Clostridia,[Eubacterium] coprostanoligenes group,na,na
+Otu566,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu568,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu571,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu572,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Anaerovoracaceae,S5-A14a,na
+Otu578,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu579,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu58,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-001,na
+Otu580,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu582,Bacteria,Firmicutes,Oscillospirales,Clostridia,UCG-010,na,na
+Otu585,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu59,Bacteria,Firmicutes,Monoglobales,Clostridia,Monoglobaceae,Monoglobus,na
+Otu590,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu591,Bacteria,Firmicutes,Lachnospirales,Clostridia,Defluviitaleaceae,Defluviitaleaceae UCG-011,na
+Otu596,Bacteria,Firmicutes,Desulfotomaculales,Desulfotomaculia,Desulfofarcimen,na,na
+Otu6,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu60,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu608,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu612,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu614,Bacteria,Firmicutes,Monoglobales,Clostridia,Monoglobaceae,Monoglobus,na
+Otu615,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu62,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu620,Bacteria,Firmicutes,Oscillospirales,Clostridia,[Eubacterium] coprostanoligenes group,na,na
+Otu623,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu635,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu64,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,na,na
+Otu640,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu644,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu65,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Bacteroidaceae,Bacteroides,nordii/slyersiae
+Otu654,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu658,Bacteria,Firmicutes,Oscillospirales,Clostridia,UCG-011,na,na
+Otu66,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelatoclostridium,na
+Otu660,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu662,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu669,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu67,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu677,Bacteria,na,na,na,na,na,na
+Otu678,Bacteria,na,na,na,na,na,na
+Otu680,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Candidatus Soleaferrea,na
+Otu683,Bacteria,na,na,na,na,na,na
+Otu687,Bacteria,Firmicutes,na,na,na,na,na
+Otu694,Bacteria,Actinobacteriota,Actinomycetales,Actinobacteria,Actinomycetaceae,Actinomyces,na
+Otu699,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Roseburia,na
+Otu70,Bacteria,Firmicutes,Veillonellales-Selenomonadales,Negativicutes,Veillonellaceae,Veillonella,na
+Otu701,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu702,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu703,Bacteria,Actinobacteriota,Micrococcales,Actinobacteria,Microbacteriaceae,na,na
+Otu71,Bacteria,Firmicutes,Oscillospirales,Clostridia,Oscillospiraceae,na,na
+Otu711,Bacteria,na,na,na,na,na,na
+Otu713,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu714,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu72,Bacteria,Desulfobacterota,Desulfovibrionales,Desulfovibrionia,Desulfovibrionaceae,Bilophila,na
+Otu720,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu721,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,na,na,na
+Otu722,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,Prevotellaceae,na,na
+Otu729,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu733,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,na,na
+Otu735,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Caproiciproducens,na
+Otu737,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu74,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu747,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu748,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu75,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,Eggerthellaceae,na,na
+Otu753,Bacteria,Firmicutes,Lactobacillales,Bacilli,Lactobacillaceae,Lactobacillus,na
+Otu766,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu772,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu774,Bacteria,Firmicutes,na,na,na,na,na
+Otu776,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu777,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Peptostreptococcaceae,na,na
+Otu780,Bacteria,Firmicutes,Christensenellales,Clostridia,Christensenellaceae,Catabacter,na
+Otu781,Bacteria,Actinobacteriota,na,na,na,na,na
+Otu784,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu8,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Blautia,na
+Otu805,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu81,Bacteria,Firmicutes,Clostridia UCG-014,Clostridia,na,na,na
+Otu812,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu818,Bacteria,na,na,na,na,na,na
+Otu819,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu82,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu824,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu826,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu828,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu83,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospira,na
+Otu831,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae UCG-008,na
+Otu832,Bacteria,Actinobacteriota,Bifidobacteriales,Actinobacteria,Bifidobacteriaceae,Bifidobacterium,na
+Otu833,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu842,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu845,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu86,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NK4A136 group,na
+Otu860,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu863,Bacteria,Actinobacteriota,Coriobacteriales,Coriobacteriia,na,na,na
+Otu864,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu866,Bacteria,na,na,na,na,na,na
+Otu867,Bacteria,na,na,na,na,na,na
+Otu868,Bacteria,Firmicutes,Oscillospirales,Clostridia,na,na,na
+Otu87,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu872,Bacteria,Firmicutes,na,na,na,na,na
+Otu877,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Ruminococcus,na
+Otu878,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,na,na
+Otu88,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Tuzzerella,na
+Otu883,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu884,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu889,Bacteria,na,na,na,na,na,na
+Otu89,Bacteria,Firmicutes,Erysipelotrichales,Bacilli,Erysipelatoclostridiaceae,Erysipelatoclostridium,na
+Otu890,Bacteria,Firmicutes,Oscillospirales,Clostridia,Ruminococcaceae,Paludicola,na
+Otu899,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Dorea,na
+Otu9,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Fusicatenibacter,saccharivorans
+Otu903,Bacteria,Actinobacteriota,na,Coriobacteriia,na,na,na
+Otu906,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu910,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu912,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu915,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu917,Bacteria,Actinobacteriota,na,Actinobacteria,na,na,na
+Otu925,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu93,Bacteria,Bacteroidota,Bacteroidales,Bacteroidia,na,na,na
+Otu943,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu948,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu95,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Eubacterium,ramulus
+Otu952,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu963,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu97,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,na,na
+Otu98,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Blautia,na
+Otu981,Bacteria,Firmicutes,Lachnospirales,Clostridia,Lachnospiraceae,Lachnospiraceae NC2004 group,na
+Otu988,Bacteria,Firmicutes,na,Clostridia,na,na,na
+Otu993,Bacteria,Firmicutes,Peptostreptococcales-Tissierellales,Clostridia,Parvimonas,na,na

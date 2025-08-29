@@ -303,7 +303,9 @@ class AssemblageProportions(nn.Module):
                 perturbation_prior,
                 device,
                 use_sparse_weights,
-                add_process_variance):
+                add_process_variance,
+                process_var_prior_scale,
+                perturbation_magnitude_prior_scale):
         super().__init__()
 
         self.num_assemblages = num_assemblages 
@@ -332,10 +334,10 @@ class AssemblageProportions(nn.Module):
             self.perturbation_indicators = PerturbationIndicators(num_assemblages, self.num_perturbations, self.perturbation_prior_prob, 
                                                                     start_temp=0.5, end_temp=0.01, device=device)            
             #* perturbation magnitude
-            self.perturbation_magnitude = PerturbationMagnitude(num_assemblages, self.num_perturbations, num_otus, device, prior_mean=0, prior_var=100)
+            self.perturbation_magnitude = PerturbationMagnitude(num_assemblages, self.num_perturbations, num_otus, device, prior_mean=0, prior_var=perturbation_magnitude_prior_scale)
 
         if self.add_process_variance is True:
-            self.process_var = ProcessVariance(num_otus, times, subjects, process_var_prior_mean, prior_var=10, device=device)
+            self.process_var = ProcessVariance(num_otus, times, subjects, process_var_prior_mean, prior_var=process_var_prior_scale, device=device)
 
         self.latent_distrib = LatentTimeSeriesMixtureWeights(num_assemblages,
                                                              num_otus,

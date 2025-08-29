@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d8" for="edge" attr.name="Post-Inulin" attr.type="float" />
+  <key id="d7" for="edge" attr.name="Inulin" attr.type="float" />
+  <key id="d6" for="edge" attr.name="Pre-Inulin" attr.type="float" />
+  <key id="d5" for="node" attr.name="Post-Inulin_sqrt" attr.type="float" />
+  <key id="d4" for="node" attr.name="Post-Inulin" attr.type="float" />
+  <key id="d3" for="node" attr.name="Inulin_sqrt" attr.type="float" />
+  <key id="d2" for="node" attr.name="Inulin" attr.type="float" />
+  <key id="d1" for="node" attr.name="Pre-Inulin_sqrt" attr.type="float" />
+  <key id="d0" for="node" attr.name="Pre-Inulin" attr.type="float" />
+  <graph edgedefault="undirected">
+    <node id="A. rectalis OTU1">
+      <data key="d0">0.0977437471350034</data>
+      <data key="d1">0.3126415633517134</data>
+      <data key="d2">0.23870112001895905</data>
+      <data key="d3">0.4885715096267475</data>
+      <data key="d4">0.1188327968120575</data>
+      <data key="d5">0.3447227825544136</data>
+    </node>
+    <node id="S. variabile OTU34">
+      <data key="d0">0.02408025413751602</data>
+      <data key="d1">0.1551813588596131</data>
+      <data key="d2">0.006861968897283077</data>
+      <data key="d3">0.0828430377115849</data>
+      <data key="d4">0.02348441444337368</data>
+      <data key="d5">0.1532495169433616</data>
+    </node>
+    <node id="C. aerofaciens OTU20">
+      <data key="d0">0.0398687943816185</data>
+      <data key="d1">0.19967422062354093</data>
+      <data key="d2">0.03980864336093267</data>
+      <data key="d3">0.19952354086907306</data>
+      <data key="d4">0.050128042697906494</data>
+      <data key="d5">0.22389516005913682</data>
+    </node>
+    <node id="Monoglobus OTU59">
+      <data key="d0">0.022890585474669933</data>
+      <data key="d1">0.15129965457551425</data>
+      <data key="d2">0.014811969051758448</data>
+      <data key="d3">0.12170854140839273</data>
+      <data key="d4">0.014281275682151318</data>
+      <data key="d5">0.11950847535698594</data>
+    </node>
+    <node id="R. bromii OTU10">
+      <data key="d0">0.10285452753305435</data>
+      <data key="d1">0.3207109719561436</data>
+      <data key="d2">0.06884535029530525</data>
+      <data key="d3">0.2623858805181888</data>
+      <data key="d4">0.04314238950610161</data>
+      <data key="d5">0.20770986858139795</data>
+    </node>
+    <node id="R. faecis/torques OTU17">
+      <data key="d0">0.02031426504254341</data>
+      <data key="d1">0.1425316282182429</data>
+      <data key="d2">0.07387267301479976</data>
+      <data key="d3">0.27179711737764944</data>
+      <data key="d4">0.07387242466211319</data>
+      <data key="d5">0.27179666050581486</data>
+    </node>
+    <node id="Clostridia UCG-014 OTU182">
+      <data key="d0">0.0007806400923679272</data>
+      <data key="d1">0.027957827032298616</data>
+      <data key="d2">0.00189108580040435</data>
+      <data key="d3">0.04349811260738045</data>
+      <data key="d4">0.026351751759648323</data>
+      <data key="d5">0.16233530657145515</data>
+    </node>
+    <node id="A. hadrus OTU24">
+      <data key="d0">0.02596373048921426</data>
+      <data key="d1">0.16113575174123917</data>
+      <data key="d2">0.023886118084192276</data>
+      <data key="d3">0.15455457962866154</data>
+      <data key="d4">0.02394881471991539</data>
+      <data key="d5">0.15475727679148205</data>
+    </node>
+    <node id="B. masiliensis OTU13">
+      <data key="d0">0.10482536007960637</data>
+      <data key="d1">0.3237689918438861</data>
+      <data key="d2">0.06729725375771523</data>
+      <data key="d3">0.2594190697649562</data>
+      <data key="d4">0.0783839002251625</data>
+      <data key="d5">0.2799730348179312</data>
+    </node>
+    <node id="Bifidobacterium OTU6">
+      <data key="d0">0.04075978075464567</data>
+      <data key="d1">0.20189299332727142</data>
+      <data key="d2">0.11488218605518341</data>
+      <data key="d3">0.3389442226313696</data>
+      <data key="d4">0.01980283297598362</data>
+      <data key="d5">0.14072609202270778</data>
+    </node>
+    <node id="F. saccharivorans OTU9">
+      <data key="d0">0.07037229339281718</data>
+      <data key="d1">0.26527965129805414</data>
+      <data key="d2">0.04898222163319588</data>
+      <data key="d3">0.2213215344994605</data>
+      <data key="d4">0.05488872155547142</data>
+      <data key="d5">0.23428555558435826</data>
+    </node>
+    <node id="E. UCG-003 OTU21">
+      <data key="d0">0.02349426473180453</data>
+      <data key="d1">0.15328165164756194</data>
+      <data key="d2">0.024853805700937908</data>
+      <data key="d3">0.15765406972526244</data>
+      <data key="d4">0.04526905342936516</data>
+      <data key="d5">0.21276760427603908</data>
+    </node>
+    <node id="Blautia OTU8">
+      <data key="d0">0.0868685816725095</data>
+      <data key="d1">0.29473646138967863</data>
+      <data key="d2">0.052102647721767426</data>
+      <data key="d3">0.22826223455001798</data>
+      <data key="d4">0.08536288142204285</data>
+      <data key="d5">0.2921709797739037</data>
+    </node>
+    <node id="Lachnospiraceae OTU31">
+      <data key="d0">0.020204860096176464</data>
+      <data key="d1">0.14214731828696758</data>
+      <data key="d2">0.015201210665206114</data>
+      <data key="d3">0.12329724516470801</data>
+      <data key="d4">0.03044806234538555</data>
+      <data key="d5">0.17449659694499933</data>
+    </node>
+    <node id="E. ramulus OTU95">
+      <data key="d0">0.01510821639870604</data>
+      <data key="d1">0.12291955254842916</data>
+      <data key="d2">0.008873103807369867</data>
+      <data key="d3">0.0942024617903899</data>
+      <data key="d4">0.01912807859480381</data>
+      <data key="d5">0.13830791226391861</data>
+    </node>
+    <node id="Lachnospiraceae OTU82">
+      <data key="d0">0.0044815341049494846</data>
+      <data key="d1">0.06695172966361276</data>
+      <data key="d2">0.01393874641507864</data>
+      <data key="d3">0.11806670324472789</data>
+      <data key="d4">0.012276704423129559</data>
+      <data key="d5">0.1108048032493608</data>
+    </node>
+    <edge source="A. rectalis OTU1" target="S. variabile OTU34">
+      <data key="d6">0.010040682813708525</data>
+      <data key="d7">0.004565694635293047</data>
+      <data key="d8">0.009794892042813448</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="C. aerofaciens OTU20">
+      <data key="d6">0.01646269905485115</data>
+      <data key="d7">0.027986757128805505</data>
+      <data key="d8">0.0248103838869436</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Monoglobus OTU59">
+      <data key="d6">0.007265301557932788</data>
+      <data key="d7">0.016588050312612262</data>
+      <data key="d8">0.01504824881256051</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="R. bromii OTU10">
+      <data key="d6">0.017542917831566075</data>
+      <data key="d7">0.04168928434632225</data>
+      <data key="d8">0.028321506895839687</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="R. faecis/torques OTU17">
+      <data key="d6">0.011540523575586057</data>
+      <data key="d7">0.025212963998191933</data>
+      <data key="d8">0.019414815472970227</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Clostridia UCG-014 OTU182">
+      <data key="d6">0.004043409197169295</data>
+      <data key="d7">0.003738487143817224</data>
+      <data key="d8">0.03341326429747809</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="A. hadrus OTU24">
+      <data key="d6">0.014246328921929357</data>
+      <data key="d7">0.010585563093846742</data>
+      <data key="d8">0.013717756667575914</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="B. masiliensis OTU13">
+      <data key="d6">0.0294853021665356</data>
+      <data key="d7">0.054064004471105924</data>
+      <data key="d8">0.04080869299876336</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Bifidobacterium OTU6">
+      <data key="d6">0.031750358556075636</data>
+      <data key="d7">0.08201620111919705</data>
+      <data key="d8">0.041103045192882985</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="F. saccharivorans OTU9">
+      <data key="d6">0.005298691042881596</data>
+      <data key="d7">0.008518314343382077</data>
+      <data key="d8">0.01494279493094656</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="E. UCG-003 OTU21">
+      <data key="d6">0.009060375054527437</data>
+      <data key="d7">0.00719625445613024</data>
+      <data key="d8">0.014163903343406772</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Blautia OTU8">
+      <data key="d6">0.007436385874152229</data>
+      <data key="d7">0.015077473590407883</data>
+      <data key="d8">0.014563056920940978</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Lachnospiraceae OTU31">
+      <data key="d6">0.009934545141031391</data>
+      <data key="d7">0.01280575619894044</data>
+      <data key="d8">0.016936056060317003</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="E. ramulus OTU95">
+      <data key="d6">0.019122509194960956</data>
+      <data key="d7">0.009536707361442787</data>
+      <data key="d8">0.02153315574557281</data>
+    </edge>
+    <edge source="A. rectalis OTU1" target="Lachnospiraceae OTU82">
+      <data key="d6">0.009408853385518267</data>
+      <data key="d7">0.01143835088641477</data>
+      <data key="d8">0.014309018956262909</data>
+    </edge>
+  </graph>
+</graphml>

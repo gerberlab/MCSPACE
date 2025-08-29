@@ -30,7 +30,7 @@ def get_relative_abundances(data, times, subjects, taxonomy):
 
 def save_best_model_posterior_summary(runs_outpath, seeds, outpath, inference_data):
     respath = get_min_loss_path(runs_outpath, seeds)
-    model = torch.load(respath / MODEL_FILE)
+    model = torch.load(respath / MODEL_FILE, weights_only=False)
     data = pickle_load(respath / DATA_FILE)
     taxonomy = pickle_load(respath / "taxonomy.pkl")
 
@@ -126,6 +126,7 @@ def run_inference_seed(data,
     torch.save(model, outpath / MODEL_FILE)
     pickle_save(outpath / DATA_FILE, inference_data)
     pickle_save(outpath / "taxonomy.pkl", taxonomy)
+    pickle_save(outpath / "elbos.pkl", elbos)
 
 
 def run_inference(data,

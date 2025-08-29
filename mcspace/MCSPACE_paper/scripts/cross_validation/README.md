@@ -12,17 +12,17 @@ This splits each dataset sample into (80/20) train-test splits and performs a 50
 ## Step 2: Run MCSPACE model inference on training datasets
 To run the MCSPACE model on training datasets, execute the command:
 ```bash
-bash run_cv_MCSPACE.sh [run_all] [run_id]
+bash cross_validation/run_cv_MCSPACE.sh [run_all] [run_id]
 ```
 ### Running all cases sequentially
 To execute all cases sequentially, run the command:
 ```bash
-bash run_cv_MCSPACE.sh run_all
+bash cross_validation/run_cv_MCSPACE.sh run_all
 ```
 ### Running specific cases
 For running multiple cases in parallel (e.g. by using a job scheduler) or focusing on specific cases, you can provide the `run_id` parameter. To run a particular case, use the command:
 ```bash
-bash run_cv_MCSPACE.sh [run_id]
+bash cross_validation/run_cv_MCSPACE.sh [run_id]
 ```
 * Options for `run_id`: 0 to 129
 
@@ -31,17 +31,17 @@ The model inference results are output into the folder: `MCSPACE_paper/output/cr
 ## Step 3: Run Gaussian mixture model (GMM) inference on training datasets
 To run the GMM on training datasets, execute the command:
 ```bash
-bash run_cv_GMM.sh [run_all] [run_id]
+bash cross_validation/run_cv_GMM.sh [run_all] [run_id]
 ```
 ### Running all cases sequentially
 To execute all cases sequentially, run the command:
 ```bash
-bash run_cv_GMM.sh run_all
+bash cross_validation/run_cv_GMM.sh run_all
 ```
 ### Running specific cases
 For running multiple cases in parallel (e.g. by using a job scheduler) or focusing on specific cases, you can provide the `run_id` parameter. To run a particular case, use the command:
 ```bash
-bash run_cv_GMM.sh [run_id]
+bash cross_validation/run_cv_GMM.sh [run_id]
 ```
 * Options for `run_id`: 0 to 129
 
@@ -50,17 +50,17 @@ The model inference results are output into the folder: `MCSPACE_paper/output/cr
 ## Step 4: Run the one-dimensional directional GMM inference on training datasets
 To run the one-dimensional directional GMM model on training datasets, execute the command:
 ```bash
-bash run_cv_GMM_1dim.sh [run_all] [run_id]
+bash cross_validation/run_cv_GMM_1dim.sh [run_all] [run_id]
 ```
 ### Running all cases sequentially
 To execute all cases sequentially, run the command:
 ```bash
-bash run_cv_GMM_1dim.sh run_all
+bash cross_validation/run_cv_GMM_1dim.sh run_all
 ```
 ### Running specific cases
 For running multiple cases in parallel (e.g. by using a job scheduler) or focusing on specific cases, you can provide the `run_id` parameter. To run a particular case, use the command:
 ```bash
-bash run_cv_GMM_1dim.sh [run_id]
+bash cross_validation/run_cv_GMM_1dim.sh [run_id]
 ```
 * Options for `run_id`: 0 to 129
 
@@ -70,17 +70,17 @@ The model inference results are output into the folder: `MCSPACE_paper/output/cr
 
 To run the two-dimensional directional GMM model on training datasets, execute the command:
 ```bash
-bash run_cv_GMM_2dim.sh [run_all] [run_id]
+bash cross_validation/run_cv_GMM_2dim.sh [run_all] [run_id]
 ```
 ### Running all cases sequentially
 To execute all cases sequentially, run the command:
 ```bash
-bash run_cv_GMM_2dim.sh run_all
+bash cross_validation/run_cv_GMM_2dim.sh run_all
 ```
 ### Running specific cases
 For running multiple cases in parallel (e.g. by using a job scheduler) or focusing on specific cases, you can provide the `run_id` parameter. To run a particular case, use the command:
 ```bash
-bash run_cv_GMM_2dim.sh [run_id]
+bash cross_validation/run_cv_GMM_2dim.sh [run_id]
 ```
 * Options for `run_id`: 0 to 129
 
@@ -89,7 +89,7 @@ The model inference results are output into the folder: `MCSPACE_paper/output/cr
 ## Step 6: Evaluate predictive performance on test datasets
 To evaluate model prediction performance on heldout test datasets, execute the command
 ```bash
-bash evaluate_cross_validation.sh
+bash cross_validation/evaluate_cross_validation.sh
 ```
 
 This script calculates the cosine distance error in predicting heldout reads for each particle in the test datasets and outputs results to the folder: `MCSPACE_paper/results/cross_validation`

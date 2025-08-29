@@ -13,3 +13,4 @@ For details on running a particular analysis, refer to the accompanying sub-docu
 2. [Analysis of main datasets](analysis/README.md)
 3. [Synthetic benchmarking](synthetic_benchmark/README.md)
 4. [Cross validation](cross_validation/README.md)
+5. [Sensitivity analysis](sensitivity_analysis/README.md)
